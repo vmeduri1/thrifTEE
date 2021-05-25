@@ -10,10 +10,7 @@ export default function Cart() {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const allProducts = useSelector((state) => state.products.products);
-    const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
     const [cart, setCart] = useState(cartFromLocalStorage);
-
-
 
     useEffect(() => {
         dispatch(getAllProducts());
@@ -64,9 +61,9 @@ export default function Cart() {
         setCart(newCart);
     }
 
-
     return (
         <>
+            {/* <h2>Cart {getCartTotal()}</h2> */}
             {cart.length > 0 && (
                 <button onClick={clearCart}>Clear Cart</button>
             )}
@@ -94,7 +91,7 @@ export default function Cart() {
                     </div>
                 ))}
             </div>
-            <div>Total Cost: ${getTotalSum()}</div>
+            {/* <div>Total Cost: ${getTotalSum()}</div> */}
         </>
     )
 }

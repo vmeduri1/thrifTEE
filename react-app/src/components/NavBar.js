@@ -31,7 +31,7 @@ const NavBar = () => {
           <LogoutButton />
         </li>
         <li>
-          <Cart />
+          {/* <h2>Cart {getCartTotal()}</h2> */}
         </li>
       </ul>
     </nav>
