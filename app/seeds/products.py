@@ -106,6 +106,26 @@ def seed_products():
     )
     db.session.add(product10)
 
+    product12 = Product(
+        sku='TDS1MCS',
+        name='Tye dye shirt',
+        category_id=1,
+        image_url='https://popsickvintage.com/wp-content/uploads/2019/12/hd-776-503x732.jpg',
+        description='Funky and hip tie dye shirt',
+        regular_price=35.00
+        )
+    db.session.add(product12)
+
+    product13 = Product(
+        sku='AWT1WS',
+        name='Aaliyah white tank',
+        category_id=1,
+        image_url='https://i.pinimg.com/originals/86/79/ac/8679ac737a499982938fbcd3a5b1a5c5.jpg',
+        description='Iconic Aaliyah tank top ',
+        regular_price=40.00
+    )
+    db.session.add(product13)
+
     db.session.commit()
 
 
