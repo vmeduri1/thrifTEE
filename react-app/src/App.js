@@ -9,8 +9,13 @@ import UsersList from "./components/UsersList";
 import User from "./components/User";
 import HomePage from "./components/HomePage"
 import { authenticate } from "./store/session";
+import Cart from './components/Cart';
+
+const PAGE_CART = 'cart'
+const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
 function App() {
+  const [cart, setCart] = useState(cartFromLocalStorage);
   const user = useSelector(state => state.session.user)
   const [loaded, setLoaded] = useState(false);
   const dispatch = useDispatch();
@@ -22,9 +27,20 @@ function App() {
     })();
   }, []);
 
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cart))
+  }, [cart])
+
   if (!loaded) {
     return null;
   }
+
+  const getCartTotal = () => {
+    return cart.reduce(
+      (sum, { quantity }) => sum + quantity,
+      0
+    );
+  };
 
   return (
     <BrowserRouter>
@@ -48,6 +64,12 @@ function App() {
         </Route>
 
       </Switch>
+      <div className="App">
+        {page === PAGE_CART && (
+          <Cart cart={cart} setCart={setCart} />
+        )}
+
+      </div>
     </BrowserRouter>
   );
 }
