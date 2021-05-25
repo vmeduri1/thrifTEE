@@ -2,7 +2,7 @@ from .db import db
 
 
 wishlists = db.Table(
-    "wishlists",
+    "wishlist",
     db.Column(
         "user_id",
         db.Integer,

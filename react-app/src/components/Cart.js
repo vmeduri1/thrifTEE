@@ -1,10 +1,39 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import * as productActions from '../store/products'
+import { getAllProducts } from '../store/products'
 
-export default function Cart({ cart, setCart }) {
+const PAGE_CART = 'cart'
+const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
+
+export default function Cart() {
+    const dispatch = useDispatch();
+    const user = useSelector((state) => state.session.user);
+    const allProducts = useSelector((state) => state.products.products);
+    const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
+    const [cart, setCart] = useState(cartFromLocalStorage);
+
+
+
+    useEffect(() => {
+        dispatch(getAllProducts());
+    }, [dispatch])
+
+    useEffect(() => {
+        localStorage.setItem('cart', JSON.stringify(cart))
+      }, [cart])
+
     const getTotalSum = () => {
         return cart.reduce(
             (sum, { cost, quantity }) => sum + cost * quantity,
             0
+        );
+    };
+
+    const getCartTotal = () => {
+        return cart.reduce(
+          (sum, { quantity }) => sum + quantity,
+          0
         );
     };
 
@@ -16,7 +45,7 @@ export default function Cart({ cart, setCart }) {
         const newCart = [...cart];
         newCart.find(
             (item) => item.name === product.name
-        ).quantity = amoun;
+        ).quantity = amount;
         setCart(newCart);
     };
 
@@ -26,9 +55,18 @@ export default function Cart({ cart, setCart }) {
         );
     };
 
+    const addToCart = (product) => {
+        let newCart = [...cart]
+        let itemInCart = newCart.findIndex(
+            (item) => product.name === item.name
+        );
+        newCart.push(itemInCart);
+        setCart(newCart);
+    }
+
+
     return (
         <>
-            <h1>Cart</h1>
             {cart.length > 0 && (
                 <button onClick={clearCart}>Clear Cart</button>
             )}
@@ -47,8 +85,11 @@ export default function Cart({ cart, setCart }) {
                             }
                         />
                         <img src={product.image_url} alt={product.name} />
+                        <button onClick={() => addToCart(product)}>
+                            +
+                        </button>
                         <button onClick={() => removeFromCart(product)}>
-                            Remove from Cart
+                            -
                         </button>
                     </div>
                 ))}
