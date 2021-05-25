@@ -1,9 +1,8 @@
 from .db import db
 
 
-wishlistsTable = db.Table(
-    "wishlists",
-    db.Model.metadata,
+wishlists = db.Table(
+    "wishlist",
     db.Column(
         "user_id",
         db.Integer,
@@ -12,12 +11,10 @@ wishlistsTable = db.Table(
     ),
     db.Column(
         "product_id",
-        db.Integer,
-        db.ForeignKey("products.id"),
-        primary_key=True
+        db.Column(
+            db.Integer,
+            db.ForeignKey("products.id"),
+            primary_key=True
+        )
     )
 )
-
-
-class Wishlists(db.Model):
-    __tablename__ = 'wish'
