@@ -94,7 +94,6 @@ export default function Cart() {
                     </div>
                 ))}
             </div>
-
             <div>Total Cost: ${getTotalSum()}</div>
         </>
     )
