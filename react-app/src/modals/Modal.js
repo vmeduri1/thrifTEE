@@ -6,32 +6,37 @@ import {
   ModalFooter,             //  The footer that houses the modal actions.
   ModalBody,               //  The wrapper that houses the modal's main content.
   ModalCloseButton,        //  The button that closes the modal.
+  Button,
   useDisclosure,           //  A handler to handle the open, close etc of the modal
   useOutsideClick,         //  A handler to handle click when outside the ref element to close
 } from "@chakra-ui/react";
 import React, { useContext, useRef, useState, useEffect } from 'react';
+// import
 import ReactDOM from 'react-dom';
+import { SignUpForm } from "./SignUpForm";
 
 // ------------------------------------------------------------------------------------------//
 
 
-export default function VerticallyCenter() {
+export function VerticallyCenter() {
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const initialRef = React.useRef()
+  const finalRef = React.useRef()
 
   return (
     <>
-      <Button onClick={onOpen}>Trigger modal</Button>
+      <Button onClick={onOpen}>Open Modal</Button>
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
-        <ModalContent>
-          <ModalHeader>Modal Title</ModalHeader>
+        <ModalContent >
+          <ModalHeader>Sign-up</ModalHeader>
           <ModalCloseButton />
-          <ModalBody>
-            <Lorem count={2} />
+          <ModalBody pb={6}>
+            <SignUpForm />
           </ModalBody>
           <ModalFooter>
-            <Button onClick={onClose}>Close</Button>
+            <Button onClick={onClose}>Submit</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
