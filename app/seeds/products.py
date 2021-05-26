@@ -166,6 +166,67 @@ def seed_products():
     )
     db.session.add(product54)
 
+# ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    product81 = Product(
+        sku='WS3B7',
+        name='Slides',
+        category_id=3,
+        image_url='https://thefashiontag.com/wp-content/uploads/2015/05/slide-sandals-outfits-11.jpg',
+        description='Women slides for all day comfort',
+        regular_price=15.00
+    )
+    db.session.add(product81)
+
+    product82 = Product(
+        sku='RB3BK6',
+        name='Rainboots',
+        category_id=3,
+        image_url='https://fasbest.com/wp-content/uploads/2017/04/Rain-Boots-Fashions-Style-26.jpg',
+        description='Classy and sturdy rainboots for those wet days out',
+        regular_price=75.00
+    )
+    db.session.add(product82)
+
+    product83 = Product(
+        sku='BF3BK4',
+        name='Ballet flats',
+        category_id=3,
+        image_url='https://www.outfittrends.com/wp-content/uploads/2016/05/baleet-lace-up-17.jpg',
+        description='Classic and stylish ballet flats',
+        regular_price=25.00
+    )
+    db.session.add(product83)
+
+    product84 = Product(
+        sku='PH3PK6',
+        name='Platform heels',
+        category_id=3,
+        image_url='http://ferbena.com/wp-content/uploads/2014/02/coral-velvet-platform-heels.jpg',
+        description='Beautiful platform heels to show your style and height',
+        regular_price=60.00
+    )
+    db.session.add(product84)
+
+    product85 = Product(
+        sku='WWS3BK6',
+        name='Wedge sneakers',
+        category_id=3,
+        image_url='https://data.whicdn.com/images/71694355/original.jpg',
+        description='Comfort of a sneaker with the wedge look',
+        regular_price=50.00
+    )
+    db.session.add(product85)
+
+    product86 = Product(
+        sku='WB3B5',
+        name='Booties',
+        category_id=3,
+        image_url='https://www.outfittrends.com/wp-content/uploads/2015/03/c01c9cf18936713dc904312a2b2e7630.jpg',
+        description='The everyday booties for a walk around town',
+        regular_price=45.00
+    )
+    db.session.add(product86)
+
 
 db.session.commit()
 
