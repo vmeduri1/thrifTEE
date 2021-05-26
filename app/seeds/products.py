@@ -227,8 +227,7 @@ def seed_products():
     )
     db.session.add(product86)
 
-
-db.session.commit()
+    db.session.commit()
 
 
 def undo_products():
