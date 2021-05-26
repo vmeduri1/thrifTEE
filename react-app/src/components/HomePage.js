@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import * as sessionActions from '../store/session'
 import * as productActions from '../store/products'
 import { getAllProducts } from '../store/products'
+import { VerticallyCenter } from '../modals/Modal'
 
 export default function HomePage() {
 
@@ -20,7 +21,7 @@ export default function HomePage() {
 
     return (
         <>
-
+            <VerticallyCenter />
             {/* <div>
                 {allProducts.map(product => (
                     <div>{product.name}
