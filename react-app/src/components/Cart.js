@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import * as productActions from '../store/products'
@@ -28,10 +29,22 @@ export default function Cart() {
     };
 
     const getCartTotal = () => {
+=======
+
+import React from 'react';
+
+
+
+
+export default function Cart({ cart, setCart }) {
+
+    const getTotalSum = () => {
+>>>>>>> main
         return cart.reduce(
           (sum, { quantity }) => sum + quantity,
           0
         );
+<<<<<<< HEAD
     };
 
     const clearCart = () => {
@@ -94,4 +107,60 @@ export default function Cart() {
             {/* <div>Total Cost: ${getTotalSum()}</div> */}
         </>
     )
+=======
+      };
+
+      const clearCart = () => {
+        setCart([]);
+      };
+
+      const setQuantity = (product, amount) => {
+        const newCart = [...cart];
+        newCart.find(
+          (item) => item.name === product.name
+        ).quantity = amount;
+        setCart(newCart);
+      };
+
+      const removeFromCart = (productToRemove) => {
+        setCart(
+          cart.filter((product) => product !== productToRemove)
+        );
+      };
+
+
+
+      return (
+        <>
+          <h1>Cart</h1>
+
+            <button onClick={clearCart}>Clear Cart</button>
+
+          <div>
+            {cart.map((product, idx) => (
+              <div key={idx}>
+                <h3>{product.name}</h3>
+                <h4>${product.cost}</h4>
+                <input
+                  value={product.quantity}
+                  onChange={(e) =>
+                    setQuantity(
+                      product,
+                      parseInt(e.target.value)
+                    )
+                  }
+                />
+                <img src={product.image} alt={product.name} />
+                <button onClick={() => removeFromCart(product)}>
+                  Remove
+                </button>
+              </div>
+            ))}
+          </div>
+
+          <div>Total Cost: ${getTotalSum()}</div>
+        </>
+      );
+
+>>>>>>> main
 }

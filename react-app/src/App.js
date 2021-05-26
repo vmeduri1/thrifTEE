@@ -8,6 +8,7 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import HomePage from "./components/HomePage"
+import Category from "./components/Category"
 import { authenticate } from "./store/session";
 import Cart from './components/Cart';
 
@@ -37,6 +38,9 @@ function App() {
       <Switch>
       <Route path="/" exact={true} >
           <HomePage />
+        </Route>
+        <Route path="/categories/:id" exact={true} >
+          <Category />
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm />
