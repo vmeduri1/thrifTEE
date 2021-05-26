@@ -3,6 +3,7 @@ export const LOAD_CART = 'LOAD_CART';
 export const ADD_PRODUCT = 'ADD_PRODUCT';
 export const REMOVE_PRODUCT = 'REMOVE_PRODUCT';
 export const UPDATE_CART = 'UPDATE_CART';
+export const CLEAR_PRODUCT = 'CLEAR_PRODUCT'
 
 
 export const loadCart = products => ({
@@ -20,6 +21,11 @@ export const loadCart = products => ({
     payload: product
   });
 
+  export const clearProduct = product => ({
+    type: CLEAR_PRODUCT,
+    payload: []
+  })
+
 //   const INITIAL_STATE= JSON.parse(localStorage.getItem('cart') || '[]')
 
 const initialState = {
@@ -34,15 +40,18 @@ const initialState = {
             products: action.payload
           };
         case ADD_PRODUCT:
-          return {
-            ...state,
-            productToAdd: action.payload
-          };
+            alert("Added to Cart")
+            if (state.some(product => product.id === action.payload.id)) {
+              // increase qty if item already exists in cart
+              return state.map(product => (product.id === action.payload.id ? { ...product, qty: product.qty + 1 } : product));
+            }
+            return [...state, { ...action.payload, qty: 1 }]; // else add the new item to cart
         case REMOVE_PRODUCT:
+          return state.filter(product => product.id !== action.payload.id)
+        case CLEAR_PRODUCT:
           return {
-            ...state,
-            productToRemove: action.payload
-          };
+            products: []
+          }
         default:
           return state;
       }

@@ -11,27 +11,27 @@ import {
     Tooltip,
   } from '@chakra-ui/react';
   import { FiShoppingCart } from 'react-icons/fi';
+  import { addProduct } from '../store/cart'
 
 
-
-  function ProductAddToCart({ price, name, image }) {
-    const addToCart = (product) => {
-        let newCart = [...cart];
-        let itemInCart = newCart.find(
-            (item) => product.name === item.name
-        );
-        if (itemInCart) {
-            itemInCart.quantity++;
-        } else {
-            itemInCart = {
-                ...product,
-                quantity: 1,
-            };
-            newCart.push(itemInCart);
-        }
-        setCart(newCart);
-        console.log(newCart)
-    };
+  function ProductAddToCart({ price, name, image, product }) {
+    // const addToCart = (product) => {
+    //     let newCart = [...cart];
+    //     let itemInCart = newCart.find(
+    //         (item) => product.name === item.name
+    //     );
+    //     if (itemInCart) {
+    //         itemInCart.quantity++;
+    //     } else {
+    //         itemInCart = {
+    //             ...product,
+    //             quantity: 1,
+    //         };
+    //         newCart.push(itemInCart);
+    //     }
+    //     setCart(newCart);
+    //     console.log(newCart)
+    // };
     return (
         <Flex p={50} w="full" alignItems="center" justifyContent="center">
         <Box
@@ -77,7 +77,7 @@ import {
                 color={'gray.800'}
                 fontSize={'1.2em'}>
                 <chakra.a href={'#'} display={'flex'}>
-                  <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} onClick={() => addToCart(product)}/>
+                  <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} onClick={() => addProduct(product)}/>
                 </chakra.a>
               </Tooltip>
             </Flex>
