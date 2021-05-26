@@ -14,6 +14,7 @@ import React, { useContext, useRef, useState, useEffect } from 'react';
 // import
 import ReactDOM from 'react-dom';
 import { SignUpForm } from "./SignUpForm";
+import { LoginForm } from "./LoginForm";
 
 // ------------------------------------------------------------------------------------------//
 
@@ -34,6 +35,7 @@ export function VerticallyCenter() {
           <ModalCloseButton />
           <ModalBody pb={6}>
             <SignUpForm />
+            <LoginForm />
           </ModalBody>
           {/* <ModalFooter>
             <Button onClick={onClose}>Sign Up </Button>
