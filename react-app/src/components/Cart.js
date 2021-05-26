@@ -12,7 +12,6 @@ export default function Cart({ cart, setCart }) {
           0
         );
       };
-
       const clearCart = () => {
         setCart([]);
       };
