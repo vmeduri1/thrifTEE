@@ -9,6 +9,7 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.products_routes import product_routes
+from .api.category_routes import category_routes
 
 from .seeds import seed_commands
 
