@@ -17,7 +17,7 @@ class User(db.Model, UserMixin):
     cc_card_number = db.Column(db.Numeric)
     # cc_expiration_date = db.Column(db.Date)
     address = db.Column(db.String(255))
-    zip_code = db.Column(db.Integer)
+    # zip_code = db.Column(db.Integer)
     state = db.Column(db.String(15))
     hashed_password = db.Column(db.String(255), nullable=False)
     # Added columns to users table
