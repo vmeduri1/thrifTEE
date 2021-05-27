@@ -61,6 +61,7 @@ export function LoginForm() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </InputGroup>
+          <br />
           <Button type='Submit'>Log in</Button>
         </FormControl>
       </Stack>

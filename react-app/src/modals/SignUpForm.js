@@ -104,6 +104,7 @@ export function SignUpForm() {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </InputGroup>
+          <br />
           <Button type='Submit'>Sign Up</Button>
         </FormControl>
       </Stack>

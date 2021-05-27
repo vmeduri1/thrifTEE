@@ -42,7 +42,7 @@ export function VerticallyCenter() {
 
   return (
     <>
-      <Button onClick={onOpen}>Open Modal</Button>
+      <Button onClick={onOpen}> { formRender ? "Sign Up" : "Log In" }  </Button>
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
