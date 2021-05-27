@@ -19,8 +19,8 @@ export function SignUpForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [fname, setfname] = useState("");
+  const [lname, setlname] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
@@ -34,7 +34,7 @@ export function SignUpForm() {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
-      return dispatch(sessionActions.signUp({ email, firstName, lastName, password }))
+      return dispatch(sessionActions.signUp({ fname, lname, email, password }))
         .catch(async (res) => {
           const data = await res.json();
           if (data && data.errors) setErrors(data.errors);
@@ -58,8 +58,8 @@ export function SignUpForm() {
               // ref={initialRef}
               placeholder="First name"
               type='text'
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              value={fname}
+              onChange={(e) => setfname(e.target.value)}
             />
           </InputGroup>
           <FormLabel>Last name</FormLabel>
@@ -68,8 +68,8 @@ export function SignUpForm() {
               // ref={initialRef}
               placeholder="Last name"
               type='text'
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              value={lname}
+              onChange={(e) => setlname(e.target.value)}
             />
           </InputGroup>
           <FormLabel>Email</FormLabel>
