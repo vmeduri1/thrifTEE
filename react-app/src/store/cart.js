@@ -26,12 +26,20 @@ export const loadCart = products => ({
     payload: []
   })
 
-  console.log(JSON.parse(localStorage.getItem('cart')))
-  const INITIAL_STATE= JSON.parse(localStorage.getItem('cart') || '[]')
 
-const initialState = {
-    products: []
+
+// const initialState = {
+//     // products: []
+//     products: JSON.parse(localStorage.getItem('cart') || '{"products":[]}').products
+
+//   };
+
+  const initialState = {
+    // products: []
+    products: JSON.parse(localStorage.getItem('cart') || '{"products":[]}').products
+
   };
+
 
   export default function cartReducer (state = initialState, action) {
     switch (action.type) {

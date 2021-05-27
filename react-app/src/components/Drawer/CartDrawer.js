@@ -24,8 +24,8 @@ import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 
 import { clearProduct, removeProduct, addProduct } from '../../store/cart'
-import { GiShoppingBag} from 'react-icons/gi';
-import {AiFillCloseCircle} from 'react-icons/ai'
+import { GiShoppingBag } from 'react-icons/gi';
+import { AiFillCloseCircle } from 'react-icons/ai'
 
 
 
@@ -37,12 +37,20 @@ export default function CartDrawer({ cart }) {
   const dispatch = useDispatch()
   let history = useHistory()
 
+  // const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
+
+
 
   useEffect(() => {
     onOpen()
   }, [cart])
 
-  function handleCheckout(){
+
+    // useEffect(() => {
+    //     localStorage.setItem('cart', JSON.stringify(cart))
+    // }, [cart])
+
+  function handleCheckout() {
     history.push("/checkout")
   }
 
@@ -76,31 +84,31 @@ export default function CartDrawer({ cart }) {
                     }
                   /> */}
                   {/* eturn ( */}
-    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden"
-    >
-      <Box>
-        ${product.regular_price}
-    <Image src={product.image_url} alt={product.name}  />
-      </Box>
-    <Box p="6" alignItems='baseline'>
-      <Box d= 'flex'>
-      <Icon as={AiFillCloseCircle} onClick={() => dispatch(removeProduct(product))} />
-            {product.name}
-      </Box>
-      <Box
-            color="gray.500"
-            fontWeight="semibold"
-            letterSpacing="wide"
-            fontSize="xs"
-            textTransform="uppercase"
-            ml="2"
-          >
+                  <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden"
+                  >
+                    <Box>
+                      ${product.regular_price}
+                      <Image src={product.image_url} alt={product.name} />
+                    </Box>
+                    <Box p="6" alignItems='baseline'>
+                      <Box d='flex'>
+                        <Icon as={AiFillCloseCircle} onClick={() => dispatch(removeProduct(product))} />
+                        {product.name}
+                      </Box>
+                      <Box
+                        color="gray.500"
+                        fontWeight="semibold"
+                        letterSpacing="wide"
+                        fontSize="xs"
+                        textTransform="uppercase"
+                        ml="2"
+                      >
 
-          </Box>
+                      </Box>
 
-    </Box>
+                    </Box>
 
-    </Box>
+                  </Box>
 
 
 
@@ -110,8 +118,8 @@ export default function CartDrawer({ cart }) {
             </div>
 
             {/* <div>Total Cost: ${getTotalSum()}</div> */}
-            <Button colorScheme = "teal" variant="outline" onClick={() => dispatch(clearProduct())}>Clear Cart</Button>
-            <Button shopIcon = {<GiShoppingBag />} colorScheme = "red" variant="outline" onClick={handleCheckout}>Checkout</Button>
+            <Button colorScheme="teal" variant="outline" onClick={() => dispatch(clearProduct())}>Clear Cart</Button>
+            <Button shopIcon={<GiShoppingBag />} colorScheme="red" variant="outline" onClick={handleCheckout}>Checkout</Button>
 
           </DrawerBody>
         </DrawerContent>

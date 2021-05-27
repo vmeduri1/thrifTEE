@@ -12,12 +12,11 @@ import { ChakraProvider } from "@chakra-ui/react"
 const store = configureStore();
 store.subscribe(() => {
   const state = store.getState();
-  const persist = {
-    cart: state.cart,
-    total: state.total
-  };
 
-  // window.localStorage.setItem('cart', JSON.stringify(persist));
+    // total: state.total
+
+
+  window.localStorage.setItem('cart', JSON.stringify(state.cart));
 });
 
 
