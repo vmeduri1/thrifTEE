@@ -8,7 +8,10 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  useDisclosure
+  useDisclosure,
+  isOpen,
+  onOpen,
+  onClose
 } from "@chakra-ui/react"
 
 
@@ -46,17 +49,13 @@ export default function Cart({ cart, setCart }) {
 
   return (
     <>
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent>
+
+    <div>Hello</div>
 
 
-          <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
+             <button onClick={clearCart}>Clear Cart</button>
 
-          <DrawerBody>
-            <button onClick={clearCart}>Clear Cart</button>
-
-            <div>
+            {/* <div>
               {cart.map((product, idx) => (
                 <div key={idx}>
                   <h3>{product.name}</h3>
@@ -78,11 +77,8 @@ export default function Cart({ cart, setCart }) {
               ))}
             </div>
 
-            <div>Total Cost: ${getTotalSum()}</div>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
-    </>
+            <div>Total Cost: ${getTotalSum()}</div>  */}
+        </>
   );
 
 }

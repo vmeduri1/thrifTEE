@@ -9,19 +9,22 @@ import {
   Icon,
   chakra,
   Tooltip,
-  useDisclosure
+  useDisclosure,
+  onOpen,
+  onClose
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { addProduct } from '../store/cart'
 import { useDispatch } from 'react-redux'
 import { Cart } from './Cart'
-const { isOpen, onOpen, onClose } = useDisclosure()
+
 
 
 
 
 function ProductAddToCart({ price, name, image, product }) {
   const dispatch = useDispatch()
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <Flex p={50} w="full" alignItems="center" justifyContent="center">
@@ -73,7 +76,11 @@ function ProductAddToCart({ price, name, image, product }) {
               fontSize={'1.2em'}>
               <chakra.a href={'#'} display={'flex'}>
                 <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}
-                  onClick={() => dispatch(addProduct(product))}
+                  onClick={
+                    async () => {
+                     const dispatched = await dispatch(addProduct(product))
+                    //  isOpen()
+                  }}
 
 
                 />

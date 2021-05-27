@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import { Grid, GridItem } from "@chakra-ui/react"
 import { Container } from "@chakra-ui/react"
 import { Flex, Spacer } from "@chakra-ui/react"
@@ -9,16 +9,19 @@ import { Box } from "@chakra-ui/react"
 import * as sessionActions from '../store/session'
 import * as categoryActions from '../store/category'
 import { getAllProductsByCategory } from '../store/category'
-import Cart from './Cart'
+import DrawerContainer from '././Drawer/Drawer'
 import Item from './Item'
+import {useDisclosure} from "@chakra-ui/react"
 
 
 export default function Category() {
+    const {isOpen, onOpen} = useDisclosure()
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
     const cart = useSelector((state) => state.cart)
     const { id } = useParams()
+    const [openDrawer, setOpenDrawer] = useState(false)
     // const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
 
@@ -31,8 +34,10 @@ export default function Category() {
     // }, [cart])
 
 
+
     return (
         <>
+        <DrawerContainer />
                 <Flex direction='row' height='150px'>
 
                 {allCatProducts.map((product, idx) => (
