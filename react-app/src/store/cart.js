@@ -26,7 +26,7 @@ export const loadCart = products => ({
     payload: []
   })
 
-  console.log(JSON.parse(localStorage.getItem('state')))
+  console.log(JSON.parse(localStorage.getItem('cart')))
   const INITIAL_STATE= JSON.parse(localStorage.getItem('cart') || '[]')
 
 const initialState = {

@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { Grid, GridItem } from "@chakra-ui/react"
+import { Container } from "@chakra-ui/react"
+import { Flex, Spacer } from "@chakra-ui/react"
+import { SimpleGrid } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 import * as sessionActions from '../store/session'
 import * as categoryActions from '../store/category'
 import { getAllProductsByCategory } from '../store/category'
@@ -15,7 +20,6 @@ export default function Category() {
     const cart = useSelector((state) => state.cart)
     const { id } = useParams()
     // const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
-    // const [cart, setCart] = useState(cartFromLocalStorage);
 
 
     useEffect(() => {
@@ -26,47 +30,23 @@ export default function Category() {
     //     localStorage.setItem('cart', JSON.stringify(cart))
     // }, [cart])
 
-    // const addToCart = (product) => {
-    //     let newCart = [...cart];
-    //     let itemInCart = newCart.find(
-    //         (item) => product.name === item.name
-    //     );
-    //     if (itemInCart) {
-    //         itemInCart.quantity++;
-    //     } else {
-    //         itemInCart = {
-    //             ...product,
-    //             quantity: 1,
-    //         };
-    //         newCart.push(itemInCart);
-    //     }
-    //     setCart(newCart);
-    //     console.log(newCart)
-    // };
 
     return (
         <>
+                <Flex direction='row' height='150px'>
 
-            <div className="card" style={{ width: '18rem' }}>
                 {allCatProducts.map((product, idx) => (
-                    <div key={product.id}>
+
+                    <div key={product.id} height="200px" width="100px">
                         <Item price={product.regular_price} name={product.name} image={product.image_url} product={product} />
-                        {/* <img src={product.image_url} class="card-img-top" alt="..." />
-                        <div className="card-body">
-                            <h5 className="card-title">{product.name}</h5>
-                            {alert(product.name)}
-                            <h5>{product.price}</h5>
-                            <img src={product.image} alt={product.name} />
-                            <button onClick={() => addToCart(product)} >
+                        </div>
 
-                                Add to Cart
-                            </button>
-                        </div> */}
-                    </div>
+
                  ))}
-            </div>
 
-            {/* <Cart cart={cart} setCart={setCart} /> */}
+               </Flex>
+
+
 
         </>
     )

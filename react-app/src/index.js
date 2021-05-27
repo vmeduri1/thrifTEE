@@ -17,7 +17,7 @@ store.subscribe(() => {
     total: state.total
   };
 
-  window.localStorage.setItem('state', JSON.stringify(persist));
+  // window.localStorage.setItem('cart', JSON.stringify(persist));
 });
 
 
