@@ -10,23 +10,41 @@ import {
   useDisclosure,
   isOpen,
   onOpen,
-  onClose
+  onClose,
+  Box,
+  Image,
+  Center,
+  Button,
+  Icon
 } from "@chakra-ui/react"
 
 import Cart from '../Cart'
 import { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+
+import { clearProduct, removeProduct, addProduct } from '../../store/cart'
+import { GiShoppingBag} from 'react-icons/gi';
+import {AiFillCloseCircle} from 'react-icons/ai'
 
 
-export default function DrawerContainer({ cart }) {
-  const cartStatus = useSelector((state) => state.cart)
+
+export default function CartDrawer({ cart }) {
+  // const cartStatus = useSelector((state) => state.cart)
   const { isOpen, onOpen, onClose } = useDisclosure()
   // const [openDrawer, setOpenDrawer] = useState(isOpen)
   const [placement, setPlacement] = React.useState("right")
+  const dispatch = useDispatch()
+  let history = useHistory()
+
 
   useEffect(() => {
     onOpen()
   }, [cart])
+
+  function handleCheckout(){
+    history.push("/checkout")
+  }
 
 
   return (
@@ -37,18 +55,18 @@ export default function DrawerContainer({ cart }) {
         <DrawerContent>
 
 
-          <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
+          <DrawerHeader borderBottomWidth="1px">Your Basket</DrawerHeader>
 
           <DrawerBody>
 
-            {/* <button onClick={clearCart}>Clear Cart</button> */}
 
-            {/* <div>
-              {cart.map((product, idx) => (
+
+            <div display='flex'>
+              {cart.products.map((product, idx) => (
                 <div key={idx}>
-                  <h3>{product.name}</h3>
-                  <h4>${product.cost}</h4>
-                  <input
+                  {/* <h3>{product.name}</h3>
+                  <h4>${product.regular_price}</h4> */}
+                  {/* <input
                     value={product.quantity}
                     onChange={(e) =>
                       setQuantity(
@@ -56,16 +74,44 @@ export default function DrawerContainer({ cart }) {
                         parseInt(e.target.value)
                       )
                     }
-                  />
-                  <img src={product.image} alt={product.name} />
-                  <button onClick={() => removeFromCart(product)}>
-                    Remove
-    </button>
+                  /> */}
+                  {/* eturn ( */}
+    <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden"
+    >
+      <Box>
+        ${product.regular_price}
+    <Image src={product.image_url} alt={product.name}  />
+      </Box>
+    <Box p="6" alignItems='baseline'>
+      <Box d= 'flex'>
+      <Icon as={AiFillCloseCircle} onClick={() => dispatch(removeProduct(product))} />
+            {product.name}
+      </Box>
+      <Box
+            color="gray.500"
+            fontWeight="semibold"
+            letterSpacing="wide"
+            fontSize="xs"
+            textTransform="uppercase"
+            ml="2"
+          >
+
+          </Box>
+
+    </Box>
+
+    </Box>
+
+
+
+
                 </div>
               ))}
             </div>
 
-            <div>Total Cost: ${getTotalSum()}</div> */}
+            {/* <div>Total Cost: ${getTotalSum()}</div> */}
+            <Button colorScheme = "teal" variant="outline" onClick={() => dispatch(clearProduct())}>Clear Cart</Button>
+            <Button shopIcon = {<GiShoppingBag />} colorScheme = "red" variant="outline" onClick={handleCheckout}>Checkout</Button>
 
           </DrawerBody>
         </DrawerContent>

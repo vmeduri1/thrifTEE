@@ -21,7 +21,6 @@ export default function Category() {
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
     const cart = useSelector((state) => state.cart)
     const { id } = useParams()
-    const [openDrawer, setOpenDrawer] = useState(false)
     // const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
 
