@@ -34,8 +34,8 @@ export function VerticallyCenter() {
           <ModalHeader>Sign-up</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
-            <SignUpForm />
-            <LoginForm />
+            <SignUpForm useOutsideClick />
+            {/* <LoginForm /> */}
           </ModalBody>
           {/* <ModalFooter>
             <Button onClick={onClose}>Sign Up </Button>

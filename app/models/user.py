@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     lname = db.Column(db.String(40))
     email = db.Column(db.String(40), nullable=False)
     cc_card_number = db.Column(db.Numeric)
-    cc_expiration_date = db.Date
+    # cc_expiration_date = db.Column(db.Date)
     address = db.Column(db.String(255))
     zip_code = db.Column(db.Integer)
     state = db.Column(db.String(15))
@@ -42,10 +42,5 @@ class User(db.Model, UserMixin):
             "fname": self.fname,
             "lname": self.lname,
             "email": self.email,
-            "cc_card_number": self.cc_card_number,
-            "cc_expiration_date": self.cc_expiration_date,
-            "address": self.address,
-            "zip_code": self.zip_code,
-            "state": self.state,
         }
     # added returns to the to_dict

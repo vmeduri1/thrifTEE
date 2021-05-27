@@ -59,7 +59,7 @@ export const logout = () => async (dispatch) => {
 };
 
 
-export const signUp = (fname, lname, email, password) => async (dispatch) => {
+export const signUp = ({ fname, lname, email, password }) => async (dispatch) => {
   const response = await fetch("/api/auth/signup", {
     method: "POST",
     headers: {
@@ -78,7 +78,7 @@ export const signUp = (fname, lname, email, password) => async (dispatch) => {
   }
 
   dispatch(setUser(data))
-  return {};
+  return true;
 }
 
 export default function reducer(state = initialState, action) {

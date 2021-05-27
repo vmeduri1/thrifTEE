@@ -1,5 +1,5 @@
-export const authenticate = async() => {
-  const response = await fetch('/api/auth/',{
+export const authenticate = async () => {
+  const response = await fetch('/api/auth/', {
     headers: {
       'Content-Type': 'application/json'
     }
@@ -31,14 +31,15 @@ export const logout = async () => {
 };
 
 
-export const signUp = async (username, email, password) => {
+export const signUp = async (fname, lname, email, password) => {
   const response = await fetch("/api/auth/signup", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      username,
+      fname,
+      lname,
       email,
       password,
     }),
