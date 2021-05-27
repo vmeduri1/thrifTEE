@@ -26,7 +26,8 @@ export const loadCart = products => ({
     payload: []
   })
 
-//   const INITIAL_STATE= JSON.parse(localStorage.getItem('cart') || '[]')
+  console.log(JSON.parse(localStorage.getItem('state')))
+  const INITIAL_STATE= JSON.parse(localStorage.getItem('cart') || '[]')
 
 const initialState = {
     products: []
@@ -41,11 +42,18 @@ const initialState = {
           };
         case ADD_PRODUCT:
             alert("Added to Cart")
-            if (state.some(product => product.id === action.payload.id)) {
+            if (state.products.some(product => product.id === action.payload.id)) {
               // increase qty if item already exists in cart
-              return state.map(product => (product.id === action.payload.id ? { ...product, qty: product.qty + 1 } : product));
+              return {
+                ...state,
+                products: state.products.map(product => (product.id === action.payload.id ? { ...product, qty: product.qty + 1 } : product))
+              }
             }
-            return [...state, { ...action.payload, qty: 1 }]; // else add the new item to cart
+            return {
+              ...state,
+              products: [...state.products, { ...action.payload, qty: 1 }]
+
+            }; // else add the new item to cart
         case REMOVE_PRODUCT:
           return state.filter(product => product.id !== action.payload.id)
         case CLEAR_PRODUCT:

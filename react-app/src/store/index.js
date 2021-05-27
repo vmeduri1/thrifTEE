@@ -29,15 +29,6 @@ if (process.env.NODE_ENV === 'production') {
 //     return createStore(rootReducer, preloadedState, enhancer);
 // };
 
-store.subscribe(() => {
-    const state = store.getState();
-    const persist = {
-      cart: state.cart,
-      total: state.total
-    };
-
-    window.localStorage.setItem('state', JSON.stringify(persist));
-  });
 
 const persistedState = localStorage.getItem('cart')
                        ? JSON.parse(localStorage.getItem('cart'))

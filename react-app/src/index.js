@@ -10,6 +10,16 @@ import { ChakraProvider } from "@chakra-ui/react"
 // const initialCart = []
 
 const store = configureStore();
+store.subscribe(() => {
+  const state = store.getState();
+  const persist = {
+    cart: state.cart,
+    total: state.total
+  };
+
+  window.localStorage.setItem('state', JSON.stringify(persist));
+});
+
 
 ReactDOM.render(
   <React.StrictMode>

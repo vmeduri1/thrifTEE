@@ -12,9 +12,11 @@ import {
   } from '@chakra-ui/react';
   import { FiShoppingCart } from 'react-icons/fi';
   import { addProduct } from '../store/cart'
+  import { useDispatch } from 'react-redux'
 
 
   function ProductAddToCart({ price, name, image, product }) {
+      const dispatch = useDispatch()
     // const addToCart = (product) => {
     //     let newCart = [...cart];
     //     let itemInCart = newCart.find(
@@ -77,7 +79,7 @@ import {
                 color={'gray.800'}
                 fontSize={'1.2em'}>
                 <chakra.a href={'#'} display={'flex'}>
-                  <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} onClick={() => addProduct(product)}/>
+                  <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} onClick={() => dispatch(addProduct(product))}/>
                 </chakra.a>
               </Tooltip>
             </Flex>
