@@ -9,7 +9,7 @@ import { Box } from "@chakra-ui/react"
 import * as sessionActions from '../store/session'
 import * as categoryActions from '../store/category'
 import { getAllProductsByCategory } from '../store/category'
-import DrawerContainer from '././Drawer/Drawer'
+import CartDrawer from './Drawer/CartDrawer'
 import Item from './Item'
 import {useDisclosure} from "@chakra-ui/react"
 
@@ -37,7 +37,7 @@ export default function Category() {
 
     return (
         <>
-        <DrawerContainer />
+        <CartDrawer cart = {cart}/>
                 <Flex direction='row' height='150px'>
 
                 {allCatProducts.map((product, idx) => (

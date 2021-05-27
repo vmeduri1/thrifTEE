@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Drawer,
@@ -14,48 +13,37 @@ import {
   onClose
 } from "@chakra-ui/react"
 
+import Cart from '../Cart'
+import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
 
-
-export default function Cart({ cart, setCart }) {
+export default function DrawerContainer({ cart }) {
+  const cartStatus = useSelector((state) => state.cart)
   const { isOpen, onOpen, onClose } = useDisclosure()
+  // const [openDrawer, setOpenDrawer] = useState(isOpen)
   const [placement, setPlacement] = React.useState("right")
 
-  const getTotalSum = () => {
-    return cart.reduce(
-      (sum, { quantity }) => sum + quantity,
-      0
-    );
-  };
-  const clearCart = () => {
-    setCart([]);
-  };
-
-  const setQuantity = (product, amount) => {
-    const newCart = [...cart];
-    newCart.find(
-      (item) => item.name === product.name
-    ).quantity = amount;
-    setCart(newCart);
-  };
-
-  const removeFromCart = (productToRemove) => {
-    setCart(
-      cart.filter((product) => product !== productToRemove)
-    );
-  };
-
+  useEffect(() => {
+    onOpen()
+  }, [cart])
 
 
   return (
     <>
+      {/* <button onClick={onOpen}>Test</button> */}
+      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
+        <DrawerOverlay />
+        <DrawerContent>
 
 
+          <DrawerHeader borderBottomWidth="1px">Basic Drawer</DrawerHeader>
 
+          <DrawerBody>
 
-             <button onClick={clearCart}>Clear Cart</button>
+            {/* <button onClick={clearCart}>Clear Cart</button> */}
 
-            <div>
+            {/* <div>
               {cart.map((product, idx) => (
                 <div key={idx}>
                   <h3>{product.name}</h3>
@@ -72,13 +60,17 @@ export default function Cart({ cart, setCart }) {
                   <img src={product.image} alt={product.name} />
                   <button onClick={() => removeFromCart(product)}>
                     Remove
-                </button>
+    </button>
                 </div>
               ))}
             </div>
 
-            <div>Total Cost: ${getTotalSum()}</div>
-        </>
+            <div>Total Cost: ${getTotalSum()}</div> */}
+
+          </DrawerBody>
+        </DrawerContent>
+      </Drawer>
+    </>
   );
 
 }
