@@ -23,6 +23,22 @@ export function VerticallyCenter() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const initialRef = React.useRef()
   const finalRef = React.useRef()
+  
+  
+  const [ formRender, setFormRender ] = useState(true)
+
+  const renderButton = () => {
+    const buttonRender = (
+      <>
+        { formRender ? <p> Already have an account? &nbsp; </p> : <p> Don't have an account? &nbsp; </p> }
+        <Button onClick={() => setFormRender(!formRender)}>
+          {formRender ? "Log In" : "Sign Up" }
+        </Button >
+      </>
+    )
+    return buttonRender
+  }
+
 
   return (
     <>
@@ -31,15 +47,19 @@ export function VerticallyCenter() {
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent >
-          <ModalHeader>Sign-up</ModalHeader>
+          <ModalHeader> 
+            { formRender ? "Create a thrifTEE Account" : "Log in to thrifTEE" } 
+          </ModalHeader>
+
           <ModalCloseButton />
+
           <ModalBody pb={6}>
-            <SignUpForm useOutsideClick />
-            {/* <LoginForm /> */}
+            { formRender ? <SignUpForm /> : <LoginForm />}
           </ModalBody>
-          {/* <ModalFooter>
-            <Button onClick={onClose}>Sign Up </Button>
-          </ModalFooter> */}
+
+          <ModalFooter>
+             { renderButton() }
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
