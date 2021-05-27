@@ -9,6 +9,8 @@ import {
   Link,
   Input,
   Text,
+  Flex,
+  Spacer,
   FormControl,
   FormLabel,
   FormErrorMessage,
@@ -87,24 +89,25 @@ const NavBar = () => {
     <Grid templateColumns="repeat(12, 1fr)" gap={.5}>
       {/* <Box w="100%" h="20" bg="gray.400" /> */}
       <Box w="100%" h="20" bg="gray.400" />
-      <Link href='/' w="100%" h="20" bg="gray.400">Home</Link>
+      <Flex>
+        <Link href='/' justifyContent='center' w="100%" h="20" bg="gray.400">thrifTEE</Link>
+      </Flex>
       {/* <NavLink to="/" exact={true} activeClassName="active">Home</NavLink> */}
 
-      <Box w="100%" h="20" bg="gray.400" />
+      <Link href='/' justifyContent='center' w="100%" h="20" bg="gray.400">Shop</Link>
+      <Link href='/' justifyContent='center' w="100%" h="20" bg="gray.400">About</Link>
       <form>
         <FormControl id='searchbar' w="300%" h="20" bg="FFFFFF" color='#000000'>
           <Input placeholder="I'm looking for..." />
         </FormControl>
       </form>
-
       <Box w="100%" h="20" bg="FFFFFF" />
       <Box w="100%" h="20" bg="FFFFFF" />
-      <Box w="100%" h="20" bg="gray.400" />
       <Box w="100%" h="20" bg="gray.400" />
       <Box w="100%" h="20" bg="gray.400" />
       <Box w="100%" h="20" bg="gray.400" />
       <VerticallyCenter w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
+      <LogoutButton w="100%" h="20" bg="gray.400" />
     </Grid >
   );
 }
