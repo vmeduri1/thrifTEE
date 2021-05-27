@@ -34,11 +34,9 @@ export const loadCart = products => ({
 
 //   };
 
-  const initialState = {
-    // products: []
-    products: JSON.parse(localStorage.getItem('cart') || '{"products":[]}').products
+  const initialState = JSON.parse(localStorage.getItem('cart') || '{"products":[]}')
 
-  };
+
 
 
   export default function cartReducer (state = initialState, action) {
