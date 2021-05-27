@@ -2,16 +2,24 @@ import React from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useDispatch, useSelector } from 'react-redux'
-
-import { 
+import { VerticallyCenter } from '../modals/Modal'
+import {
   Box,
-  Grid, 
+  Grid,
+  Link,
+  Input,
+  Text,
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
   GridItem,
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
-  BreadcrumbSeparator, 
+  BreadcrumbSeparator,
 } from "@chakra-ui/react"
+
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
@@ -75,21 +83,29 @@ const NavBar = () => {
     //   </ul>
     // </nav>
 
-    <Grid templateColumns="repeat(12, 1fr)" gap={.5}>
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-      <Box w="100%" h="20" bg="gray.400" />
-    </Grid>
 
+    <Grid templateColumns="repeat(12, 1fr)" gap={.5}>
+      {/* <Box w="100%" h="20" bg="gray.400" /> */}
+      <Box w="100%" h="20" bg="gray.400" />
+      <Link href='/' w="100%" h="20" bg="gray.400">Home</Link>
+      {/* <NavLink to="/" exact={true} activeClassName="active">Home</NavLink> */}
+
+      <Box w="100%" h="20" bg="gray.400" />
+      <form>
+        <FormControl id='searchbar' w="300%" h="20" bg="FFFFFF" color='#000000'>
+          <Input placeholder="I'm looking for..." />
+        </FormControl>
+      </form>
+
+      <Box w="100%" h="20" bg="FFFFFF" />
+      <Box w="100%" h="20" bg="FFFFFF" />
+      <Box w="100%" h="20" bg="gray.400" />
+      <Box w="100%" h="20" bg="gray.400" />
+      <Box w="100%" h="20" bg="gray.400" />
+      <Box w="100%" h="20" bg="gray.400" />
+      <VerticallyCenter w="100%" h="20" bg="gray.400" />
+      <Box w="100%" h="20" bg="gray.400" />
+    </Grid >
   );
 }
 
