@@ -9,6 +9,7 @@ import {
   Button,
   useDisclosure,           //  A handler to handle the open, close etc of the modal
   useOutsideClick,         //  A handler to handle click when outside the ref element to close
+  Link,
 } from "@chakra-ui/react";
 import React, { useContext, useRef, useState, useEffect } from 'react';
 // import
@@ -23,16 +24,16 @@ export function VerticallyCenter() {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const initialRef = React.useRef()
   const finalRef = React.useRef()
-  
-  
-  const [ formRender, setFormRender ] = useState(true)
+
+
+  const [formRender, setFormRender] = useState(true)
 
   const renderButton = () => {
     const buttonRender = (
       <>
-        { formRender ? <p> Already have an account? &nbsp; </p> : <p> Don't have an account? &nbsp; </p> }
+        { formRender ? <p> Already have an account? &nbsp; </p> : <p> Don't have an account? &nbsp; </p>}
         <Button onClick={() => setFormRender(!formRender)}>
-          {formRender ? "Log In" : "Sign Up" }
+          {formRender ? "Log In" : "Sign Up"}
         </Button >
       </>
     )
@@ -42,23 +43,24 @@ export function VerticallyCenter() {
 
   return (
     <>
-      <Button onClick={onOpen}> { formRender ? "Sign Up" : "Log In" }  </Button>
+      <Link onClick={onOpen}> {formRender ? "Sign Up" : "Log In"}  </Link>
+      {/* <Button onClick={onOpen}> {formRender ? "Sign Up" : "Log In"}  </Button> */}
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
         <ModalContent >
-          <ModalHeader> 
-            { formRender ? "Create a thrifTEE Account" : "Log in to thrifTEE" } 
+          <ModalHeader>
+            {formRender ? "Create a thrifTEE Account" : "Log in to thrifTEE"}
           </ModalHeader>
 
           <ModalCloseButton />
 
           <ModalBody pb={6}>
-            { formRender ? <SignUpForm /> : <LoginForm />}
+            {formRender ? <SignUpForm /> : <LoginForm />}
           </ModalBody>
 
           <ModalFooter>
-             { renderButton() }
+            {renderButton()}
           </ModalFooter>
         </ModalContent>
       </Modal>

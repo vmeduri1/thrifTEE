@@ -1,6 +1,9 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/session";
+import {
+  Link,
+} from "@chakra-ui/react"
 
 const LogoutButton = () => {
   const dispatch = useDispatch();
@@ -8,7 +11,8 @@ const LogoutButton = () => {
     dispatch(logout());
   };
 
-  return <button onClick={onLogout}>Logout</button>;
+  return <Link onClick={onLogout}>Logout</Link>;
+  // return <Button onClick={onLogout}>Logout</Button>;
 };
 
 export default LogoutButton;

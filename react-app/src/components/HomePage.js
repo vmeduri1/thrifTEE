@@ -21,7 +21,7 @@ export default function HomePage() {
 
     return (
         <>
-            <VerticallyCenter />
+            {/* <VerticallyCenter /> */}
             {/* <VerticallyCenter /> */}
             {/* <div>
                 {allProducts.map(product => (

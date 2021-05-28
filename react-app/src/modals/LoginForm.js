@@ -23,15 +23,17 @@ export function LoginForm() {
   const [errors, setErrors] = useState([]);
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password })).catch(
-      async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      }
-    );
+    const dispatched = await dispatch(sessionActions.login({ email, password }))
+    // return dispatch(sessionActions.login({ credential, password })).catch(
+    // async (res) => {
+    //   const data = await res.json();
+    //   if (data && data.errors) setErrors(data.errors);
+    // }
+    if (dispatched.errors) setErrors(dispatch.errors)
+    // } else setErrors(['issues'])                       // need to work on fix!!
   };
 
   return (
