@@ -12,6 +12,7 @@ import Category from "./components/Category/Category"
 import SingleProduct from "./components/Product/Product"
 import { authenticate } from "./store/session";
 import ThankYou from "./components/ThankYou";
+import CatNavBar from './components/CatNavBar';
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -32,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <NavBar />
-
+      <CatNavBar />
       <Switch>
       <Route path="/" exact={true} >
           <HomePage />
