@@ -31,14 +31,10 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 
 
 export default function CartDrawer({ cart }) {
-  // const cartStatus = useSelector((state) => state.cart)
   const { isOpen, onOpen, onClose } = useDisclosure()
-  // const [openDrawer, setOpenDrawer] = useState(isOpen)
   const [placement, setPlacement] = React.useState("right")
   const dispatch = useDispatch()
   let history = useHistory()
-
-  // const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
 
 
 
@@ -46,10 +42,6 @@ export default function CartDrawer({ cart }) {
     onOpen()
   }, [cart])
 
-
-    // useEffect(() => {
-    //     localStorage.setItem('cart', JSON.stringify(cart))
-    // }, [cart])
 
   function handleCheckout() {
     history.push("/checkout")

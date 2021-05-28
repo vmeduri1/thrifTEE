@@ -39,7 +39,7 @@ function App() {
         <Route path="/categories/:id" exact={true} >
           <Category />
         </Route>
-        <Route path="/product/:id" exact={true} >
+        <Route path="/products/:id" exact={true} >
           <SingleProduct />
         </Route>
         <Route path="/login" exact={true}>

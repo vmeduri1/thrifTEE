@@ -18,6 +18,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 import { addProduct } from '../store/cart'
 import { useDispatch } from 'react-redux'
 import { Cart } from './Cart'
+import {useHistory} from 'react-router-dom'
 
 
 
@@ -26,6 +27,11 @@ import { Cart } from './Cart'
 function ProductAddToCart({ price, name, image, product }) {
   const dispatch = useDispatch()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const history = useHistory()
+
+  const handleProductRedirect =() => {
+    history.push(`/products/${product.id}`)
+}
 
   return (
     <Flex p={50} w="full" alignItems="center" justifyContent="center">
@@ -96,7 +102,7 @@ function ProductAddToCart({ price, name, image, product }) {
               </Box>
               <Box fontSize="lg">
               <Tooltip hasArrow label="Product Details" bg="red.600">
-            <Button>Button</Button>
+            <Button onClick={handleProductRedirect}>Button</Button>
               </Tooltip>
               </Box>
             </Box>
