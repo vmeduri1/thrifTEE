@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import Cart from './components/Cart'
 import configureStore from './store';
-import { ChakraProvider } from "@chakra-ui/react"
+import { ChakraProvider } from "@chakra-ui/react"         
 
 // const initialCart = []
 
