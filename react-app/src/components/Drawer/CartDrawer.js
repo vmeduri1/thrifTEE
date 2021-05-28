@@ -44,7 +44,7 @@ export default function CartDrawer({ cart }) {
 
 
   function handleCheckout() {
-    history.push("/checkout")
+    history.push("/thankyou")
   }
 
 

@@ -11,6 +11,7 @@ import HomePage from "./components/HomePage"
 import Category from "./components/Category/Category"
 import SingleProduct from "./components/Product/Product"
 import { authenticate } from "./store/session";
+import ThankYou from "./components/ThankYou";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -53,6 +54,9 @@ function App() {
         </Route>
         <Route path="/users/:userId" exact={true} >
           <User />
+        </Route>
+        <Route path="/thankyou" exact={true} >
+          <ThankYou />
         </Route>
 
       </Switch>
