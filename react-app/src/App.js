@@ -8,8 +8,10 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import HomePage from "./components/HomePage"
-import Category from "./components/Category"
+import Category from "./components/Category/Category"
+import SingleProduct from "./components/Product/Product"
 import { authenticate } from "./store/session";
+import ThankYou from "./components/ThankYou";
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -38,6 +40,9 @@ function App() {
         <Route path="/categories/:id" exact={true} >
           <Category />
         </Route>
+        <Route path="/products/:id" exact={true} >
+          <SingleProduct />
+        </Route>
         <Route path="/login" exact={true}>
           <LoginForm />
         </Route>
@@ -49,6 +54,9 @@ function App() {
         </Route>
         <Route path="/users/:userId" exact={true} >
           <User />
+        </Route>
+        <Route path="/thankyou" exact={true} >
+          <ThankYou />
         </Route>
 
       </Switch>

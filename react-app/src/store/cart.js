@@ -16,22 +16,28 @@ export const loadCart = products => ({
     payload: product
   });
 
-  export const removeProduct = product => ({
+  export const removeProduct = products => ({
     type: REMOVE_PRODUCT,
-    payload: product
+    payload: products
   });
 
-  export const clearProduct = product => ({
+  export const clearProduct = ()=> ({
     type: CLEAR_PRODUCT,
     payload: []
   })
 
-  console.log(JSON.parse(localStorage.getItem('state')))
-  const INITIAL_STATE= JSON.parse(localStorage.getItem('cart') || '[]')
 
-const initialState = {
-    products: []
-  };
+
+// const initialState = {
+//     // products: []
+//     products: JSON.parse(localStorage.getItem('cart') || '{"products":[]}').products
+
+//   };
+
+  const initialState = JSON.parse(localStorage.getItem('cart') || '{"products":[]}')
+
+
+
 
   export default function cartReducer (state = initialState, action) {
     switch (action.type) {
@@ -41,7 +47,7 @@ const initialState = {
             products: action.payload
           };
         case ADD_PRODUCT:
-            alert("Added to Cart")
+            // alert("Added to Cart")
             if (state.products.some(product => product.id === action.payload.id)) {
               // increase qty if item already exists in cart
               return {
@@ -55,7 +61,10 @@ const initialState = {
 
             }; // else add the new item to cart
         case REMOVE_PRODUCT:
-          return state.filter(product => product.id !== action.payload.id)
+          alert('removed product')
+          return {
+            products: state.products.filter(product => product.id !== action.payload.id)
+          }
         case CLEAR_PRODUCT:
           return {
             products: []

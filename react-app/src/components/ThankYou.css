@@ -1,0 +1,11 @@
+.thank-you-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+.thank-you-image {
+    width: 100%;
+    height: auto;
+}

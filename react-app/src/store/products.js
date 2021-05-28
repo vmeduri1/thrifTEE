@@ -10,7 +10,7 @@
   //     payload: products
   // })
 
-  const setProducts = (products) => ({
+  export const setProducts = (products) => ({
       type: SET_PRODUCTS,
       payload: products
   })
@@ -20,7 +20,7 @@
   //     payload: product
   // })
 
-  const setProduct = (product) => ({
+  export const setProduct = (product) => ({
       type: SET_PRODUCT,
       payload: product
   })
@@ -59,6 +59,24 @@ export const getAllProductsByCategory =(id) => async (dispatch) => {
 
     return products;
 }
+
+
+export const getSingleProduct=(id) => async (dispatch) => {
+  const response = await fetch(`/api/products/${id}`)
+
+  if(!response.ok) {
+      const errors = await response.json()
+      return {errors}
+  }
+
+  const product = await response.json()
+
+  dispatch(setProduct(product))
+  //?
+
+  return product;
+}
+
 
 
 
