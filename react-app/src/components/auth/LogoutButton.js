@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/session";
 import {
-  Link,
+  Button
 } from "@chakra-ui/react"
 
 const LogoutButton = () => {
@@ -11,8 +11,13 @@ const LogoutButton = () => {
     dispatch(logout());
   };
 
-  return <Link onClick={onLogout}>Logout</Link>;
-  // return <Button onClick={onLogout}>Logout</Button>;
+  return (
+    <Button onClick={onLogout} _hover={{ color: "white", bg: "gray.500" }}>
+      Logout
+    </Button>
+  )
+
+
 };
 
 export default LogoutButton;

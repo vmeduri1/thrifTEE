@@ -29,7 +29,8 @@ import {
   isClose,
   Icon,
   chakra,
-  Button
+  Button,
+  Center
 } from "@chakra-ui/react"
 
 
@@ -50,35 +51,39 @@ const NavBar = () => {
   return (
     <>
       {flag ? <CartDrawer /> : null }
-      <Grid templateColumns="repeat(15, 1fr)" gap={.5}>
-        <Box w="100%" h="20" bg="gray.400">
-        </Box>
-        <Box w="100%" h="20" bg="gray.400" />
-        <Flex>
-          <Link href='/' align={'center'} justifyContent='center' w="100%" h="20" bg="gray.400" align={'center'}>thrifTEE</Link>
+      <Grid templateColumns="repeat(15, 1fr)" gap={.7} bg="gray.100">
+        <Flex w="100%" h="20" />
+        <Flex w="100%" h="20" />
+        <Flex >
+          <Link href='/' w="100%" h="20" textAlign="center" paddingTop={6} fontWeight="bold" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >thrifTEE</Link>
         </Flex>
         {/* <NavLink to="/" exact={true} activeClassName="active">Home</NavLink> */}
-
-        <Link href='/' align={'center'} justifyContent='center' w="100%" h="20" bg="gray.400">Shop</Link>
-        <Link href='/' align={'center'} justifyContent='center' w="100%" h="20" bg="gray.400">About</Link>
+        <Link href='/' textAlign="center" paddingTop={6} w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >Shop</Link>
+        <Link href='/' textAlign="center" paddingTop={6} w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>About</Link>
         <form>
-          <FormControl id='searchbar' w="300%" h="20" bg="FFFFFF" color='#000000'>
-            <Input placeholder="I'm looking for..." />
+          <FormControl id='searchbar' w="475%" h="20" bg="FFFFFF" color='#000000' textAlign="center" paddingTop={5}>
+            <Input placeholder="I'm looking for..." bg="white" />
           </FormControl>
         </form>
-        <Box w="100%" h="20" bg="FFFFFF" />
-        <Box w="100%" h="20" bg="FFFFFF" />
-        <Box w="100%" h="20" bg="gray.400" />
-        <Box w="100%" h="20" bg="gray.400" />
-        <Flex w="100%" h="20" bg="gray.400" >
-          <Button onClick={() => setFlag(!flag)}>
-            <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}/>
+        <Flex w="100%" h="20" bg="FFFFFF" />
+        <Flex w="100%" h="20" bg="FFFFFF" />
+        <Flex w="100%" h="20"  />
+        <Flex w="100%" h="20"  />
+        <Flex w="100%" h="20" textAlign="center" paddingTop={5} >
+          <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>
+            <Icon as={FiShoppingCart} h={7} w={7} justifyItems="center" alignItems="center"/>
           </Button>
         </Flex>
-        <VerticallyCenter w="100%" h="20" bg="gray.400" />
-        <LogoutButton w="100%" h="20" bg="gray.400" />
-        <Box w="100%" h="20" bg="gray.400" />
-        <Box w="100%" h="20" bg="gray.400" />
+  
+        <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginRight={3} >
+          <VerticallyCenter />
+        </Flex>
+        <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginLeft={3}>
+          <LogoutButton />
+        </Flex>
+        
+        <Flex w="100%" h="20" />
+        <Flex w="100%" h="20" />
       </Grid >
     </>
   );
