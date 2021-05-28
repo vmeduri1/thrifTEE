@@ -4,12 +4,13 @@ import { useHistory, useParams } from "react-router-dom";
 import { Grid, GridItem } from "@chakra-ui/react"
 import { Flex, Spacer, Container } from "@chakra-ui/react"
 import { Box, Center, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react"
-import * as sessionActions from '../store/session'
-import * as categoryActions from '../store/category'
-import { getAllProductsByCategory } from '../store/category'
-import CartDrawer from './Drawer/CartDrawer'
-import Item from './Item'
+import * as sessionActions from '../../store/session'
+import * as categoryActions from '../../store/category'
+import { getAllProductsByCategory } from '../../store/category'
+import CartDrawer from '../Drawer/CartDrawer'
+import Item from '../Item'
 import { useDisclosure } from "@chakra-ui/react"
+import {CategoryHero} from './CategoryHero'
 
 
 export default function Category() {
@@ -32,9 +33,11 @@ export default function Category() {
 
     return (
         <>
+        <CategoryHero />
             <CartDrawer cart={cart} />
 
                 <Wrap spacing="20px">
+
 
                     {allCatProducts.map((product, idx) => (
 
