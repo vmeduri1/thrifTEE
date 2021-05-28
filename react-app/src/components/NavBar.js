@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useDispatch, useSelector } from 'react-redux'
@@ -36,7 +36,11 @@ const NavBar = () => {
   const events = useSelector(state => state.events);        // pull content out of state
   const dispatch = useDispatch();
   const history = useHistory();
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [flag, setFlag] = useState(false)
 
+
+  
 
   // useEffect(() => {
   //   dispatch(cart())                       // RUN THUNK TO GET
@@ -62,6 +66,8 @@ const NavBar = () => {
   //     </>
   //   );
   // }
+
+
 
 
   return (
