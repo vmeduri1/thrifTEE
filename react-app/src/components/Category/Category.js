@@ -18,6 +18,7 @@ export default function Category() {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
+    const product = useSelector(state => state.products.product)
     const cart = useSelector((state) => state.cart)
     const { id } = useParams()
     // const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
@@ -43,7 +44,7 @@ export default function Category() {
 
                         <WrapItem key={product.id}>
                             <Center>
-                            <Item price={product.regular_price} name={product.name} image={product.image_url} product={product} />
+                            <Item price={product.regular_price} name={product.name} image={product.image_url} product={product} id={product.id}/>
                             </Center>
                         </WrapItem>
 
