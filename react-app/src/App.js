@@ -8,8 +8,8 @@ import ProtectedRoute from "./components/auth/ProtectedRoute";
 import UsersList from "./components/UsersList";
 import User from "./components/User";
 import HomePage from "./components/HomePage"
-import Category from "./components/Category"
-import Checkout from "./components/Checkout/Checkout"
+import Category from "./components/Category/Category"
+import SingleProduct from "./components/Product/Product"
 import { authenticate } from "./store/session";
 
 function App() {
@@ -39,8 +39,8 @@ function App() {
         <Route path="/categories/:id" exact={true} >
           <Category />
         </Route>
-        <Route path="/checkout" exact={true}>
-          <Checkout />
+        <Route path="/product/:id" exact={true} >
+          <SingleProduct />
         </Route>
         <Route path="/login" exact={true}>
           <LoginForm />

@@ -15,7 +15,8 @@ import {
   Image,
   Center,
   Button,
-  Icon
+  Icon,
+
 } from "@chakra-ui/react"
 
 import Cart from '../Cart'
@@ -69,7 +70,7 @@ export default function CartDrawer({ cart }) {
 
 
 
-            <div display='flex'>
+            <Box mb={20} >
               {cart.products.map((product, idx) => (
                 <div key={idx}>
                   {/* <h3>{product.name}</h3>
@@ -84,22 +85,22 @@ export default function CartDrawer({ cart }) {
                     }
                   /> */}
                   {/* eturn ( */}
-                  <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden"
+                  <Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden" mb={10}
                   >
-                    <Box>
+                    <Box pt={15} pb={15} fontWeight="bold" fontSize="xl">
                       ${product.regular_price}
                       <Image src={product.image_url} alt={product.name} />
                     </Box>
                     <Box p="6" alignItems='baseline'>
                       <Box d='flex'>
-                        <Icon as={AiFillCloseCircle} onClick={() => dispatch(removeProduct(product))} />
+                        <Icon as={AiFillCloseCircle} onClick={() => dispatch(removeProduct(product))} mr={4}/>
                         {product.name}
                       </Box>
                       <Box
                         color="gray.500"
                         fontWeight="semibold"
                         letterSpacing="wide"
-                        fontSize="xs"
+                        fontSize="xl"
                         textTransform="uppercase"
                         ml="2"
                       >
@@ -115,11 +116,11 @@ export default function CartDrawer({ cart }) {
 
                 </div>
               ))}
-            </div>
+            </Box>
 
             {/* <div>Total Cost: ${getTotalSum()}</div> */}
-            <Button colorScheme="teal" variant="outline" onClick={() => dispatch(clearProduct())}>Clear Cart</Button>
-            <Button shopIcon={<GiShoppingBag />} colorScheme="red" variant="outline" onClick={handleCheckout}>Checkout</Button>
+            <Button colorScheme="teal" variant="outline" mb={5} mr={3} onClick={() => dispatch(clearProduct())}>Clear Cart</Button>
+            <Button shopIcon={<GiShoppingBag />} colorScheme="red" variant="outline" ml={3} onClick={handleCheckout} mb={5}>Checkout</Button>
 
           </DrawerBody>
         </DrawerContent>

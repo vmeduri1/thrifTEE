@@ -1,31 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory,useParams } from 'react-router-dom'
+import * as productActions from '../../store/products'
+import {getSingleProduct} from '../../store/products'
+import {setProduct} from '../../store/products'
 import {
-  Flex,
-  Circle,
-  Box,
-  Image,
-  Badge,
-  useColorModeValue,
-  Icon,
-  chakra,
-  Tooltip,
-  useDisclosure,
-  onOpen,
-  onClose,
-  Button
-} from '@chakra-ui/react';
-import { FiShoppingCart } from 'react-icons/fi';
-import { addProduct } from '../store/cart'
-import { useDispatch } from 'react-redux'
-import { Cart } from './Cart'
+    Flex,
+    Circle,
+    Box,
+    Image,
+    Badge,
+    useColorModeValue,
+    Icon,
+    chakra,
+    Tooltip,
+    useDisclosure,
+    onOpen,
+    onClose
+  } from '@chakra-ui/react';
+  import { FiShoppingCart } from 'react-icons/fi';
 
 
 
+export default function SingleProduct() {
+    const dispatch = useDispatch();
+    const product = useSelector(state => state.products.product)
+    const cart = useSelector((state) => state.cart)
+    const { id } = useParams()
+
+    useEffect(() => {
+        dispatch(getSingleProduct(id));
+    }, [dispatch])
 
 
-function ProductAddToCart({ price, name, image, product }) {
-  const dispatch = useDispatch()
-  const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <Flex p={50} w="full" alignItems="center" justifyContent="center">
@@ -46,8 +53,8 @@ function ProductAddToCart({ price, name, image, product }) {
         />
 
         <Image
-          src={image}
-          alt={`Picture of ${name}`}
+          src={product.image_url}
+          alt={`Picture of ${product.name}`}
           roundedTop="lg"
           height="500px"
           vw="2%"
@@ -67,7 +74,7 @@ function ProductAddToCart({ price, name, image, product }) {
               as="h4"
               lineHeight="tight"
               isTruncated>
-              {name}
+              {product.name}
             </Box>
             <Tooltip
               label="Add to cart"
@@ -79,7 +86,7 @@ function ProductAddToCart({ price, name, image, product }) {
                 <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}
                   onClick={
                     async () => {
-                     const dispatched = await dispatch(addProduct(product))
+                     const dispatched = await dispatch(setProduct(product))
                     //  isOpen()
                   }}
 
@@ -92,20 +99,13 @@ function ProductAddToCart({ price, name, image, product }) {
           <Flex justifyContent="space-between" alignContent="center">
             <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
               <Box as="span" color={'gray.600'} fontSize="lg">
-                ${price}
-              </Box>
-              <Box fontSize="lg">
-              <Tooltip hasArrow label="Product Details" bg="red.600">
-            <Button>Button</Button>
-              </Tooltip>
+                ${product.regular_price}
               </Box>
             </Box>
           </Flex>
         </Box>
       </Box>
     </Flex>
-  );
 
+    )
 }
-
-export default ProductAddToCart;
