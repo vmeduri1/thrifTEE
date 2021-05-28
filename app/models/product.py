@@ -1,5 +1,6 @@
 from .db import db
 
+
 class Product(db.Model):
     __tablename__ = 'products'
 
@@ -9,8 +10,9 @@ class Product(db.Model):
     category_id = db.Column(db.Integer, db.ForeignKey("categories.id"))
     image_url = db.Column(db.String(255))
     description = db.Column(db.String(255))
-    regular_price = db.Column(db.Numeric, nullable=False)
-    #created products table
+    regular_price = db.Column(db.Numeric(
+        scale=2, asdecimal=False), nullable=True)
+    # created products table
 
     orders = db.relationship("Order", back_populates="products")
     categories = db.relationship("Category", back_populates="products")

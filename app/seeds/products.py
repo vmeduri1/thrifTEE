@@ -9,7 +9,7 @@ def seed_products():
         category_id=4,
         image_url='https://cdnd.lystit.com/photos/2012/04/16/paul-smith-multi-striped-socks-product-1-3276627-727547536.jpeg',
         description='socks, woolen',
-        regular_price=8.00
+        regular_price=8.88
     )
 
     db.session.add(product1)
