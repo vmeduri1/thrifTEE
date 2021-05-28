@@ -2,20 +2,18 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { Grid, GridItem } from "@chakra-ui/react"
-import { Container } from "@chakra-ui/react"
-import { Flex, Spacer } from "@chakra-ui/react"
-import { SimpleGrid } from "@chakra-ui/react"
-import { Box } from "@chakra-ui/react"
+import { Flex, Spacer, Container } from "@chakra-ui/react"
+import { Box, Center, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react"
 import * as sessionActions from '../store/session'
 import * as categoryActions from '../store/category'
 import { getAllProductsByCategory } from '../store/category'
 import CartDrawer from './Drawer/CartDrawer'
 import Item from './Item'
-import {useDisclosure} from "@chakra-ui/react"
+import { useDisclosure } from "@chakra-ui/react"
 
 
 export default function Category() {
-    const {isOpen, onOpen} = useDisclosure()
+    const { isOpen, onOpen } = useDisclosure()
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
@@ -28,27 +26,30 @@ export default function Category() {
         dispatch(getAllProductsByCategory(id));
     }, [dispatch])
 
-    // useEffect(() => {
-    //     localStorage.setItem('cart', JSON.stringify(cart))
-    // }, [cart])
+
 
 
 
     return (
         <>
-        <CartDrawer cart = {cart}/>
-                <Flex direction='row' height='150px'>
+            <CartDrawer cart={cart} />
 
-                {allCatProducts.map((product, idx) => (
+                <Wrap spacing="20px">
 
-                    <div key={product.id} height="200px" width="100px">
-                        <Item price={product.regular_price} name={product.name} image={product.image_url} product={product} />
-                        </div>
+                    {allCatProducts.map((product, idx) => (
+
+                        <WrapItem key={product.id}>
+                            <Center>
+                            <Item price={product.regular_price} name={product.name} image={product.image_url} product={product} />
+                            </Center>
+                        </WrapItem>
 
 
-                 ))}
+                    ))}
+                </Wrap>
 
-               </Flex>
+
+
 
 
 

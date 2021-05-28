@@ -41,7 +41,7 @@ function ProductAddToCart({ price, name, image, product }) {
           position="absolute"
           top={2}
           right={2}
-          bg="red.200"
+          // bg="red.200"
         />
 
         <Image
@@ -49,7 +49,7 @@ function ProductAddToCart({ price, name, image, product }) {
           alt={`Picture of ${name}`}
           roundedTop="lg"
           height="500px"
-          width="100%"
+          vw="2%"
           backgroundImage='contain'
         />
 
