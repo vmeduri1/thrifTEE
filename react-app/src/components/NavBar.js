@@ -106,6 +106,7 @@ const NavBar = () => {
       <Box w="100%" h="20" bg="gray.400" />
       <Box w="100%" h="20" bg="gray.400" />
       <Box w="100%" h="20" bg="gray.400" />
+      {/* <Shoppingcart = onClick{onOpen} w="100%" h="20" bg="gray.400" /> */}
       <VerticallyCenter w="100%" h="20" bg="gray.400" />
       <LogoutButton w="100%" h="20" bg="gray.400" />
     </Grid >
