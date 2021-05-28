@@ -52,7 +52,7 @@ export default function CartDrawer({ cart }) {
     // }, [cart])
 
   function handleCheckout() {
-    history.push("/checkout")
+    history.push("/thankyou")
   }
 
 
