@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from './auth/LogoutButton';
 import { useDispatch, useSelector } from 'react-redux'
@@ -28,19 +28,65 @@ import {
   onClose,
   isClose,
   Icon,
+  chakra,
+  Button
 } from "@chakra-ui/react"
+
 
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
-  const events = useSelector(state => state.events);        // pull content out of state
   const dispatch = useDispatch();
+  const events = useSelector(state => state.events);        // pull content out of state
   const history = useHistory();
+
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [flag, setFlag] = useState(false)
 
-
+  useEffect(() => {
+    setFlag(true)
+  }, [flag])
   
+  return (
+    <>
+      {flag ? <CartDrawer /> : null }
+      <Grid templateColumns="repeat(15, 1fr)" gap={.5}>
+        <Box w="100%" h="20" bg="gray.400">
+        </Box>
+        <Box w="100%" h="20" bg="gray.400" />
+        <Flex>
+          <Link href='/' align={'center'} justifyContent='center' w="100%" h="20" bg="gray.400" align={'center'}>thrifTEE</Link>
+        </Flex>
+        {/* <NavLink to="/" exact={true} activeClassName="active">Home</NavLink> */}
+
+        <Link href='/' align={'center'} justifyContent='center' w="100%" h="20" bg="gray.400">Shop</Link>
+        <Link href='/' align={'center'} justifyContent='center' w="100%" h="20" bg="gray.400">About</Link>
+        <form>
+          <FormControl id='searchbar' w="300%" h="20" bg="FFFFFF" color='#000000'>
+            <Input placeholder="I'm looking for..." />
+          </FormControl>
+        </form>
+        <Box w="100%" h="20" bg="FFFFFF" />
+        <Box w="100%" h="20" bg="FFFFFF" />
+        <Box w="100%" h="20" bg="gray.400" />
+        <Box w="100%" h="20" bg="gray.400" />
+        <Flex w="100%" h="20" bg="gray.400" >
+          <Button onClick={() => setFlag(!flag)}>
+            <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}/>
+          </Button>
+        </Flex>
+        <VerticallyCenter w="100%" h="20" bg="gray.400" />
+        <LogoutButton w="100%" h="20" bg="gray.400" />
+        <Box w="100%" h="20" bg="gray.400" />
+        <Box w="100%" h="20" bg="gray.400" />
+      </Grid >
+    </>
+  );
+}
+
+export default NavBar;
+
+// WENT BEFORE THE RETURN STATMENT
 
   // useEffect(() => {
   //   dispatch(cart())                       // RUN THUNK TO GET
@@ -67,11 +113,11 @@ const NavBar = () => {
   //   );
   // }
 
+  ////////////////////////////////////////////////////
 
+// WENT IN THE RETURN STATMENT
 
-
-  return (
-    // <nav>
+  // <nav>
     //   <ul>
     //     <li>
     //       <NavLink to="/" exact={true} activeClassName="active">
@@ -98,38 +144,3 @@ const NavBar = () => {
     //     </li>
     //   </ul>
     // </nav>
-
-    <>
-      <CartDrawer />
-      <Grid templateColumns="repeat(15, 1fr)" gap={.5}>
-        <Box w="100%" h="20" bg="gray.400" />
-        <Box w="100%" h="20" bg="gray.400" />
-        <Flex>
-          <Link href='/' justifyContent='center' w="100%" h="20" bg="gray.400">thrifTEE</Link>
-        </Flex>
-        {/* <NavLink to="/" exact={true} activeClassName="active">Home</NavLink> */}
-
-        <Link href='/' justifyContent='center' w="100%" h="20" bg="gray.400">Shop</Link>
-        <Link href='/' justifyContent='center' w="100%" h="20" bg="gray.400">About</Link>
-        <form>
-          <FormControl id='searchbar' w="300%" h="20" bg="FFFFFF" color='#000000'>
-            <Input placeholder="I'm looking for..." />
-          </FormControl>
-        </form>
-        <Box w="100%" h="20" bg="FFFFFF" />
-        <Box w="100%" h="20" bg="FFFFFF" />
-        <Box w="100%" h="20" bg="gray.400" />
-        <Box w="100%" h="20" bg="gray.400" />
-        <Flex w="100%" h="20" bg="gray.400" >
-          <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'} onClick={onOpen} />
-        </Flex>
-        <VerticallyCenter w="100%" h="20" bg="gray.400" />
-        <LogoutButton w="100%" h="20" bg="gray.400" />
-        <Box w="100%" h="20" bg="gray.400" />
-        <Box w="100%" h="20" bg="gray.400" />
-      </Grid >
-    </>
-  );
-}
-
-export default NavBar;

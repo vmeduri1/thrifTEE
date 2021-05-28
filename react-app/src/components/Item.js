@@ -81,8 +81,6 @@ function ProductAddToCart({ price, name, image, product }) {
                      const dispatched = await dispatch(addProduct(product))
                     //  isOpen()
                   }}
-
-
                 />
               </chakra.a>
             </Tooltip>
