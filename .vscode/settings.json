@@ -1,6 +1,5 @@
 {
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
-    "python.linting.pycodestyleEnabled": true,
-    "python.pythonPath": "/home/jonathan/.pyenv/versions/3.9.4/bin/python"
+    "python.linting.pycodestyleEnabled": true
 }
