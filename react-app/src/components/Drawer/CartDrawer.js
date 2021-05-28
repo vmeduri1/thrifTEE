@@ -22,7 +22,6 @@ import Cart from '../Cart'
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-
 import { clearProduct, removeProduct, addProduct } from '../../store/cart'
 import { GiShoppingBag } from 'react-icons/gi';
 import { AiFillCloseCircle } from 'react-icons/ai'
@@ -46,9 +45,9 @@ export default function CartDrawer({ cart }) {
   }, [cart])
 
 
-    // useEffect(() => {
-    //     localStorage.setItem('cart', JSON.stringify(cart))
-    // }, [cart])
+  // useEffect(() => {
+  //     localStorage.setItem('cart', JSON.stringify(cart))
+  // }, [cart])
 
   function handleCheckout() {
     history.push("/checkout")
@@ -66,15 +65,16 @@ export default function CartDrawer({ cart }) {
           <DrawerHeader borderBottomWidth="1px">Your Basket</DrawerHeader>
 
           <DrawerBody>
+            <div> Hello</div>
 
 
 
-            <div display='flex'>
+            {/* <div display='flex'>
               {cart.products.map((product, idx) => (
-                <div key={idx}>
-                  {/* <h3>{product.name}</h3>
+                <div key={idx}> */}
+            {/* <h3>{product.name}</h3>
                   <h4>${product.regular_price}</h4> */}
-                  {/* <input
+            {/* <input
                     value={product.quantity}
                     onChange={(e) =>
                       setQuantity(
@@ -83,8 +83,8 @@ export default function CartDrawer({ cart }) {
                       )
                     }
                   /> */}
-                  {/* eturn ( */}
-                  <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden"
+            {/* eturn ( */}
+            {/* <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden"
                   >
                     <Box>
                       ${product.regular_price}
@@ -115,11 +115,11 @@ export default function CartDrawer({ cart }) {
 
                 </div>
               ))}
-            </div>
+            </div> */}
 
             {/* <div>Total Cost: ${getTotalSum()}</div> */}
-            <Button colorScheme="teal" variant="outline" onClick={() => dispatch(clearProduct())}>Clear Cart</Button>
-            <Button shopIcon={<GiShoppingBag />} colorScheme="red" variant="outline" onClick={handleCheckout}>Checkout</Button>
+            {/* <Button colorScheme="teal" variant="outline" onClick={() => dispatch(clearProduct())}>Clear Cart</Button> */}
+            {/* <Button shopIcon={<GiShoppingBag />} colorScheme="red" variant="outline" onClick={handleCheckout}>Checkout</Button> */}
 
           </DrawerBody>
         </DrawerContent>
