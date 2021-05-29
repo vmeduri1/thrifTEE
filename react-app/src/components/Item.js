@@ -34,10 +34,12 @@ function ProductAddToCart({ price, name, image, product }) {
 }
 
   return (
-    <Flex p={50} w="full" alignItems="center" justifyContent="center">
+
+    <div>
+    <Flex p={50} w="md" alignItems="center" justifyContent="center">
       <Box
         bg={useColorModeValue('white', 'gray.800')}
-        maxW="sm"
+        maxW={{ xl: "1200px" }}
 
         borderWidth="1px"
         rounded="lg"
@@ -45,7 +47,7 @@ function ProductAddToCart({ price, name, image, product }) {
         position="relative">
         <Circle
           size="10px"
-          position="absolute"
+          // position="absolute"
           top={2}
           right={2}
           // bg="red.200"
@@ -56,7 +58,7 @@ function ProductAddToCart({ price, name, image, product }) {
           alt={`Picture of ${name}`}
           roundedTop="lg"
           height="500px"
-          vw="2%"
+          // vw="2%"
           backgroundImage='contain'
         />
 
@@ -69,6 +71,7 @@ function ProductAddToCart({ price, name, image, product }) {
           <Flex mt="1" justifyContent="space-between" alignContent="center">
             <Box
               fontSize="2xl"
+              // maxW={"200px" }
               fontWeight="semibold"
               as="h4"
               lineHeight="tight"
@@ -102,7 +105,7 @@ function ProductAddToCart({ price, name, image, product }) {
               </Box>
               <Box fontSize="lg">
               <Tooltip hasArrow label="Product Details" bg="red.600">
-            <Button onClick={handleProductRedirect}>Button</Button>
+            <Button onClick={handleProductRedirect}>Quick Look</Button>
               </Tooltip>
               </Box>
             </Box>
@@ -110,7 +113,9 @@ function ProductAddToCart({ price, name, image, product }) {
         </Box>
       </Box>
     </Flex>
+    </div>
   );
+
 
 }
 

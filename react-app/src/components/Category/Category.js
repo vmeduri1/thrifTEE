@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
 import { Grid, GridItem } from "@chakra-ui/react"
-import { Flex, Spacer, Container } from "@chakra-ui/react"
+import { Flex, Spacer, Container, Text } from "@chakra-ui/react"
 import { Box, Center, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react"
 import * as sessionActions from '../../store/session'
 import * as categoryActions from '../../store/category'
@@ -18,6 +18,7 @@ export default function Category() {
     const dispatch = useDispatch();
     const user = useSelector((state) => state.session.user);
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
+    // const categoryName = useSelector((state) => state.category)
     const product = useSelector(state => state.products.product)
     const cart = useSelector((state) => state.cart)
     const { id } = useParams()
@@ -36,6 +37,11 @@ export default function Category() {
         <>
         <CategoryHero />
             <CartDrawer cart={cart} />
+
+            <Box>
+            {/* <Text fontSize="6xl">{`ThrifTEE ${categoryName}`}</Text> */}
+            {/* {console.log(categoryName + "category")} */}
+            </Box>
 
                 <Wrap spacing="20px">
 
