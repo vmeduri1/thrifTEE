@@ -44,10 +44,21 @@ const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [flag, setFlag] = useState(false)
 
+  const [logoutfunc, setLogOutFunc] = useState(false)
+
+
   useEffect(() => {
     setFlag(true)
   }, [flag])
 
+
+  let logoutBtnVisibility;
+
+  if (sessionUser) {          // if user is logged in
+    logoutBtnVisibility = (
+      <LogoutButton user={sessionUser} />
+    )
+  }
 
 
   return (
@@ -73,7 +84,7 @@ const NavBar = () => {
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" textAlign="center" paddingTop={5} >
-        <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>
+          <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>
             <Icon as={FiShoppingCart} h={7} w={7} justifyItems="center" alignItems="center" />
           </Button>
         </Flex>
@@ -82,7 +93,8 @@ const NavBar = () => {
           <VerticallyCenter />
         </Flex>
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginLeft={3}>
-          <LogoutButton />
+          {logoutBtnVisibility}
+          {/* <LogoutButton /> */}
         </Flex>
 
         <Flex w="100%" h="20" />
