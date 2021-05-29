@@ -13,6 +13,7 @@ import SingleProduct from "./components/Product/Product"
 import { authenticate } from "./store/session";
 import ThankYou from "./components/ThankYou";
 import AboutPage from '../src/components/AboutPage'
+import Footer from '../src/components/Footer'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -20,7 +21,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -35,7 +36,7 @@ function App() {
       <NavBar />
 
       <Switch>
-      <Route path="/" exact={true} >
+        <Route path="/" exact={true} >
           <HomePage />
         </Route>
         <Route path="/categories/:id" exact={true} >
@@ -66,6 +67,7 @@ function App() {
         </Route>
 
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
