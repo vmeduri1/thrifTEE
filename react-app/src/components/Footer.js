@@ -54,7 +54,9 @@ export default function FooterDetails() {
   return (
     <Box
       bg={useColorModeValue('gray.50', 'gray.900')}
-      color={useColorModeValue('gray.700', 'gray.200')}>
+      color={useColorModeValue('gray.700', 'gray.200')}
+    // pos={"bottom"}
+    >
       <Container
         as={Stack}
         maxW={'6xl'}
@@ -65,8 +67,8 @@ export default function FooterDetails() {
         align={{ base: 'center', md: 'center' }}>
         <Stack direction={'row'} spacing={6} align={{ base: 'center', md: 'center' }}>
           <Text
-            fontSize={'xl'}
-            fontWeight={'400'}
+            fontSize={'l'}
+            fontWeight={'500'}
             justify={{ base: 'center', md: 'space-between' }}
             align={{ base: 'center', md: 'center' }}
           >CONNECT WITH US</Text>
@@ -79,6 +81,6 @@ export default function FooterDetails() {
         >© thrifTEE. All rights reserved</Text>
       </Container>
     </Box>
-
   )
+
 }
