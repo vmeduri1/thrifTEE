@@ -9,15 +9,11 @@ import {
   Icon,
   chakra,
   Tooltip,
-  useDisclosure,
-  onOpen,
-  onClose,
   Button
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { addProduct } from '../store/cart'
 import { useDispatch } from 'react-redux'
-import { Cart } from './Cart'
 import {useHistory} from 'react-router-dom'
 
 
@@ -26,7 +22,6 @@ import {useHistory} from 'react-router-dom'
 
 function ProductAddToCart({ price, name, image, product }) {
   const dispatch = useDispatch()
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const history = useHistory()
 
   const handleProductRedirect =() => {
@@ -58,8 +53,6 @@ function ProductAddToCart({ price, name, image, product }) {
           alt={`Picture of ${name}`}
           roundedTop="lg"
           height="500px"
-          // vw="2%"
-          backgroundImage='contain'
         />
 
         <Box p="6">

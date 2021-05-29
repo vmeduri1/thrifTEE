@@ -19,13 +19,12 @@ import {
 
 } from "@chakra-ui/react"
 
-import Cart from '../Cart'
+
 import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { clearProduct, removeProduct, addProduct } from '../../store/cart'
-import { GiShoppingBag } from 'react-icons/gi';
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 
@@ -41,6 +40,7 @@ export default function CartDrawer({ cart }) {
   useEffect(() => {
     onOpen()
   }, [cart])
+  //with access to cart from prop via line 30 on Category.js monitors for chnages to trigger open of side cart. Bug will open automaticall with every page refresh as well.
 
 
   function handleCheckout() {
@@ -65,18 +65,7 @@ export default function CartDrawer({ cart }) {
             <Box mb={20} >
               {cart.products.map((product, idx) => (
                 <div key={idx}>
-                  {/* <h3>{product.name}</h3>
-                  <h4>${product.regular_price}</h4> */}
-                  {/* <input
-                    value={product.quantity}
-                    onChange={(e) =>
-                      setQuantity(
-                        product,
-                        parseInt(e.target.value)
-                      )
-                    }
-                  /> */}
-                  {/* eturn ( */}
+
                   <Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden" mb={10}
                   >
                     <Box pt={15} pb={15} fontWeight="bold" fontSize="xl">
@@ -112,7 +101,7 @@ export default function CartDrawer({ cart }) {
 
             {/* <div>Total Cost: ${getTotalSum()}</div> */}
             <Button colorScheme="teal" variant="outline" mb={5} mr={3} onClick={() => dispatch(clearProduct())}>Clear Cart</Button>
-            <Button shopIcon={<GiShoppingBag />} colorScheme="red" variant="outline" ml={3} onClick={handleCheckout} mb={5}>Checkout</Button>
+            <Button colorScheme="red" variant="outline" ml={3} onClick={handleCheckout} mb={5}>Checkout</Button>
 
           </DrawerBody>
         </DrawerContent>

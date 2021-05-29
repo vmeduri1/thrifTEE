@@ -5,7 +5,7 @@ import './index.css';
 import App from './App';
 import Cart from './components/Cart'
 import configureStore from './store';
-import { ChakraProvider } from "@chakra-ui/react"         
+import { ChakraProvider } from "@chakra-ui/react"
 
 // const initialCart = []
 
@@ -17,6 +17,7 @@ store.subscribe(() => {
 
 
   window.localStorage.setItem('cart', JSON.stringify(state.cart));
+  //subscribes to monitor state.cart and sets items into local storage
 });
 
 

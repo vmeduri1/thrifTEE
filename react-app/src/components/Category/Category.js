@@ -1,36 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useParams } from "react-router-dom";
-import { Grid, GridItem } from "@chakra-ui/react"
-import { Flex, Spacer, Container, Text } from "@chakra-ui/react"
-import { Box, Center, SimpleGrid, Wrap, WrapItem } from "@chakra-ui/react"
-import * as sessionActions from '../../store/session'
-import * as categoryActions from '../../store/category'
+import { useParams } from "react-router-dom";
+import { Center, Wrap, WrapItem } from "@chakra-ui/react"
 import { getAllProductsByCategory } from '../../store/category'
 import CartDrawer from '../Drawer/CartDrawer'
 import Item from '../Item'
-import { useDisclosure } from "@chakra-ui/react"
 import {CategoryHero} from './CategoryHero'
 
 
 export default function Category() {
-    const { isOpen, onOpen } = useDisclosure()
     const dispatch = useDispatch();
-    const user = useSelector((state) => state.session.user);
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
-    // const categoryName = useSelector((state) => state.category)
-    const product = useSelector(state => state.products.product)
     const cart = useSelector((state) => state.cart)
     const { id } = useParams()
-    // const cartFromLocalStorage = JSON.parse(localStorage.getItem('cart') || '[]')
+
 
 
     useEffect(() => {
         dispatch(getAllProductsByCategory(id));
-    }, [dispatch])
+    }, [dispatch, id])
 
 
-
+//subscribe to cart on line 14, pass as prop to CartDrawer on 30 where state of cart gets monitored for change
+//subscribe to allCatProducts and pass attributes of each item on line 41 as props to Item to render each item with product name, price etc to page
 
 
     return (
@@ -38,10 +30,6 @@ export default function Category() {
         <CategoryHero />
             <CartDrawer cart={cart} />
 
-            <Box>
-            {/* <Text fontSize="6xl">{`ThrifTEE ${categoryName}`}</Text> */}
-            {/* {console.log(categoryName + "category")} */}
-            </Box>
 
                 <Wrap spacing="20px">
 

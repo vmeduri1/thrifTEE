@@ -1,5 +1,5 @@
 import { StarIcon} from '@chakra-ui/icons'
-import { Box, HStack, Icon, Stack, Text, useColorModeValue } from '@chakra-ui/react'
+import { Box, HStack, Icon, Stack, Text} from '@chakra-ui/react'
 import * as React from 'react'
 import { chakra, HTMLChakraProps } from '@chakra-ui/react'
 
@@ -17,7 +17,7 @@ export const BannerLink = (props: HTMLChakraProps<'a'>) => (
     borderColor="whiteAlpha.400"
     fontWeight="medium"
     rounded="base"
-    _hover={{ bg: 'whiteAlpha.200' }}
+    _hover={{ bg: '#f56565' }}
   />
 )
 
@@ -30,7 +30,7 @@ export const CategoryHero = () => (
       py="3"
       px={{ base: '3', md: '6', lg: '8' }}
       color="white"
-      bg={useColorModeValue('blue.600', 'blue.400')}
+      bg=  '#f56565'
     >
       <HStack spacing="3">
         <Icon as={StarIcon} fontSize="2xl" h="10" />
