@@ -1,10 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import * as sessionActions from '../../store/session'
-import * as productActions from "../../store/products"
 import { getAllProducts } from '../../store/products'
-import { VerticallyCenter } from '../../modals/Modal'
 import CartDrawer from '../Drawer/CartDrawer'
 import Item from '../Item'
 import BannerHero from './BannerHero'
@@ -39,7 +35,7 @@ export default function HomePage() {
                     </div>
                 ))}
             </div> */}
-            <Box h="125px" center>
+            <Box h="125px">
 
                 <Image
                     alt={'ThrifTEE Logo'}

@@ -93,30 +93,3 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 }
-
-// export default function reducer(state = initialState, action) {
-//   switch (action.type) {
-//     case SET_USER:
-//       return { user: action.payload }
-//     case REMOVE_USER:
-//       return { user: null }
-//     default:
-//       return state;
-//   }
-// }
-
-// const sessionReducer = (state = initialState, action) => {
-//   let newState;
-//   switch (action.type) {
-//     case SET_USER:
-//       newState = Object.assign({}, state);
-//       newState.user = action.payload;
-//       return newState;
-//     case REMOVE_USER:
-//       newState = Object.assign({}, state);
-//       newState.user = null;
-//       return newState;
-//     default:
-//       return state;
-//   }
-// };
