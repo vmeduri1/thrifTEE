@@ -1,6 +1,3 @@
-// AboutPage.js
-// A single component file
-
 import {
   Heading,
   Avatar,

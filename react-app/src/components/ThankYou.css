@@ -1,7 +1,8 @@
 .container-for-body{
     height: 85vh;
-
 }
+
+
 .thank-you-container{
     position: fixed;
     top: 50%;
@@ -9,9 +10,8 @@
     transform: translate(-50%, -50%);
     display:flex;
     flex-direction: column;
-    /* height:100vh; */
-
 }
+
 
 .thank-you-image {
     width: 100%;
