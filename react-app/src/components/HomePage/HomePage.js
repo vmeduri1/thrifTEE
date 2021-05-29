@@ -45,8 +45,8 @@ export default function HomePage() {
                     alt={'ThrifTEE Logo'}
                     fit={'cover'}
                     align={'center'}
-                    w={'100%'}
-                    h={'100%'}
+                    w={'163em'}
+                    h={'12em'}
                     src={
                         'https://res.cloudinary.com/dse6ebwba/image/upload/v1622252621/v2_Magenta_Vibrant_and_Dynamic_Parties_and_Celebrations_Retractable_Exhibition_Banner_e7bpv8.png'
 

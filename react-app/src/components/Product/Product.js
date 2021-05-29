@@ -45,7 +45,7 @@ export default function SingleProduct() {
   return (
 
     <>
-      <Container h='85vh' w="1000px" centerContent>
+      <Container h='79vh' w="1000px" centerContent mt="75px">
         <CartDrawer cart={cart} />
         <Box
           bg={useColorModeValue('white', 'gray.800')}
