@@ -31,7 +31,7 @@ const NavBar = () => {
           <LogoutButton />
         </li>
       </ul>
-      <ul>
+      {/* <ul>
         <li>
           <NavLink to ="/categories/1" exact={true} activeClassName="active">
             Tops
@@ -56,7 +56,7 @@ const NavBar = () => {
             <Category />
           </NavLink>
         </li>
-      </ul>
+      </ul> */}
     </nav>
   );
 }
