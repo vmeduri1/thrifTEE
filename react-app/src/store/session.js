@@ -28,6 +28,7 @@ export const authenticate = () => async (dispatch) => {
 }
 
 export const login = (email, password) => async (dispatch) => {
+  // const {email, password} = user;
   const response = await fetch('/api/auth/login', {
     method: 'POST',
     headers: {
@@ -42,9 +43,10 @@ export const login = (email, password) => async (dispatch) => {
   if (data.errors) {
     return data;
   }
+  console.log(data)
 
   dispatch(setUser(data))
-  return {};
+  return response;
 }
 
 export const logout = () => async (dispatch) => {
@@ -91,3 +93,30 @@ export default function reducer(state = initialState, action) {
       return state;
   }
 }
+
+// export default function reducer(state = initialState, action) {
+//   switch (action.type) {
+//     case SET_USER:
+//       return { user: action.payload }
+//     case REMOVE_USER:
+//       return { user: null }
+//     default:
+//       return state;
+//   }
+// }
+
+// const sessionReducer = (state = initialState, action) => {
+//   let newState;
+//   switch (action.type) {
+//     case SET_USER:
+//       newState = Object.assign({}, state);
+//       newState.user = action.payload;
+//       return newState;
+//     case REMOVE_USER:
+//       newState = Object.assign({}, state);
+//       newState.user = null;
+//       return newState;
+//     default:
+//       return state;
+//   }
+// };

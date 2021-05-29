@@ -11,10 +11,12 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import * as sessionActions from "../store/session"
+import { login } from '../store/session'
 import { useDispatch } from "react-redux";
 
 
-// need to work on this functionality 
+
+// need to work on this functionality
 export function LoginForm() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");
@@ -23,18 +25,25 @@ export function LoginForm() {
   const [errors, setErrors] = useState([]);
 
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    return dispatch(sessionActions.login({ credential, password })).catch(
-      async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
-      }
-    );
+    const dispatched = await dispatch(sessionActions.login( email, password ))
+
+    if (dispatched.errors) setErrors(dispatch.errors)
   };
 
+  const handleDemo= async (e) => {
+    e.preventDefault();
+    const email = 'demo@aa.io';
+    const password = 'password'
+    const dispatched = await dispatch(sessionActions.login( email, password))
+
+    if (dispatched.errors) setErrors(dispatch.errors)
+  }
+
   return (
+    <>
     <form onSubmit={handleSubmit}>
       <div>
         {errors.map((error, idx) => <span key={idx}>{error}</span>)}
@@ -63,8 +72,14 @@ export function LoginForm() {
           </InputGroup>
           <br />
           <Button type='Submit'>Log in</Button>
+
         </FormControl>
       </Stack>
     </form>
+
+    <form onSubmit={handleDemo}>
+      <Button type="Submit">Demo User</Button>
+    </form>
+    </>
   )
 }
