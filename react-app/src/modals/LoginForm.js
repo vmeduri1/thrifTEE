@@ -14,7 +14,7 @@ import * as sessionActions from "../store/session"
 import { useDispatch } from "react-redux";
 
 
-
+// need to work on this functionality 
 export function LoginForm() {
   const dispatch = useDispatch();
   const [email, setEmail] = useState("");

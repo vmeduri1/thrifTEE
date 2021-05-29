@@ -11,12 +11,14 @@ import {
   Tooltip,
   useDisclosure,
   onOpen,
-  onClose
+  onClose,
+  Button
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { addProduct } from '../store/cart'
 import { useDispatch } from 'react-redux'
 import { Cart } from './Cart'
+import {useHistory} from 'react-router-dom'
 
 
 
@@ -25,6 +27,11 @@ import { Cart } from './Cart'
 function ProductAddToCart({ price, name, image, product }) {
   const dispatch = useDispatch()
   const { isOpen, onOpen, onClose } = useDisclosure()
+  const history = useHistory()
+
+  const handleProductRedirect =() => {
+    history.push(`/products/${product.id}`)
+}
 
   return (
     <Flex p={50} w="full" alignItems="center" justifyContent="center">
@@ -41,7 +48,7 @@ function ProductAddToCart({ price, name, image, product }) {
           position="absolute"
           top={2}
           right={2}
-          bg="red.200"
+          // bg="red.200"
         />
 
         <Image
@@ -49,7 +56,7 @@ function ProductAddToCart({ price, name, image, product }) {
           alt={`Picture of ${name}`}
           roundedTop="lg"
           height="500px"
-          width="100%"
+          vw="2%"
           backgroundImage='contain'
         />
 
@@ -90,6 +97,11 @@ function ProductAddToCart({ price, name, image, product }) {
             <Box fontSize="2xl" color={useColorModeValue('gray.800', 'white')}>
               <Box as="span" color={'gray.600'} fontSize="lg">
                 ${price}
+              </Box>
+              <Box fontSize="lg">
+              <Tooltip hasArrow label="Product Details" bg="red.600">
+            <Button onClick={handleProductRedirect}>Button</Button>
+              </Tooltip>
               </Box>
             </Box>
           </Flex>

@@ -78,19 +78,24 @@ This is the backend for the Flask React project.
 
    ```bash
    heroku container:push web -a {NAME_OF_HEROKU_APP}
+   heroku container:push web -a thriftee
    ```
 
 8. Release your docker container to heroku
 
    ```bash
    heroku container:release web -a {NAME_OF_HEROKU_APP}
+   heroku container:release web -a thriftee
    ```
 
 9. set up your database:
 
    ```bash
    heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
+   heroku run -a thriftee flask db upgrade
    heroku run -a {NAME_OF_HEROKU_APP} flask seed all
+   heroku run -a thriftee flask seed all
+
    ```
 
 10. Under Settings find "Config Vars" and add any additional/secret .env variables.
