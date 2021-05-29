@@ -11,6 +11,7 @@ const rootReducer = combineReducers({
     category: categoryReducer,
     cart: cartReducer
 
+
 });
 
 
