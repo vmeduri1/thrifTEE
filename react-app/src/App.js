@@ -13,6 +13,8 @@ import SingleProduct from "./components/Product/Product"
 import { authenticate } from "./store/session";
 import ThankYou from "./components/ThankYou";
 import AboutPage from '../src/components/AboutPage'
+import Footer from '../src/components/Footer'
+import { Box } from '@chakra-ui/react'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -20,7 +22,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    (async() => {
+    (async () => {
       await dispatch(authenticate());
       setLoaded(true);
     })();
@@ -35,37 +37,42 @@ function App() {
       <NavBar />
 
       <Switch>
-      <Route path="/" exact={true} >
+        <Route path="/" exact={true} >
           <HomePage />
+          {/* <Footer /> */}
         </Route>
         <Route path="/categories/:id" exact={true} >
           <Category />
+          {/* <Footer /> */}
         </Route>
         <Route path="/products/:id" exact={true} >
           <SingleProduct />
+          {/* <Footer /> */}
         </Route>
         <Route path="/aboutDevs" exact={true} >
           <AboutPage />
+          {/* <Footer /> */}
         </Route>
-
 
         {/* <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route> */}
+            <LoginForm />
+          </Route>
+          <Route path="/sign-up" exact={true}>
+            <SignUpForm />
+          </Route> */}
         {/* <Route path="/users" exact={true} >
-          <UsersList />
-        </Route> */}
+            <UsersList />
+          </Route> */}
         {/* <Route path="/users/:userId" exact={true} >
-          <User />
-        </Route> */}
+            <User />
+          </Route> */}
         <Route path="/thankyou" exact={true} >
           <ThankYou />
+          {/* <Footer /> */}
         </Route>
 
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
