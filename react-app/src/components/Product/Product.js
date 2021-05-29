@@ -7,7 +7,7 @@ import {getSingleProduct} from '../../store/products';
 import { addProduct } from '../../store/cart';
 import CartDrawer from '../Drawer/CartDrawer'
 import Category from '../Category/Category'
-import './index.css';
+
 import {
     Flex,
     Circle,
