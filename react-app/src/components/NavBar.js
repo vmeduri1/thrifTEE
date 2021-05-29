@@ -48,9 +48,12 @@ const NavBar = () => {
     setFlag(true)
   }, [flag])
 
+
   return (
     <>
       {/* {flag ? <CartDrawer /> : null} */}
+
+   */}
       <Grid templateColumns="repeat(15, 1fr)" gap={.7} bg="gray.100">
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" />
@@ -70,7 +73,7 @@ const NavBar = () => {
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" textAlign="center" paddingTop={5} >
-          <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>
+        <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>
             <Icon as={FiShoppingCart} h={7} w={7} justifyItems="center" alignItems="center" />
           </Button>
         </Flex>
