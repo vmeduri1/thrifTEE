@@ -44,10 +44,23 @@ const NavBar = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const [flag, setFlag] = useState(false)
 
+
   useEffect(() => {
     setFlag(true)
   }, [flag])
 
+
+  let BtnVisibility;
+
+  if (sessionUser) {          // if user is logged in
+    BtnVisibility = (
+      <LogoutButton user={sessionUser} />
+    )
+  } else {                      // if user is NOT LOGGED in
+    BtnVisibility = (
+      <VerticallyCenter />
+    )
+  }
 
 
   return (
@@ -61,8 +74,8 @@ const NavBar = () => {
           <Link href='/' w="100%" h="20" textAlign="center" paddingTop={6} fontWeight="bold" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >thrifTEE</Link>
         </Flex>
 
-        <Link href='/' textAlign="center" paddingTop={6} w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >Shop</Link>
-        <Link href='/aboutDevs' textAlign="center" paddingTop={6} w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>About</Link>
+        <Link href='/' textAlign="center" paddingTop={6} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >Shop</Link>
+        <Link href='/aboutDevs' textAlign="center" paddingTop={6} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>About</Link>
         <form>
           <FormControl id='searchbar' w="475%" h="20" bg="FFFFFF" color='#000000' textAlign="center" paddingTop={5}>
             <Input placeholder="I'm looking for..." bg="white" />
@@ -73,16 +86,18 @@ const NavBar = () => {
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" textAlign="center" paddingTop={5} >
-        <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>
+          <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>
             <Icon as={FiShoppingCart} h={7} w={7} justifyItems="center" alignItems="center" />
           </Button>
         </Flex>
 
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginRight={3} >
-          <VerticallyCenter />
+          {/* <VerticallyCenter /> */}
+          {BtnVisibility}
         </Flex>
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginLeft={3}>
-          <LogoutButton />
+          {/* {logoutBtnVisibility} */}
+          {/* <LogoutButton /> */}
         </Flex>
 
         <Flex w="100%" h="20" />
