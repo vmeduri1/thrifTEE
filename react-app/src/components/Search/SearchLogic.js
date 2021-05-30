@@ -45,7 +45,7 @@ const Search = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button onClick={handleSearch} type='Submit' colorScheme="white" variant="ghost"><i className="fas fa-search"></i></Button>
+            <Button onClick={handleSearch} type='Submit' colorScheme="white" variant="ghost" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}><i className="fas fa-search"></i></Button>
           </InputGroup>
         </FormControl>
       </form>
