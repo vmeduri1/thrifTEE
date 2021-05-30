@@ -317,9 +317,95 @@ def seed_products():
     )
     db.session.add(product96)
 
-    # product97 = Product(
-    #     name=''
-    # )
+    product97 = Product(
+        name='High Waist Shorts',
+        category_id=2,
+        image_url='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3lXaJB12R9s7eJY2O64VzZmRqu1eQP-oMrT9BOMVtalFBYo7vrzau163bR7-f4ihOjxHZTOERPw&usqp=CAc',
+        description='High waist shorts for the summer',
+        regular_price=50.00
+    )
+    db.session.add(product97)
+
+    product98 = Product(
+        name='Printed Leggings',
+        category_id=2,
+        image_url='https://smhttp-ssl-71464-tavinoir.nexcesscdn.net/pub/media/catalog/product/cache/9e832ad6fa4744e63c1db7c26c6fa775/a/p/apparel_high-waisted-tight_charcoal-palm_v1_5.jpg',
+        description='Jungle leggings for the summer',
+        regular_price=50.00
+    )
+    db.session.add(product98)
+
+    product99 = Product(
+        name='Flower Skirt',
+        category_id=2,
+        image_url='https://i1.adis.ws/i/boohooamplience/agg76943_white_xl_3?$product_image_main_mobile$&fmt=webp',
+        description='Flower skirt for warm weather and clean air',
+        regular_price=75.00
+    )
+    db.session.add(product99)
+
+    product100 = Product(
+        name='Faux Leather Leggings',
+        category_id=2,
+        image_url='https://n.nordstrommedia.com/id/sr3/4759f20b-80e1-41cb-9bbb-0dc4f31387e2.jpeg?crop=pad&pad_color=FFF&format=jpeg&w=780&h=1196',
+        description='Leather Leggings for anytime, anywhere',
+        regular_price=75.00
+    )
+    db.session.add(product100)
+
+    product101 = Product(
+        name="Mom's Jeans",
+        category_id=2,
+        image_url='https://img.ltwebstatic.com/images3_pi/2020/11/02/1604310714632a63f439ace1263a6756967d8c1a92.webp',
+        description='Jeans you can wear, ripped',
+        regular_price=101.00
+    )
+    db.session.add(product101)
+
+    product102 = Product(
+        name="Jogger's Flat Front",
+        category_id=2,
+        image_url='https://vuori.imgix.net/s/files/1/0022/4008/6074/products/VW418TER_1_1890x.jpg?auto=compress,format&w=1230&v=1610748548',
+        description='Daily jogger for summer or cool weather',
+        regular_price=35.00
+    )
+    db.session.add(product102)
+
+    product103 = Product(
+        name='Performance Jogger',
+        category_id=2,
+        image_url='https://vuori.imgix.net/s/files/1/0022/4008/6074/products/VW303HTG_1_e050560d-f70e-4584-bc3f-83f111396fd3_1890x.jpg?auto=compress,format&w=1230&v=1611175536',
+        description='Knit joggers for the shore or city',
+        regular_price=25.00
+    )
+    db.session.add(product103)
+
+    product104 = Product(
+        name='Jeggings',
+        category_id=2,
+        image_url='https://athleta.gap.com/webcontent/0019/950/181/cn19950181.jpg',
+        description='Jeggings for the office',
+        regular_price=23.00
+    )
+    db.session.add(product104)
+
+    product105 = Product(
+        name='High Waist Shorts',
+        category_id=2,
+        image_url='https://s7d5.scene7.com/is/image/FreePeople/55752372_088_a/?$a15-pdp-detail-shot$&fit=constrain&fmt=webp&qlt=80&wid=720',
+        description='The way home shorts',
+        regular_price=30.00
+    )
+    db.session.add(product105)
+
+    product106 = Product(
+        name='Japanese Linen Pants',
+        category_id=2,
+        image_url='https://cdn.shopify.com/s/files/1/0480/9136/5539/products/LOOK16_050_1296x2048.jpg?v=1620917518',
+        description='Aya muse mika pants with leather tie',
+        regular_price=25.00
+    )
+    db.session.add(product106)
 
     db.session.commit()
 
