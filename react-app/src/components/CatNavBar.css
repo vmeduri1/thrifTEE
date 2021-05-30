@@ -1,0 +1,32 @@
+/* .master-div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+} */
+
+.nav-links {
+    display: grid;
+    grid-template-columns: repeat(12,1fr);
+    color: white;
+    /* min-height: 65px; */
+    height: 30px;
+    width: 100%;
+    margin: auto;
+    grid-column: 2/3;
+  /* flex-direction: row; */
+}
+
+.tops {
+    grid-column: 4/5;
+}
+
+.bottoms {
+    grid-column: 6/7;
+}
+
+.shoes {
+    grid-column: 8/9;
+}
+
+.accessories {
+    grid-column: 10/11;
+}

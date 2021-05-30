@@ -34,7 +34,6 @@ import {
 } from "@chakra-ui/react"
 
 
-
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
@@ -64,7 +63,6 @@ const NavBar = () => {
 
 
   return (
-    <>
       {/* {flag ? <CartDrawer /> : null} */}
 
       <Grid templateColumns="repeat(15, 1fr)" gap={.7} bg="gray.100">
