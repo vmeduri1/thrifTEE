@@ -14,3 +14,6 @@ const SearchResultsFunc = () => {
     </>
   )
 }
+
+
+export default SearchResultsFunc;

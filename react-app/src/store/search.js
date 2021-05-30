@@ -9,7 +9,7 @@ const loadResult = list => ({
 export const searchFunc = (param) => async dispatch => {      // param is the searchTerm that a person searches for
 
   const response = await fetch(`/api/search/${param}`);
-  // /api/search/A-List
+  // /api/search/shirt
   if (response.ok) {
     const searchResults = await response.json();    // jsonifed  searchResult, litterally
     dispatch(loadResult(searchResults))
