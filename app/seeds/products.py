@@ -317,8 +317,6 @@ def seed_products():
     )
     db.session.add(product96)
 
-    
-
     # product97 = Product(
     #     name=''
     # )
