@@ -34,7 +34,6 @@ import {
 } from "@chakra-ui/react"
 
 
-
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
