@@ -5,7 +5,8 @@ search_routes = Blueprint('search', __name__, url_prefix='/api/search')
 
 
 @search_routes.route('/<string:query>')
-def get_results(query):
+def search(query):
+
     results = Post.query.filter(
         Post.title.ilike(f"%{query}%")
     ).all()
