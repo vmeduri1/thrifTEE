@@ -14,6 +14,7 @@ import { authenticate } from "./store/session";
 import ThankYou from "./components/ThankYou";
 import CatNavBar from './components/CatNavBar';
 import AboutPage from '../src/components/AboutPage'
+import SearchResults from '../src/components/SearchResultPage/SearchResults'
 import Footer from '../src/components/Footer'
 import { Box } from '@chakra-ui/react'
 
@@ -40,19 +41,22 @@ function App() {
       <Switch>
         <Route path="/" exact={true} >
           <HomePage />
-          {/* <Footer /> */}
         </Route>
+
         <Route path="/categories/:id" exact={true} >
           <Category />
-          {/* <Footer /> */}
         </Route>
+
         <Route path="/products/:id" exact={true} >
           <SingleProduct />
-          {/* <Footer /> */}
         </Route>
+
         <Route path="/aboutDevs" exact={true} >
           <AboutPage />
-          {/* <Footer /> */}
+        </Route>
+
+        <Route path="/search" exact={true} >
+          <SearchResults />
         </Route>
 
         {/* <Route path="/login" exact={true}>
