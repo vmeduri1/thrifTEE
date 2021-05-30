@@ -4,7 +4,7 @@ import { getAllProducts } from '../../store/products'
 import CartDrawer from '../Drawer/CartDrawer'
 import Item from '../Item'
 import BannerHero from './BannerHero'
-import { Wrap, WrapItem, Divider, Box, Image, Container, Center} from "@chakra-ui/react"
+import { Wrap, WrapItem, Divider, Box, Image, Container, Center, LinkBox, LinkOverlay, Heading, Flex } from "@chakra-ui/react"
 import './index.css'
 
 
@@ -63,7 +63,9 @@ export default function HomePage() {
 
                 <CartDrawer cart={cart} />
 
-                <Wrap spacing="20px">
+            </div>
+
+                {/* <Wrap spacing="20px">
 
 
                     {allProducts.map((product, idx) => (
@@ -78,9 +80,74 @@ export default function HomePage() {
 
 
                     ))}
-                </Wrap>
+                </Wrap> */}
 
-            </div>
+
+
+            <Flex align={"center"} justify={"center"}>
+
+
+                <LinkBox bg="white" margin="20px">
+                    <Heading size="md" my="2">
+                        <LinkOverlay href="categories/1" margin="20px">
+                            <Image src="https://res.cloudinary.com/dse6ebwba/image/upload/v1622401279/3_rl7v2n.png" />
+                        </LinkOverlay>
+
+                    </Heading>
+                </LinkBox>
+
+
+
+
+                <LinkBox bg="white" margin="20px">
+                    <Heading size="md" my="2">
+                        <LinkOverlay href="/categories/2">
+                            <Image src="https://res.cloudinary.com/dse6ebwba/image/upload/v1622401278/1_giq6rt.png" />
+                        </LinkOverlay>
+
+                    </Heading>
+                </LinkBox>
+
+
+
+
+
+
+                <LinkBox bg="white" margin="20px">
+                    <Heading size="md" my="2">
+                        <LinkOverlay href="/categories/3">
+                            <Image src="https://res.cloudinary.com/dse6ebwba/image/upload/v1622401279/2_ntgkos.png" />
+                        </LinkOverlay>
+
+                    </Heading>
+                </LinkBox>
+
+
+
+
+                <LinkBox bg="white" margin="20px">
+                    <Heading size="md" my="2">
+                        <LinkOverlay href="/categories/4">
+                            <Image src="https://res.cloudinary.com/dse6ebwba/image/upload/v1622401279/4_twhzgx.png" />
+                       </LinkOverlay>
+
+                    </Heading>
+                </LinkBox>
+
+
+
+            </Flex>
+
+
+
+
+
+
+
+
+
+
+
 
             <Center className="wasteless-container" mb="50px" >
 

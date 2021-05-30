@@ -43,7 +43,7 @@ export function VerticallyCenter() {
 
   return (
     <>
-      <Button onClick={onOpen} _hover={{ color: "white", fontWeight: "bold", bg: "gray.500" }}> {formRender ? "Sign Up" : "Log In"}  </Button>
+      <Button onClick={onOpen} colorScheme="white" variant="ghost" _hover={{ color: "white", fontWeight: "bold", bg: "gray.500" }}> {formRender ? "Sign Up" : "Log In"}  </Button>
 
       <Modal onClose={onClose} isOpen={isOpen} isCentered>
         <ModalOverlay />
