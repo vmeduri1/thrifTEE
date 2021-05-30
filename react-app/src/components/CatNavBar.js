@@ -25,7 +25,7 @@ export default function CatNavBar() {
         <ThemeProvider>
             <div className="master-div">
             <Grid
-                bg="tomato"
+                bg="black"
                 // w="100%"
                 // px={5}
                 // py={4}
@@ -33,12 +33,12 @@ export default function CatNavBar() {
                 // alignItems="center"
                 templateColumns="repeat(3, 1fr)" gap={.5}
             >
-            <Box w="100%" h="20" bg="tomato" />
+            <Box w="100%" h="20" bg="black" />
             <Box>
                 <div className="nav-links">
                     <div className="tops">
-                        <button onClick={handleTops}>Tops</button>
-                        {/* <NavLink className="navs" to="/categories/1">Tops</NavLink> */}
+                        {/* <button onClick={handleTops}>Tops</button> */}
+                        <NavLink className="navs" to="/categories/1">Tops</NavLink>
                     </div>
                     <div className="bottoms">
                         <NavLink className="navs" to="/categories/2">Bottoms</NavLink>

@@ -65,7 +65,7 @@ export default function BannerHero() {
             </Text>
           </Heading>
           <Text color={'gray.500'} fontSize="3xl">
-            Giving beautiful clothing a second lease of life and fighting throwaway fashion. Check out thirfTEE, your new favorite shopping destination
+            Giving beautiful clothing a second lease of life and fighting throwaway fashion. Check out thrifTEE, your new favorite shopping destination
           </Text>
           <Stack
             spacing={{ base: 4, sm: 6 }}
