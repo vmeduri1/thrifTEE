@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ThemeProvider, Box, Flex, Link, Image, Text, Grid } from "@chakra-ui/react";
+import { ThemeProvider, Box, Flex, Link, Image, Text, Grid, Center } from "@chakra-ui/react";
 import { NavLink } from 'react-router-dom';
 import './CatNavBar.css'
 import { useHistory, useParams } from 'react-router-dom';
@@ -25,7 +25,7 @@ export default function CatNavBar() {
         <ThemeProvider>
             <div className="master-div">
             <Grid
-                bg="black"
+                bg="#f6f6f6"
                 // w="100%"
                 // px={5}
                 // py={4}
@@ -33,25 +33,27 @@ export default function CatNavBar() {
                 // alignItems="center"
                 templateColumns="repeat(3, 1fr)" gap={.5}
             >
-            <Box w="100%" h="20" bg="black" />
-            <Box>
-                <div className="nav-links">
-                    <div className="tops">
-                        {/* <button onClick={handleTops}>Tops</button> */}
-                        <NavLink className="navs" to="/categories/1">Tops</NavLink>
+            <Box w="100%" h="20" bg="#f6f6f6" />
+            <Flex >
+                <Box h="50px" mt="15px">
+                    <div className="nav-links">
+                        <div className="tops">
+                            {/* <button onClick={handleTops}>Tops</button> */}
+                            <Link fontSize="22px" fontWeight="500" className="navs" href="/categories/1" style={{textDecoration: 'none'}} color="black">Tops</Link>
+                        </div>
+                        <div className="bottoms">
+                            <Link href="/categories/2" fontSize="22px" fontWeight="500" className="navs" style={{textDecoration: 'none'}} color="black" >Bottoms</Link>
+                        </div>
+                        <div className="shoes">
+                            <Link fontSize="22px" fontWeight="500" className="navs" style={{textDecoration: 'none'}} href="/categories/3" color="black">Shoes</Link>
+                        </div>
+                        <div className="accessories">
+                            <Link fontSize="22px" fontWeight="500" className="navs" style={{textDecoration: 'none'}} href="/categories/4" color="black">Accessories</Link>
+                        </div>
                     </div>
-                    <div className="bottoms">
-                        <NavLink className="navs" to="/categories/2">Bottoms</NavLink>
-                    </div>
-                    <div className="shoes">
-                        <NavLink className="navs" to="/categories/3">Shoes</NavLink>
-                    </div>
-                    <div className="accessories">
-                        <NavLink className="navs" to="/categories/4">Accessories</NavLink>
-                    </div>
-                </div>
 
-            </Box>
+                </Box>
+            </ Flex>
             </Grid>
             </div>
         </ThemeProvider>
