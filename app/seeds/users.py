@@ -7,19 +7,19 @@ def seed_users():
 
     demo = User(fname="Demo", lname="Demos",
                 email='demo@aa.io',
-                hashed_password='password')
+                password='password')
 
     db.session.add(demo)
 
     demo2 = User(fname="John", lname="Smith",
                  email='JohnSmith@gmail.com',
-                 hashed_password='JohnSmith1')
+                 password='JohnSmith1')
 
     db.session.add(demo2)
 
     demo3 = User(fname="Jane", lname="Smith",
                  email='JaneSmith@yahoo.com',
-                 hashed_password='Janesmith7')
+                 password='Janesmith7')
 
     db.session.add(demo3)
 

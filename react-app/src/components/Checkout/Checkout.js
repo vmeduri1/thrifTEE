@@ -8,7 +8,7 @@ export default function Checkout({ product }) {
 
     const cartItems = Object.values(cart);
 
-    const filteredItems = Object.values(allProducts?.filter(item => item.id === cart[item.id]?.itemId));
+    // const filteredItems = Object.values(allProducts?.filter(item => item.id === cart[item.id]?.itemId));
 
     return (
         // Object.values(allProducts).length > 0 &&
@@ -22,7 +22,7 @@ export default function Checkout({ product }) {
                     </div>
                     <div className="cart-container">
                         <div>
-                            <Cart />
+                            {/* <Cart /> */}
                         </div>
                         {/* {filteredItems?.map(item => (
                             <div key={item.id} className-="cart-container-item">
