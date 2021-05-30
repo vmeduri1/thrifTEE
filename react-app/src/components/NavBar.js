@@ -4,6 +4,7 @@ import LogoutButton from './auth/LogoutButton';
 import { useDispatch, useSelector } from 'react-redux'
 import { VerticallyCenter } from '../modals/Modal'
 import CartDrawer from '../components/Drawer/CartDrawer'
+import SearchLogic from '../components/Search/SearchLogic'
 import { FiShoppingCart } from 'react-icons/fi'
 import {
   Box,
@@ -70,16 +71,17 @@ const NavBar = () => {
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" />
         <Flex >
-          <Link href='/' w="100%" h="20" textAlign="center" paddingTop={6} fontWeight="bold" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >thrifTEE</Link>
+          <Link href='/' w="100%" h="20" textAlign="center" paddingTop={8} fontWeight="bold" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >thrifTEE</Link>
         </Flex>
 
-        <Link href='/' textAlign="center" paddingTop={6} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >Shop</Link>
-        <Link href='/aboutDevs' textAlign="center" paddingTop={6} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>About</Link>
-        <form>
+        <Link href='/' textAlign="center" paddingTop={8} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >Shop</Link>
+        <Link href='/aboutDevs' textAlign="center" paddingTop={8} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>About</Link>
+        {/* <form>
           <FormControl id='searchbar' w="475%" h="20" bg="FFFFFF" color='#000000' textAlign="center" paddingTop={5}>
             <Input placeholder="I'm looking for..." bg="white" />
           </FormControl>
-        </form>
+        </form> */}
+        <SearchLogic />
         <Flex w="100%" h="20" bg="FFFFFF" />
         <Flex w="100%" h="20" bg="FFFFFF" />
         <Flex w="100%" h="20" />
