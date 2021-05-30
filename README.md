@@ -1,8 +1,17 @@
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white) ![Nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
 # Welcome to thrifTEE!
-[Prerequisites](#prerequisites) | [Technologies](#technologies) | [Key Features](#key-features) | [Future Implementations](#fguture) | [Contributors](#contributors)
+[Prerequisites](#prerequisites) | [Technologies](#technologies) | [Key Features](#key-features) | [Future Implementations](#future-implementation) | [Contributors](#contributors)
 
 ### Live Link: [thrifTEE](https://thriftee.herokuapp.com/)
-*thrifTEE* is an e-commerce application that rejects throwaway fashion culture and gives beautiful apparel a second lease of life! Inspired by [ThredUp](https://www.thredup.com/), [Everlane](https://www.everlane.com/), and [Sephora](https://www.sephora.com/), users can browser, sort, and buy some of their favorite trending finds without breaking the bank.
+
+
+<p align="center"> *thrifTEE* is an e-commerce application that rejects throwaway fashion culture and gives beautiful apparel a second lease of life! Inspired by [ThredUp](https://www.thredup.com/), [Everlane](https://www.everlane.com/), and [Sephora](https://www.sephora.com/), users can browser, sort, and buy some of their favorite trending finds without breaking the bank.
+  <br />
+  
+  <a href="https://github.com/vmeduri1/thrifTEE/wiki"><strong>Explore the Docs »</strong></a>
+  <br />
+  <br /> <a href="#prerequisites">Prerequisites</a> · <a href="#technologies">Technologies</a> · <a href="#key-features">Key Features</a> · <a href="#future-implementation">Future Implementations</a> · <a href="contributors">Contributors</a>
+</p>
 
 #### Home Page
 ![Gif of final homepage goes here]()
