@@ -63,6 +63,7 @@ const NavBar = () => {
 
 
   return (
+    <>
       {/* {flag ? <CartDrawer /> : null} */}
 
       <Grid templateColumns="repeat(15, 1fr)" gap={.7} bg="gray.100">
