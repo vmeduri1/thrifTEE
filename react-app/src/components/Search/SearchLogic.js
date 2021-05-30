@@ -35,7 +35,7 @@ const Search = () => {
     <>
       <form onSubmit={handleSearch}>
         <FormControl
-          w="475%" h="20" bg="FFFFFF" color='#000000' textAlign="center" paddingTop={5}
+          w="475%" h="20" bg="#FFFFFF" color='#000000' textAlign="center" paddingTop={5}
         >
           <InputGroup>
             <Input
@@ -45,7 +45,7 @@ const Search = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
             />
-            <Button onClick={handleSearch} type='Submit'><i className="fas fa-search"></i></Button>
+            <Button onClick={handleSearch} type='Submit' colorScheme="white" variant="ghost"><i className="fas fa-search"></i></Button>
           </InputGroup>
         </FormControl>
       </form>
