@@ -1,14 +1,15 @@
 const LOADRESULT = 'search/LOADRESULT'
 
-const loadResult = list => ({
+const loadResult = products => ({
   type: LOADRESULT,
-  list,                           // list is the list of result from the back end
+  payload: products,                           // list is the list of result from the back end
+  // products
 });
 
 
-export const searchFunc = (param) => async dispatch => {      // param is the searchTerm that a person searches for
+export const searchFunc = (query) => async dispatch => {      // param is the searchTerm that a person searches for
 
-  const response = await fetch(`/api/search/${param}`);
+  const response = await fetch(`/api/search/${query}`);
   // /api/search/shirt
   if (response.ok) {
     const searchResults = await response.json();    // jsonifed  searchResult, litterally
@@ -19,19 +20,40 @@ export const searchFunc = (param) => async dispatch => {      // param is the se
 
 
 //-------------------REDUCER--------------------------//
-const initialState = {
-  'products': [],
-}
+// const initialState = {
+//   'products': {},
+// }
 
 
-const searchReducer = (state = initialState, action) => {
+const searchReducer = (state = {}, action) => {
+  let newState;
+
   switch (action.type) {
     case LOADRESULT:
-      return { products: [...action.list] }
+      newState = Object.assign({}, state)
+      newState.searchResults = action.payload
+      // const products = action.payload
+      // const searchProducts = {}
+      // for (const product in products) {
+      //   searchProducts[product.id] = product
+      // }
+      // return searchProducts
+      return newState
+
+    // return { products: [...action.query] }
     default:
-      return state;
+      return { ...state };
   }
 }
+
+// const searchReducer = (state = [], action) => {
+//   switch (action.type) {
+//     case LOADRESULT:
+//       return { results: [...action.products] }
+//     default:
+//       return state;
+//   }
+// }
 
 
 export default searchReducer;

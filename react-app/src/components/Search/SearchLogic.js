@@ -24,29 +24,32 @@ const Search = () => {
 
   const handleSearch = async (e) => {
     e.preventDefault();
+    setSearchTerm('')
 
     await dispatch(searchActions.searchFunc(searchTerm))
-    history.push('/search')
+    history.push(`/search/${searchTerm}`)
   }
 
 
   return (
-    <div>
-      <FormControl
-        w="475%" h="20" bg="FFFFFF" color='#000000' textAlign="center" paddingTop={5}
-      >
-        <InputGroup>
-          <Input
-            placeholder="I'm looking for..."
-            bg="white"
-            type='text'
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <Button onClick={(e) => handleSearch(e)} type='Submit'><i className="fas fa-search"></i></Button>
-        </InputGroup>
-      </FormControl>
-    </div>
+    <>
+      <form onSubmit={handleSearch}>
+        <FormControl
+          w="475%" h="20" bg="FFFFFF" color='#000000' textAlign="center" paddingTop={5}
+        >
+          <InputGroup>
+            <Input
+              placeholder="I'm looking for..."
+              bg="white"
+              type='text'
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+            <Button type='Submit'><i className="fas fa-search"></i></Button>
+          </InputGroup>
+        </FormControl>
+      </form>
+    </>
   )
 }
 

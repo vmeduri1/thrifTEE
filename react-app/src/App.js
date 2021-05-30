@@ -55,7 +55,7 @@ function App() {
           <AboutPage />
         </Route>
 
-        <Route path="/search" exact={true} >
+        <Route path="/search/:query" exact={true} >
           <SearchResults />
         </Route>
 

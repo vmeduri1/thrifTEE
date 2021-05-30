@@ -1,16 +1,17 @@
-import {createStore, combineReducers, applyMiddleware, compose } from "redux";
+import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import session from "./session"
 import productsReducer from "./products"
 import categoryReducer from "./category"
 import cartReducer from "./cart"
+import searchReducer from './search'
 
 const rootReducer = combineReducers({
     session,
     products: productsReducer,
     category: categoryReducer,
-    cart: cartReducer
-
+    cart: cartReducer,
+    search: searchReducer,
 
 });
 
@@ -32,8 +33,8 @@ if (process.env.NODE_ENV === 'production') {
 
 
 const persistedState = localStorage.getItem('cart')
-                       ? JSON.parse(localStorage.getItem('cart'))
-                       : []
+    ? JSON.parse(localStorage.getItem('cart'))
+    : []
 
 const configureStore = (persistedState) => {
     return createStore(rootReducer, persistedState, enhancer)
