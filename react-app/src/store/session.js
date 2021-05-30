@@ -28,6 +28,7 @@ export const authenticate = () => async (dispatch) => {
 }
 
 export const login = (email, password) => async (dispatch) => {
+  // const {email, password} = user;
   const response = await fetch('/api/auth/login', {
     method: 'POST',
     headers: {
@@ -42,9 +43,10 @@ export const login = (email, password) => async (dispatch) => {
   if (data.errors) {
     return data;
   }
+  console.log(data)
 
   dispatch(setUser(data))
-  return {};
+  return response;
 }
 
 export const logout = () => async (dispatch) => {

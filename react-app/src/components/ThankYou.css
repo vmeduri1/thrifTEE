@@ -1,9 +1,17 @@
+.container-for-body{
+    height: 85vh;
+}
+
+
 .thank-you-container{
     position: fixed;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%)
+    transform: translate(-50%, -50%);
+    display:flex;
+    flex-direction: column;
 }
+
 
 .thank-you-image {
     width: 100%;

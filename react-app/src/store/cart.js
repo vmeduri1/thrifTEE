@@ -28,13 +28,9 @@ export const loadCart = products => ({
 
 
 
-// const initialState = {
-//     // products: []
-//     products: JSON.parse(localStorage.getItem('cart') || '{"products":[]}').products
-
-//   };
 
   const initialState = JSON.parse(localStorage.getItem('cart') || '{"products":[]}')
+  //initial cart state read from local storage, if nothing at key 'cart' sets cart to be a value of products:[]
 
 
 

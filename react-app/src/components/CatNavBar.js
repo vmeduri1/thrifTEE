@@ -25,7 +25,7 @@ export default function CatNavBar() {
         <ThemeProvider>
             <div className="master-div">
             <Grid
-                bg="tomato"
+                bg="blue"
                 // w="100%"
                 // px={5}
                 // py={4}
@@ -33,7 +33,7 @@ export default function CatNavBar() {
                 // alignItems="center"
                 templateColumns="repeat(3, 1fr)" gap={.5}
             >
-            <Box w="100%" h="20" bg="tomato" />
+            <Box w="100%" h="20" bg="blue" />
             <Box>
                 <div className="nav-links">
                     <div className="tops">
