@@ -43,7 +43,7 @@ const Search = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <Button onClick={(e) => handleSearch(e)} type='Submit'>Search</Button>
+          <Button onClick={(e) => handleSearch(e)} type='Submit'><i className="fas fa-search"></i></Button>
         </InputGroup>
       </FormControl>
     </div>
