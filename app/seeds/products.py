@@ -8,7 +8,7 @@ def seed_products():
         name='Striped socks',
         category_id=4,
         image_url='https://cdnd.lystit.com/photos/2012/04/16/paul-smith-multi-striped-socks-product-1-3276627-727547536.jpeg',
-        description='socks, woolen',
+        description='Socks, woolen',
         regular_price=8.88
     )
 
@@ -19,7 +19,7 @@ def seed_products():
         name='Neon socks',
         category_id=4,
         image_url='https://partycity6.scene7.com/is/image/PartyCity/_pdp_sq_?$_1000x1000_$&$product=PartyCity/592140',
-        description='socks, cotton and fun!',
+        description='Socks, cotton and fun!',
         regular_price=9.00
     )
 
@@ -226,6 +226,102 @@ def seed_products():
         regular_price=45.00
     )
     db.session.add(product86)
+
+    product87 = Product(
+        name='White Socks',
+        category_id=4,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622398191/Screen_Shot_2021-05-20_at_5.03.46_PM_ro6ybs.png',
+        description="A pair of socks to wear",
+        regular_price=10.00
+    )
+    db.session.add(product87)
+
+    product88 = Product(
+        name='Motorcycle Sweatshirt',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622398566/Screen_Shot_2021-05-20_at_5.05.26_PM_hcfmwu.png',
+        description='Motorcycle Sweatshirt to ride in or wear on the track',
+        regular_price=200.00
+    )
+    db.session.add(product88)
+
+    product89 = Product(
+        name='Pirates Bomber',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622398701/Screen_Shot_2021-05-20_at_5.07.19_PM_dok0c6.png',
+        description='Pirates Bomber to wear on the go',
+        regular_price=200.00
+    )
+    db.session.add(product89)
+
+    product90 = Product(
+        name='A$AP Rocky Jean Jacket',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622399726/Screen_Shot_2021-05-20_at_10.56.52_PM_bide8q.png',
+        description="A$AP Rocky's Jean Jacket",
+        regular_price=200.00
+    )
+    db.session.add(product90)
+
+    product91 = Product(
+        name='The Air Crew Tee',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400317/Screen_Shot_2021-05-30_at_1.43.27_PM_lnf8xu.png',
+        description='Air crew tee to wear to the beach',
+        regular_price=25.00
+    )
+    db.session.add(product91)
+
+    product92 = Product(
+        name='Blue Translucent Top',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400317/Screen_Shot_2021-05-30_at_1.43.01_PM_zomekh.png',
+        description='Blue top to wear up and trendy, or down and casual',
+        regular_price=130.00
+    )
+    db.session.add(product92)
+
+    product93 = Product(
+        name='I Feel Ghosts',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400316/Screen_Shot_2021-05-30_at_1.43.15_PM_mssrjm.png',
+        description='Kids see ghosts sometimes',
+        regular_price=240.00
+    )
+    db.session.add(product93)
+
+    product94 = Product(
+        name='James Dean Leather',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400317/Screen_Shot_2021-05-30_at_1.43.42_PM_jdquoy.png',
+        description='James Dean classic leather',
+        regular_price=180.00
+    )
+    db.session.add(product94)
+
+    product95 = Product(
+        name='Ralph Lauren Polo',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400316/Screen_Shot_2021-05-30_at_1.43.58_PM_wkz4zo.png',
+        description='Blue ralph lauren polo',
+        regular_price=30.00
+    )
+    db.session.add(product95)
+
+    product96 = Product(
+        name='LA Tee',
+        category_id=1,
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400316/Screen_Shot_2021-05-30_at_1.44.11_PM_lxyyxa.png',
+        description="An la tee that's classic",
+        regular_price=25.00
+    )
+    db.session.add(product96)
+
+    
+
+    # product97 = Product(
+    #     name=''
+    # )
 
     db.session.commit()
 
