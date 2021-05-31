@@ -23,7 +23,7 @@ _thrifTEE_ is an e-commerce application that rejects throwaway fashion culture a
   <a href="contributors">Contributors</a>
 </p>
 
-![Gif of final homepage goes here]()
+![Home Page View](/thriftee-homepage.gif)
 
 ## Technologies
 #### Frontend
