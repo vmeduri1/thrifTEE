@@ -2,7 +2,7 @@
 
 # Welcome to thrifTEE!
 ### Live Link: [thrifTEE](https://thriftee.herokuapp.com/)
-_thrifTEE_ is an e-commerce application that rejects throwaway fashion culture and gives beautiful apparel a second lease of life! Inspired by [ThredUp](https://www.thredup.com/), [Everlane](https://www.everlane.com/), and [Sephora](https://www.sephora.com/), users can browser, sort, and buy some of their favorite trending finds without breaking the bank. 
+_thrifTEE_ is an e-commerce application that rejects throwaway fashion culture and gives beautiful apparel a second lease of life! Inspired by [ThredUp](https://www.thredup.com/), [Everlane](https://www.everlane.com/), and [Sephora](https://www.sephora.com/), users can browser, sort, and buy some of their favorite trending finds without breaking the bank.
 <p align="center">
   <a href="https://github.com/vmeduri1/thrifTEE/wiki"><strong>Explore the Wiki »</strong></a> 
   or 
@@ -16,6 +16,8 @@ _thrifTEE_ is an e-commerce application that rejects throwaway fashion culture a
   · 
   <a href="#key-features">Key Features</a> 
   · 
+  <a href="#wiki-pages">Wiki Pages</a> 
+  ·
   <a href="#future-implementations">Future Implementations</a> 
   · 
   <a href="contributors">Contributors</a>
@@ -45,6 +47,28 @@ _thrifTEE_ is an e-commerce application that rejects throwaway fashion culture a
 - Designed around a relational database schema, which allows users to browse, search, and buy items, as well as update their cart with dynamic data and rendering.
 - Makes use of AJAX / API Routes to render elements such as updating and removing from the cart asynchronously.
 - Includes csrf attack protection and performs front-end and back-end validation on forms.  
+
+## Wiki Pages
+
+#### Database
+![thrifTEE Database Schema]()
+
+#### Frontend Routes
+- `/`
+- `/about`
+- `/tops`
+- `/bottoms`
+- `/shoes`
+- `/accessories`
+- `/checkout`
+- `/thank-you`
+
+#### Backend Routes
+- `/api/auth`
+- `/api/users`
+- `/api/products`
+- `/api/products/categories`
+- `/api/users/:id/orders`
 
 ## Future Implementations
 - Users can upload and sell their own items.
