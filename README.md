@@ -51,7 +51,7 @@ _thrifTEE_ is an e-commerce application that rejects throwaway fashion culture a
 ## Wiki Pages
 
 #### Database
-![thrifTEE Database Schema]()
+![thrifTEE Database Schema](https://media.discordapp.net/attachments/844746106016890891/845352696034492486/Screen_Shot_2021-05-21_at_12.28.12_PM.png)
 
 #### Frontend Routes
 - `/`
