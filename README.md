@@ -10,7 +10,6 @@ _thrifTEE_ is an e-commerce application that rejects throwaway fashion culture a
 </p>
 
 </br>
-</br>
 <p align="center">
   <a href="#technologies">Technologies</a> 
   · 
