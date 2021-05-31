@@ -3,7 +3,6 @@
 # Welcome to thrifTEE!
 ### Live Link: [thrifTEE](https://thriftee.herokuapp.com/)
 _thrifTEE_ is an e-commerce application that rejects throwaway fashion culture and gives beautiful apparel a second lease of life! Inspired by [ThredUp](https://www.thredup.com/), [Everlane](https://www.everlane.com/), and [Sephora](https://www.sephora.com/), users can browser, sort, and buy some of their favorite trending finds without breaking the bank. 
-</br>
 <p align="center">
   <a href="https://github.com/vmeduri1/thrifTEE/wiki"><strong>Explore the Wiki »</strong></a> 
   or 
