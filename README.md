@@ -1,9 +1,11 @@
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white) ![Nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white) ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) ![Redux](https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white)
+
 # Welcome to thrifTEE!
 ### Live Link: [thrifTEE](https://thriftee.herokuapp.com/)
 _thrifTEE_ is an e-commerce application that rejects throwaway fashion culture and gives beautiful apparel a second lease of life! Inspired by [ThredUp](https://www.thredup.com/), [Everlane](https://www.everlane.com/), and [Sephora](https://www.sephora.com/), users can browser, sort, and buy some of their favorite trending finds without breaking the bank. 
 </br>
-_[Explore the Wiki »](https://github.com/vmeduri1/thrifTEE/wiki)_ or [Explore the Mock Up »](https://xd.adobe.com/view/227c8a0f-a385-4390-9959-75f885379123-772f/)
+</br>
+**[Explore the Wiki »](https://github.com/vmeduri1/thrifTEE/wiki)** or **[Explore the Mock Up »](https://xd.adobe.com/view/227c8a0f-a385-4390-9959-75f885379123-772f/)**
 
 </br>
 </br>
