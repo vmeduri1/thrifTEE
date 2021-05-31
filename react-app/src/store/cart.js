@@ -57,7 +57,7 @@ export const loadCart = products => ({
 
             }; // else add the new item to cart
         case REMOVE_PRODUCT:
-          alert('removed product')
+          // alert('removed product')
           return {
             products: state.products.filter(product => product.id !== action.payload.id)
           }

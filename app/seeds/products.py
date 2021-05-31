@@ -257,7 +257,7 @@ def seed_products():
     product90 = Product(
         name='A$AP Rocky Jean Jacket',
         category_id=1,
-        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622399726/Screen_Shot_2021-05-20_at_10.56.52_PM_bide8q.png',
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622499613/Screen_Shot_2021-05-31_at_5.19.53_PM_r1fs54.png',
         description="A$AP Rocky's Jean Jacket",
         regular_price=200.00
     )
@@ -266,7 +266,7 @@ def seed_products():
     product91 = Product(
         name='The Air Crew Tee',
         category_id=1,
-        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400317/Screen_Shot_2021-05-30_at_1.43.27_PM_lnf8xu.png',
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622499614/Screen_Shot_2021-05-31_at_5.19.37_PM_kfmbjr.png',
         description='Air crew tee to wear to the beach',
         regular_price=25.00
     )
@@ -275,7 +275,7 @@ def seed_products():
     product92 = Product(
         name='Blue Translucent Top',
         category_id=1,
-        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400317/Screen_Shot_2021-05-30_at_1.43.01_PM_zomekh.png',
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622499615/Screen_Shot_2021-05-31_at_5.19.09_PM_m2r2e1.png',
         description='Blue top to wear up and trendy, or down and casual',
         regular_price=130.00
     )
@@ -293,7 +293,7 @@ def seed_products():
     product94 = Product(
         name='James Dean Leather',
         category_id=1,
-        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622400317/Screen_Shot_2021-05-30_at_1.43.42_PM_jdquoy.png',
+        image_url='https://res.cloudinary.com/dn2tap8j5/image/upload/v1622499613/Screen_Shot_2021-05-31_at_5.19.26_PM_oxkynn.png',
         description='James Dean classic leather',
         regular_price=180.00
     )

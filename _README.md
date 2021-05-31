@@ -94,6 +94,7 @@ This is the backend for the Flask React project.
    heroku run -a {NAME_OF_HEROKU_APP} flask db upgrade
    heroku run -a thriftee flask db upgrade
    heroku run -a {NAME_OF_HEROKU_APP} flask seed all
+   heroku run -a thriftee flask seed undo
    heroku run -a thriftee flask seed all
 
    ```
