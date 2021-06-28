@@ -63,6 +63,7 @@ export default function HomePage() {
 
                 <CartDrawer cart={cart} />
 
+
             </div>
 
                 {/* <Wrap spacing="20px">

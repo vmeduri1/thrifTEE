@@ -17,6 +17,7 @@ import AboutPage from '../src/components/AboutPage'
 import SearchResults from '../src/components/SearchResultPage/SearchResults'
 import Footer from '../src/components/Footer'
 import { Box } from '@chakra-ui/react'
+import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -57,6 +58,9 @@ function App() {
 
         <Route path="/search/:query" exact={true} >
           <SearchResults />
+        </Route>
+        <Route path="/confirm" exact>
+          <OrderConfirmation />
         </Route>
 
         {/* <Route path="/login" exact={true}>
