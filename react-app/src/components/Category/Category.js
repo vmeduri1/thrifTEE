@@ -6,13 +6,17 @@ import { getAllProductsByCategory } from '../../store/category'
 import CartDrawer from '../Drawer/CartDrawer'
 import Item from '../Item'
 import {CategoryHero} from './CategoryHero'
+import {useDisclosure} from '@chakra-ui/react';
 
 
 export default function Category() {
     const dispatch = useDispatch();
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
-    const cart = useSelector((state) => state.cart)
+    // const { isOpen, onOpen, onClose } = useDisclosure()
+    // const cart = useSelector((state) => state.cart)
+
     const { id } = useParams()
+
 
 
 
@@ -20,15 +24,18 @@ export default function Category() {
         dispatch(getAllProductsByCategory(id));
     }, [dispatch, id])
 
+    // const handleOpen = () => {
+    //     onOpen()
+    //   };
 
-//subscribe to cart on line 14, pass as prop to CartDrawer on 30 where state of cart gets monitored for change
+
 //subscribe to allCatProducts and pass attributes of each item on line 41 as props to Item to render each item with product name, price etc to page
 
 
     return (
         <>
         <CategoryHero />
-            <CartDrawer cart={cart} />
+            {/* <CartDrawer isOpen={isOpen} onClose={onClose} cart={cart} /> */}
 
 
                 <Wrap spacing="20px">
@@ -45,11 +52,6 @@ export default function Category() {
 
                     ))}
                 </Wrap>
-
-
-
-
-
 
         </>
     )

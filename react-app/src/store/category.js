@@ -17,6 +17,9 @@ const SET_PRODUCT_CAT = 'SET_PRODUCT_CAT';
   };
 
   export const getAllProductsByCategory =(id) => async (dispatch) => {
+
+    if (id) {
+
     const response = await fetch(`/api/categories/${id}`)
 
     if(!response.ok) {
@@ -28,6 +31,7 @@ const SET_PRODUCT_CAT = 'SET_PRODUCT_CAT';
 
 
     dispatch(setProductsCAT(products.products))
+  }
 
     // return CatProducts;
 }

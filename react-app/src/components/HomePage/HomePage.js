@@ -18,9 +18,9 @@ export default function HomePage() {
     const cart = useSelector((state) => state.cart)
     // const [products, setProducts] = useState([])
 
-    useEffect(() => {
-        dispatch(getAllProducts());
-    }, [dispatch])
+    // useEffect(() => {
+    //     dispatch(getAllProducts());
+    // }, [dispatch])
 
 
 
