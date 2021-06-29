@@ -1,6 +1,6 @@
 
 .img-contain {
-    max-width: 100px;
+    max-width: 500px;
 }
 
 .img-contain img{
@@ -9,4 +9,10 @@
     object-fit: cover;
     overflow: hidden;
     border-radius: 75%;
+}
+
+.product-details-grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
