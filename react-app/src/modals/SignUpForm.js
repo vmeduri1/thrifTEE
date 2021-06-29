@@ -34,13 +34,10 @@ export function SignUpForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
-      setErrors([]);
+
       const dispatched = await dispatch(sessionActions.signUp({ fname, lname, email, password }))
-      // .catch(async (res) => {
-      //   const data = await res.json();
-      //   if (data && data.errors) setErrors(data.errors);
-      if (dispatched.errors) setErrors(dispatch.errors)
-      // else useOutsideClick()
+      if (dispatched.errors) setErrors(dispatched.errors)
+
     } else setErrors(['Confirm Password field must be the same as the Password field']);
   }
 
@@ -50,14 +47,17 @@ export function SignUpForm() {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        {errors.map((error, idx) => <span key={idx}>{error}</span>)}
+        <ul style={{ marginTop: '.25em', marginBottom: '1.25em' }}>
+          {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
+        </ul>
+
       </div>
       <Stack spacing={3}>
         <FormControl isRequired>
           <FormLabel>First name</FormLabel>
           <InputGroup>
             <Input
-              // ref={initialRef}
+
               placeholder="First name"
               type='text'
               value={fname}
@@ -67,7 +67,7 @@ export function SignUpForm() {
           <FormLabel>Last name</FormLabel>
           <InputGroup>
             <Input
-              // ref={initialRef}
+
               placeholder="Last name"
               type='text'
               value={lname}
@@ -77,7 +77,7 @@ export function SignUpForm() {
           <FormLabel>Email</FormLabel>
           <InputGroup>
             <Input
-              // ref={initialRef}
+
               placeholder="Email"
               type='email'
               value={email}
@@ -87,7 +87,7 @@ export function SignUpForm() {
           <FormLabel>Password</FormLabel>
           <InputGroup>
             <Input
-              // ref={initialRef}
+
               placeholder="Password"
               type='password'
               value={password}
@@ -97,7 +97,7 @@ export function SignUpForm() {
           <FormLabel>Confirm Password</FormLabel>
           <InputGroup>
             <Input
-              // ref={initialRef}
+
               placeholder="Confirm Password"
               type='password'
               value={confirmPassword}
