@@ -5,26 +5,20 @@ import { Heading } from "@chakra-ui/react"
 import { Text } from "@chakra-ui/react"
 import { Box } from "@chakra-ui/react"
 import { DeleteIcon } from '@chakra-ui/icons'
-import './orderConfirmation.css'
+import './OrderConfirmation.css'
 
 
 export default function ItemDetail({ product }) {
     return (
         <>
-            <Grid>
-                <Grid>
-                    <Text>{product.name}</Text>
-                    <Text>{product.regular_price}</Text>
-                </Grid>
-
-                <Grid>
-                    <Box className="img-contain" colSpan={3}>
+            <Grid className="product-details-grid">
+                <Grid templateColumns="repeat(4, 1fr)" gap={4}>
+                    <GridItem colSpan={1}>{product.name}</GridItem>
+                    <GridItem className="img-contain" colSpan={1}>
                         <img src={product.image_url}></img>
-                    </Box>
-                </Grid>
-
-                <Grid>
-                    <DeleteIcon>Remove</DeleteIcon>
+                    </GridItem>
+                    <GridItem>${product.regular_price}</GridItem>
+                    <GridItem><DeleteIcon>Remove</DeleteIcon></GridItem>
                 </Grid>
             </Grid>
         </>
