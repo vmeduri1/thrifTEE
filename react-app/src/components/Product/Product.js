@@ -1,5 +1,5 @@
 // comment
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
 import * as productActions from '../../store/products';
@@ -7,6 +7,9 @@ import { getSingleProduct } from '../../store/products';
 import { addProduct } from '../../store/cart';
 import CartDrawer from '../Drawer/CartDrawer'
 import Category from '../Category/Category'
+
+
+
 
 import {
   Flex,
@@ -34,6 +37,9 @@ export default function SingleProduct() {
   const product = useSelector(state => state.products.product)
   const cart = useSelector((state) => state.cart)
   const { id } = useParams()
+  // const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
 
   useEffect(() => {
@@ -41,12 +47,23 @@ export default function SingleProduct() {
   }, [dispatch])
 
 
+const handleAdd = async(product) => {
+  dispatch(addProduct(product))
+}
+
+const handleOpen = () => {
+  onOpen()
+};
+
+  // const handleClose = () => {
+  //   onClose();
+  // };
 
   return (
 
     <>
       <Container h='79vh' w="1000px" centerContent mt="75px">
-        <CartDrawer cart={cart} />
+
         <Box
           bg={useColorModeValue('white', 'gray.800')}
 
@@ -88,12 +105,10 @@ export default function SingleProduct() {
                 fontSize={'1.2em'}>
                 <chakra.a href={'#'} display={'flex'}>
                   <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}
-                    onClick={
-                      async () => {
-                        const dispatched = await dispatch(addProduct(product))
-                      }}
-
-
+                    onClick={() => {
+                    handleAdd(product)
+                   handleOpen()
+                    }}
                   />
                 </chakra.a>
               </Tooltip>
@@ -116,6 +131,7 @@ export default function SingleProduct() {
             </Box>
           </Box>
         </Box>
+        <CartDrawer isOpen={isOpen} onClose={onClose} cart={cart}/>
       </Container>
     </>
 

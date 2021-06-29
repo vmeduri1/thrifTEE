@@ -29,18 +29,11 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 
 
 
-export default function CartDrawer({ cart }) {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+export default function CartDrawer(props) {
+  // const { isOpen, onOpen, onClose } = useDisclosure()
   const [placement, setPlacement] = React.useState("right")
   const dispatch = useDispatch()
   let history = useHistory()
-
-
-
-  useEffect(() => {
-    onOpen()
-  }, [cart])
-  //with access to cart from prop via line 30 on Category.js monitors for chnages to trigger open of side cart. Bug will open automaticall with every page refresh as well.
 
 
   function handleCheckout() {
@@ -50,8 +43,11 @@ export default function CartDrawer({ cart }) {
 
   return (
     <>
-      {/* <button onClick={onOpen}>Test</button> */}
-      <Drawer placement={placement} onClose={onClose} isOpen={isOpen}>
+
+      <Drawer
+
+      {...props}
+       >
         <DrawerOverlay />
         <DrawerContent>
 
@@ -63,8 +59,8 @@ export default function CartDrawer({ cart }) {
 
 
             <Box mb={20} >
-              {cart.products.map((product, idx) => (
-                <div key={idx}>
+              {props.cart.products.map((product, idx) => (
+                <div key={product.id}>
 
                   <Box maxW="sm" borderWidth="2px" borderRadius="lg" overflow="hidden" mb={10}
                   >
@@ -92,11 +88,8 @@ export default function CartDrawer({ cart }) {
 
                   </Box>
 
-
-
-
                 </div>
-              ))}
+               ))}
             </Box>
 
             {/* <div>Total Cost: ${getTotalSum()}</div> */}

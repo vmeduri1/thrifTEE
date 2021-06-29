@@ -1,4 +1,5 @@
 import React from 'react';
+import {useSelector} from 'react-redux'
 import {
   Flex,
   Circle,
@@ -9,12 +10,14 @@ import {
   Icon,
   chakra,
   Tooltip,
-  Button
+  Button,
+  useDisclosure
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
 import { addProduct } from '../store/cart'
 import { useDispatch } from 'react-redux'
 import {useHistory} from 'react-router-dom'
+import CartDrawer from './Drawer/CartDrawer';
 
 
 
@@ -23,14 +26,25 @@ import {useHistory} from 'react-router-dom'
 function ProductAddToCart({ price, name, image, product }) {
   const dispatch = useDispatch()
   const history = useHistory()
+  const cart = useSelector((state) => state.cart)
+  const { isOpen, onOpen, onClose } = useDisclosure()
 
   const handleProductRedirect =() => {
     history.push(`/products/${product.id}`)
 }
 
+  const handleAdd = async(product) => {
+  dispatch(addProduct(product))
+  }
+
+  const handleOpen = () => {
+    onOpen()
+  };
+
   return (
 
     <div>
+         <CartDrawer isOpen={isOpen} onClose={onClose} cart={cart}/>
     <Flex p={50} w="md" alignItems="center" justifyContent="center">
       <Box
         bg={useColorModeValue('white', 'gray.800')}
@@ -79,16 +93,14 @@ function ProductAddToCart({ price, name, image, product }) {
               fontSize={'1.2em'}>
               <chakra.a href={'#'} display={'flex'}>
                 <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}
-                  onClick={
-                    async () => {
-                     const dispatched = await dispatch(addProduct(product))
-                    //  isOpen()
-                  }}
-
-
+                   onClick={() => {
+                    handleAdd(product)
+                    handleOpen()
+                    }}
                 />
               </chakra.a>
             </Tooltip>
+
           </Flex>
 
           <Flex justifyContent="space-between" alignContent="center">

@@ -62,6 +62,9 @@ function App() {
         <Route path="/confirm" exact>
           <OrderConfirmation />
         </Route>
+        <Route path="/categories/1" exact>
+          Tops
+        </Route>
 
         {/* <Route path="/login" exact={true}>
             <LoginForm />

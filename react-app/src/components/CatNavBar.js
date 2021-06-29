@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom';
 import { ThemeProvider, Box, Flex, Link, Image, Text, Grid, Center } from "@chakra-ui/react";
 import { NavLink } from 'react-router-dom';
@@ -12,14 +12,16 @@ export default function CatNavBar() {
     const dispatch = useDispatch();
     const { id } = useParams()
     const allCatProducts = useSelector((state) => Object.values(state.category.categories));
-    const history = useHistory();
-    const handleTops = () => {
-        history.push('/categories/1');
-    }
+    const [products, setProducts]=useState(null)
+    // const history = useHistory();
+    // const handleTops = () => {
+    //     history.push('/categories/1');
+    // }
 
     useEffect(() => {
         dispatch(getAllProductsByCategory(id));
     }, [dispatch, id])
+
 
     return (
         <ThemeProvider>
@@ -39,7 +41,7 @@ export default function CatNavBar() {
                     <div className="nav-links">
                         <div className="tops">
                             {/* <button onClick={handleTops}>Tops</button> */}
-                            <Link fontSize="22px" fontWeight="500" className="navs" href="/categories/1" style={{textDecoration: 'none'}} color="black">Tops</Link>
+                            <Link href='/categories/1'  fontSize="22px" fontWeight="500" className="navs" style={{textDecoration: 'none'}} color="black">Tops</Link>
                         </div>
                         <div className="bottoms">
                             <Link href="/categories/2" fontSize="22px" fontWeight="500" className="navs" style={{textDecoration: 'none'}} color="black" >Bottoms</Link>
