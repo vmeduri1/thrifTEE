@@ -40,13 +40,13 @@ export const login = (email, password) => async (dispatch) => {
     })
   });
   const data = await response.json();
-  if (data.errors) {
-    return data;
-  }
-  console.log(data)
 
-  dispatch(setUser(data))
-  return response;
+  if (!data.errors) {
+    dispatch(setUser(data));
+  }
+
+
+  return data;
 }
 
 export const logout = () => async (dispatch) => {
@@ -75,12 +75,13 @@ export const signUp = ({ fname, lname, email, password }) => async (dispatch) =>
     }),
   });
   const data = await response.json();
-  if (data.errors) {
-    return data;
+
+  if (!data.errors) {
+    dispatch(setUser(data));
   }
 
-  dispatch(setUser(data))
-  return true;
+
+  return data;
 }
 
 export default function reducer(state = initialState, action) {
