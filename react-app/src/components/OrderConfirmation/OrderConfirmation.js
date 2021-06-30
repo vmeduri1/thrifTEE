@@ -7,7 +7,7 @@ import * as cartReducer from '../../store/cart'
 import { Text } from "@chakra-ui/react"
 import { Box } from "@chakra-ui/react"
 import { Button, ButtonGroup, Typography } from "@chakra-ui/react"
-
+import './orderConfirmation.css'
 
 
 export default function OrderConfirmation(){
@@ -25,13 +25,13 @@ export default function OrderConfirmation(){
 
     return (
 
-        <Container maxWidth="600px">
+        <Container className="container" maxWidth="600px">
              {cart.map(product => (
         <Grid
         key={product.id}
         >
 
-            <ItemDetail product={product} cart={cart} />
+            <ItemDetail  mb={"10px"} product={product} cart={cart} />
              </Grid>
     ))}
 
