@@ -86,15 +86,14 @@ const NavBar = () => {
         <Flex w="100%" h="20" bg="FFFFFF" />
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" />
+
         <Flex w="100%" h="20" textAlign="center" paddingTop={5} >
           <Button onClick={() => setFlag(!flag)} _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} colorScheme="white" variant="ghost">
             <a href='/confirm'><Icon as={FiShoppingCart} h={7} w={7} justifyItems="center" alignItems="center" /></a>
-            {/* <Icon as={FiShoppingCart} h={7} w={7} justifyItems="center" alignItems="center" /> */}
           </Button>
         </Flex>
 
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginRight={3} >
-          {/* <VerticallyCenter /> */}
           {BtnVisibility}
         </Flex>
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginLeft={3}>
