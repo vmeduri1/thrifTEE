@@ -23,13 +23,13 @@ import CartDrawer from './Drawer/CartDrawer';
 
 
 
-function ProductAddToCart({ price, name, image, product }) {
+function ProductAddToCart({ price, name, image, product}) {
   const dispatch = useDispatch()
   const history = useHistory()
   const cart = useSelector((state) => state.cart)
   const { isOpen, onOpen, onClose } = useDisclosure()
 
-  const handleProductRedirect = () => {
+  const handleProductRedirect = (product) => {
     history.push(`/products/${product.id}`)
   }
 
@@ -110,7 +110,9 @@ function ProductAddToCart({ price, name, image, product }) {
                 </Box>
                 <Box fontSize="lg">
                   <Tooltip hasArrow label="Product Details" bg="red.600">
-                    <Button onClick={handleProductRedirect}>Quick Look</Button>
+                    <Button onClick={()=> {
+                      handleProductRedirect(product)
+                    }}>Quick Look</Button>
                   </Tooltip>
                 </Box>
               </Box>

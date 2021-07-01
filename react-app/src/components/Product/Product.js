@@ -55,9 +55,6 @@ export default function SingleProduct() {
     onOpen()
   };
 
-  // const handleClose = () => {
-  //   onClose();
-  // };
 
   return (
 
