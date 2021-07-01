@@ -40,7 +40,7 @@ export default function Checkout({ product }) {
 
                         <div id="form-grid-wrapper">
 
-                        <div className="container-checkout">
+                        {/* <div className="container-checkout">
                             {cart.map(item => (
                                 <>
                                     <div style={{ width: "75px" }}><img src={item.image_url}></img></div>
@@ -50,7 +50,7 @@ export default function Checkout({ product }) {
                                 </>
                             ))}
 
-                        </div>
+                        </div> */}
 
                         <div className="form-container">  <PaymentForm /></div>
 
