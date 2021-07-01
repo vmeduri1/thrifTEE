@@ -1,0 +1,31 @@
+.container-checkout {
+    max-width: 700px;
+    display: grid;
+    /* grid-auto-rows: 1fr;  */
+    grid-template-columns: 1fr 1fr 1fr .5fr;
+    grid-auto-rows: 1fr;
+    gap: 7px 10px;
+    margin: 0 auto;
+  }
+
+  .header-text{
+    text-align: center;
+    margin-bottom: 1em;
+    background-color: #f56565;
+    font-size: 2em;
+    margin-top: 2em;
+  }
+
+  .cart-label{
+    text-align: center;
+    margin-bottom: 2.5em;
+    font-weight: 700;
+    font-size:1.5em;
+  }
+
+
+.total-cart {
+    margin-top: 2em;
+    text-align: center;
+    font-size: 2em;
+  }
