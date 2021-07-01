@@ -63,27 +63,16 @@ function App() {
         <Route path="/confirm" exact>
           <OrderConfirmation />
         </Route>
-        <Route path="/checkout" exact><Checkout />
+        <Route path="/checkout" exact>
+          <Checkout />
         </Route>
-        {/* <Route path="/categories/1" exact>
-          Tops
-        </Route> */}
 
-        {/* <Route path="/login" exact={true}>
-            <LoginForm />
-          </Route>
-          <Route path="/sign-up" exact={true}>
-            <SignUpForm />
-          </Route> */}
-        {/* <Route path="/users" exact={true} >
-            <UsersList />
-          </Route> */}
-        {/* <Route path="/users/:userId" exact={true} >
-            <User />
-          </Route> */}
+      
+
+       
         <Route path="/thankyou" exact={true} >
           <ThankYou />
-          {/* <Footer /> */}
+        
         </Route>
 
       </Switch>
