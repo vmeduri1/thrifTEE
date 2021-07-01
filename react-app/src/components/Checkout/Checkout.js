@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import "./checkout.css"
 import { DeleteIcon } from '@chakra-ui/icons'
-import { clearProduct, removeProduct} from '../../store/cart'
+import { clearProduct, removeProduct } from '../../store/cart'
 import { useDispatch } from 'react-redux'
 
 
@@ -20,7 +20,7 @@ export default function Checkout({ product }) {
     const cart = Object.values(useSelector(state => state.cart.products))
     const dispatch = useDispatch()
 
-    const handleTotal=(cart)=> {
+    const handleTotal = (cart) => {
         let total = 0;
         cart.map(item => total += item.regular_price)
         return total
@@ -31,8 +31,8 @@ export default function Checkout({ product }) {
     return (
 
         <>
-        <div className="header-text">
-            <p>Checkout</p>
+            <div className="header-text">
+                <p>Checkout</p>
             </div>
 
             <div className="cart">
@@ -48,12 +48,12 @@ export default function Checkout({ product }) {
                         </div> */}
 
                         <div className="container-checkout">
-                            {cart.map(item=> (
+                            {cart.map(item => (
                                 <>
-                                <div style={{width: "75px"}}><img src={item.image_url}></img></div>
-                                <div>{item.name}</div>
-                                <div>{`$${item.regular_price}`}</div>
-                                <div onClick={() => dispatch(removeProduct(item))}><DeleteIcon /></div>
+                                    <div style={{ width: "75px" }}><img src={item.image_url}></img></div>
+                                    <div>{item.name}</div>
+                                    <div>{`$${item.regular_price}`}</div>
+                                    <div onClick={() => dispatch(removeProduct(item))}><DeleteIcon cursor='pointer' /></div>
                                 </>
                             ))}
 

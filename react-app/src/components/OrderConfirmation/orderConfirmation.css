@@ -2,7 +2,7 @@
 /* .img-contain {
     max-width: 500px;
 } */
-
+/*
 .container {
     display: grid;
     grid-template-columns: 1fr 1.5fr 0.5fr 0.5fr;
@@ -12,16 +12,17 @@
       ". . . ."
       ". . . ."
       ". . . .";
-  }
-/*
-.cart-container {
+  } */
+
+/* .cart-container {
     background-color: red;
 }
 
 .product-details-grid-name{
     background-color: blue;
-
+    margin-bottom: 10px;
 }
+
 .product-details-grid {
     background-color:green;
 

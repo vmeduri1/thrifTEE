@@ -63,8 +63,10 @@ function App() {
         <Route path="/confirm" exact>
           <OrderConfirmation />
         </Route>
-        <Route path="/checkout" exact><Checkout />
+        <Route path="/checkout" exact>
+          <Checkout />
         </Route>
+
         <Route path="/categories/1" exact>
           Tops
         </Route>
