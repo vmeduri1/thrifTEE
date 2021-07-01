@@ -42,7 +42,6 @@ export default function ItemDetail({ product }) {
                 </GridItem>
                 <GridItem
                     alignContent='center'
-                // fontWeight='500'
                 >
                     {product.name}
                 </GridItem>
@@ -52,7 +51,9 @@ export default function ItemDetail({ product }) {
                     ${product.regular_price}
                 </GridItem>
                 <GridItem>
-                    <DeleteIcon cursor='pointer'>
+                    <DeleteIcon
+                        cursor='pointer'
+                    >
                         Remove
                     </DeleteIcon>
                 </GridItem>
