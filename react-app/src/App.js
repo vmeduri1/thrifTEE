@@ -45,19 +45,19 @@ function App() {
           <HomePage />
         </Route>
 
-        <Route path="/categories/:id" exact={true} >
+        <Route path="/categories/:id" exact>
           <Category />
         </Route>
 
-        <Route path="/products/:id" exact={true} >
+        <Route path="/products/:id" exact >
           <SingleProduct />
         </Route>
 
-        <Route path="/aboutDevs" exact={true} >
+        <Route path="/aboutDevs" exact >
           <AboutPage />
         </Route>
 
-        <Route path="/search/:query" exact={true} >
+        <Route path="/search/:query" exact >
           <SearchResults />
         </Route>
         <Route path="/confirm" exact>
@@ -65,9 +65,9 @@ function App() {
         </Route>
         <Route path="/checkout" exact><Checkout />
         </Route>
-        <Route path="/categories/1" exact>
+        {/* <Route path="/categories/1" exact>
           Tops
-        </Route>
+        </Route> */}
 
         {/* <Route path="/login" exact={true}>
             <LoginForm />
