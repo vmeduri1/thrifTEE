@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import Item from '../Item'
-import { searchFunc } from '../../store/search'
+
 import {
   Flex,
   Text,
 } from '@chakra-ui/react';
 
 
-const SearchResultsFunc = () => {
+const SearchResultsFunc = (search) => {
   const product_Search = useSelector(state => state.search?.searchResults)
   // console.log(state.search, '-----search term')
+  // console.log(searchActions.searchFunc.response, '---searchActions---')
+  // console.log(searchFunc?.searchResults, '---searchfunc')
 
 
   const productResults = Object.values(product_Search).map(product => {
@@ -24,6 +26,7 @@ const SearchResultsFunc = () => {
         fontSize='20px'
         fontWeight='600'
         mt='50px'
+        ml='25px'
       >
         Your search found the following items:
       </Text>
