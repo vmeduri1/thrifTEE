@@ -36,27 +36,22 @@ export default function OrderConfirmation() {
             ))}
 
             <Box>
-                <Flex>
+                <Flex
+                    w='800px'
+                    justifyContent='center'
+                    alignItems='center'
+                >
                     <Text
-                        // ml='575px;'
-                        // mb='10px'
-                        w='800px'
-                        ml='482px'
+                        ml='305px'
                         mt='15px'
                         mb='15px'
-                        bg='red'
                     >
                         {/* Order Total: ${handleTotal(cart)} */}
                         Order Total:
                     </Text>
                     <Text
-                        // ml='575px;'
-                        // mb='10px'
-                        // w='800px'
-                        // ml='482px'
-                        // mt='15px'
-                        // mb='15px'
-                        bg='blue'
+                        ml='5px'
+                        fontWeight='700'
                     >
                         ${handleTotal(cart)}
                     </Text>
@@ -67,7 +62,7 @@ export default function OrderConfirmation() {
                     ml='525px;'
                     mb='25px'
                 >
-                    Checkout
+                    <a href='/checkout'>Checkout</a>
                 </Button>
             </Box>
 

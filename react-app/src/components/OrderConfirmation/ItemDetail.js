@@ -42,11 +42,20 @@ export default function ItemDetail({ product }) {
                 </GridItem>
                 <GridItem
                     alignContent='center'
+                // fontWeight='500'
                 >
                     {product.name}
                 </GridItem>
-                <GridItem>${product.regular_price}</GridItem>
-                <GridItem><DeleteIcon>Remove</DeleteIcon></GridItem>
+                <GridItem
+                    fontWeight='500'
+                >
+                    ${product.regular_price}
+                </GridItem>
+                <GridItem>
+                    <DeleteIcon cursor='pointer'>
+                        Remove
+                    </DeleteIcon>
+                </GridItem>
             </Grid>
         </>
 

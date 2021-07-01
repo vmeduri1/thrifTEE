@@ -14,17 +14,17 @@
       ". . . .";
   } */
 
-.cart-container {
+/* .cart-container {
     background-color: red;
 }
 
 .product-details-grid-name{
-    /* background-color: blue; */
+    background-color: blue;
     margin-bottom: 10px;
 }
 
 .product-details-grid {
-    /* background-color:green; */
+    background-color:green;
 
 }
 
@@ -40,4 +40,4 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-}
+} */
