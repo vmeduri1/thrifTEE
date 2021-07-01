@@ -22,12 +22,12 @@ import './orderConfirmation.css'
 export default function ItemDetail({ product }) {
     return (
         <>
-            {/* <Grid bg='blue' className="product-details-grid"> */}
             <Grid
                 templateColumns="repeat(4, 1fr)"
                 gap={4}
                 borderBottom='1px solid rgb(0, 0, 0, 0.063)'
                 mt='16px'
+                w='800px'
             >
                 <GridItem
                     mb='16px'
@@ -39,12 +39,12 @@ export default function ItemDetail({ product }) {
                             w='10em'
                         />
                     </Link>
-
                 </GridItem>
-                <GridItem>
+                <GridItem
+                    alignContent='center'
+                >
                     {product.name}
                 </GridItem>
-
                 <GridItem>${product.regular_price}</GridItem>
                 <GridItem><DeleteIcon>Remove</DeleteIcon></GridItem>
             </Grid>
