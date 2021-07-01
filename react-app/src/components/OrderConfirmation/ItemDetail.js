@@ -24,7 +24,7 @@ export default function ItemDetail({ product }) {
 
             <span>{product.name}</span>
             <div><img src={product.image_url}alt=""/></div>
-            <span>${product.regular_price}</span>
+            <span>{product.regular_price}</span>
             <div><DeleteIcon />Remove</div>
         </>
 

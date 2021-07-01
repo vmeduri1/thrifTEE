@@ -18,6 +18,7 @@ import SearchResults from '../src/components/SearchResultPage/SearchResults'
 import Footer from '../src/components/Footer'
 import { Box } from '@chakra-ui/react'
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
+import Checkout from '../src/components/Checkout/Checkout'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -61,6 +62,8 @@ function App() {
         </Route>
         <Route path="/confirm" exact>
           <OrderConfirmation />
+        </Route>
+        <Route path="/checkout" exact><Checkout />
         </Route>
         <Route path="/categories/1" exact>
           Tops
