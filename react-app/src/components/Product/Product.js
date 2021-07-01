@@ -34,7 +34,7 @@ import { FiShoppingCart } from 'react-icons/fi';
 
 export default function SingleProduct() {
   const dispatch = useDispatch();
-  const product = useSelector(state => state.products.product)
+  const product = useSelector(state => state.products?.product)
   const cart = useSelector((state) => state.cart)
   const { id } = useParams()
   // const [open, setOpen] = useState(false);
@@ -47,13 +47,13 @@ export default function SingleProduct() {
   }, [dispatch])
 
 
-const handleAdd = async(product) => {
-  dispatch(addProduct(product))
-}
+  const handleAdd = async (product) => {
+    dispatch(addProduct(product))
+  }
 
-const handleOpen = () => {
-  onOpen()
-};
+  const handleOpen = () => {
+    onOpen()
+  };
 
   // const handleClose = () => {
   //   onClose();
@@ -86,7 +86,7 @@ const handleOpen = () => {
             <Box d="flex" alignItems="baseline">
               <Badge rounded="full" px="2" fontSize="0.8em" colorScheme="red">
                 New
-                </Badge>
+              </Badge>
             </Box>
             <Box mt="1" justifyContent="space-between" alignContent="center">
               <Box
@@ -106,8 +106,8 @@ const handleOpen = () => {
                 <chakra.a href={'#'} display={'flex'}>
                   <Icon as={FiShoppingCart} h={7} w={7} alignSelf={'center'}
                     onClick={() => {
-                    handleAdd(product)
-                   handleOpen()
+                      handleAdd(product)
+                      handleOpen()
                     }}
                   />
                 </chakra.a>
@@ -131,7 +131,7 @@ const handleOpen = () => {
             </Box>
           </Box>
         </Box>
-        <CartDrawer isOpen={isOpen} onClose={onClose} cart={cart}/>
+        <CartDrawer isOpen={isOpen} onClose={onClose} cart={cart} />
       </Container>
     </>
 
