@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {useHistory} from 'react-router-dom'
 import * as cartReducer from '../../store/cart'
 import { Center } from "@chakra-ui/react"
+import * as orderReducer from '../../store/order'
 
 
 import {
@@ -22,6 +23,8 @@ import {
 
 export default function Paymentform() {
 
+  let total;
+
     const [errors, setErrors] = useState([]);
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -37,9 +40,13 @@ export default function Paymentform() {
 
 
 
-    const handlePay=async (e)=> {
-        e.preventDefault()
-        // await dispatch(orderReducer.createOrder())
+    const handlePay=async (total)=> {
+        total = handleTotal(cart)
+
+        // e.preventDefault()
+
+
+        await dispatch(orderReducer.createOrder(total))
         await dispatch(cartReducer.clearProduct())
         history.push('/ThankYou')
 
@@ -59,7 +66,7 @@ export default function Paymentform() {
 
     return (
         <>
-        <form onSubmit={handlePay}>
+        <form onSubmit = {handlePay(total)}>
           <div>
             <ul style={{marginTop: '.25em', marginBottom: '1.25em'}}>
             {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
