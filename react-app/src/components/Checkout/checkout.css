@@ -3,9 +3,12 @@
     display: grid;
     /* grid-auto-rows: 1fr;  */
     grid-template-columns: 1fr 1fr 1fr .5fr;
-    grid-auto-rows: 1fr;
-    gap: 7px 10px;
-    margin: 0 auto;
+    grid-auto-rows: .2fr;
+    margin-right: 4em;
+    /* gap: 7px 10px; */
+    width: 40%;
+    margin-top: 22%;
+    /* margin: 0 auto; */
   }
 
   .header-text{
@@ -23,9 +26,32 @@
     font-size:1.5em;
   }
 
-
 .total-cart {
-    margin-top: 2em;
+    margin: 0 auto;
+}
+
+
+.total-cart p {
+    margin-bottom: 1em;
+    border-bottom: 1px solid black;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
+  }
+
+
+
+  #form-grid-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .form-container {
+    width: 43%;
+    padding-left: 2.15em;
+    padding-right: 2.15em;
+    border: 2px solid #f56565;
+    padding-bottom: 1.5em;
+    padding-top: 1.5em;
+
   }
