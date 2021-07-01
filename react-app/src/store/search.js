@@ -14,6 +14,7 @@ export const searchFunc = (query) => async dispatch => {      // param is the se
   if (response.ok) {
     const searchResults = await response.json();    // jsonifed  searchResult, litterally
     dispatch(loadResult(searchResults))
+    console.log('++++++searchResults', searchResults)
     return searchResults;
   }
 }
@@ -41,6 +42,7 @@ const searchReducer = (state = {}, action) => {
       return newState
 
     // return { products: [...action.query] }
+
     default:
       return { ...state };
   }
