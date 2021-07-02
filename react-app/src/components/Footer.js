@@ -34,13 +34,64 @@ export default function FooterDetails() {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}>
         <Stack direction={'row'} spacing={6} align={{ base: 'center', md: 'center' }}>
-          <Text
-            fontSize={'l'}
-            fontWeight={'500'}
-            justify={{ base: 'center', md: 'space-between' }}
-            align={{ base: 'center', md: 'center' }}
-          >CONNECT WITH THE DEVELOPERS</Text>
-          <a href='https://github.com/vmeduri1/thrifTEE' fontSize={'25px'}><i fontSize={'25px'} className="fab fa-github"></i></a>
+          <Flex
+            justify='space-evenly'
+            // bg='lightblue'
+            w='750px'
+          >
+            <Text
+              // fontSize={'l'}
+              fontWeight='500'
+              justify={{ base: 'center', md: 'space-between' }}
+              align={{ base: 'center', md: 'center' }}
+              ml='-55px'
+            // >CONNECT WITH THE DEVS</Text>
+            >CONNECT WITH THE DEVELOPERS</Text>
+
+            <Flex
+              fontSize='17px'
+              fontWeight='600'
+              border='1px solid rgb(211, 211, 211)'
+              borderRadius='5px'
+              justifyContent='center'
+              w='75px'
+            >
+              <a href='/aboutDevs'>Natalie</a>
+            </Flex>
+            <Flex
+              fontSize='17px'
+              fontWeight='600'
+              border='1px solid rgb(211, 211, 211)'
+              borderRadius='5px'
+              justifyContent='center'
+              w='75px'
+            >
+              <a href='/aboutDevs'>Vishaal</a>
+            </Flex>
+            <Flex
+              fontSize='17px'
+              fontWeight='600'
+              border='1px solid rgb(211, 211, 211)'
+              borderRadius='5px'
+              justifyContent='center'
+              w='90px'
+            // w='70px'
+            >
+              <a href='/aboutDevs'>Jonathan</a>
+            </Flex>
+            <Flex
+              fontSize='17px'
+              fontWeight='600'
+              border='1px solid rgb(211, 211, 211)'
+              borderRadius='5px'
+              justifyContent='center'
+              w='70px'
+            >
+              <a href='/aboutDevs'>B</a>
+            </Flex>
+
+
+          </Flex>
 
         </Stack>
         <Flex
