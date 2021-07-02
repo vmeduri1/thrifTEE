@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   Box,
+  Flex,
   chakra,
   Container,
   Stack,
@@ -38,14 +39,25 @@ export default function FooterDetails() {
             fontWeight={'500'}
             justify={{ base: 'center', md: 'space-between' }}
             align={{ base: 'center', md: 'center' }}
-          >CONNECT WITH US</Text>
-          {/* <a href='https://github.com/vmeduri1/thrifTEE' fontSize={'25px'}><i fontSize={'25px'} className="fab fa-github"></i></a> */}
-          <a href='https://github.com/vmeduri1/thrifTEE' mt={'3px'}><FaGithub fontSize={'25px'} /></a>
+          >CONNECT WITH THE DEVELOPERS</Text>
+          <a href='https://github.com/vmeduri1/thrifTEE' fontSize={'25px'}><i fontSize={'25px'} className="fab fa-github"></i></a>
+
         </Stack>
-        <Text
-          fontSize={'l'}
-          fontWeight={'500'}
-        >© thrifTEE. All rights reserved</Text>
+        <Flex
+          w='255px'
+        >
+          <Text
+            fontSize={'l'}
+            fontWeight={'500'}
+          >
+            © thrifTEE. All rights reserved
+          </Text>
+          <Text
+            ml='15px'
+          >
+            <a href='https://github.com/vmeduri1/thrifTEE' mt={'3px'}><FaGithub fontSize={'25px'} /></a>
+          </Text>
+        </Flex>
       </Container>
     </Box>
   )
