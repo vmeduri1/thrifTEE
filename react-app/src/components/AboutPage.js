@@ -33,38 +33,37 @@ export default function SocialProfileSimple() {
         rounded={'2xl'}
         p={6}
         textAlign={'center'}>
-        <Avatar
-          size={'3xl'}
-          src={
-            'https://avatars.githubusercontent.com/u/60409772?v=4'
-          }
-          alt={'Avatar Alt'}
-          mb={4}
-          pos={'relative'}
-          _after={{
-            content: '""',
-            w: 4,
-            h: 4,
-            border: '2px solid white',
-            pos: 'absolute',
-            bottom: 0,
-            right: 3,
-          }}
-        />
-        <Heading fontSize={'2xl'} fontFamily={'body'}>
-          Natalie Oldroyd
+        <Flex
+          // bg='lightblue'
+          w='346.33px'
+          flexDirection='column'
+        >
+          <Avatar
+            size={'3xl'}
+            // size={'3xl'}
+            src={
+              'https://avatars.githubusercontent.com/u/60409772?v=4'
+            }
+            alt={'Avatar Alt'}
+            mb={4}
+            pos={'relative'}
+            _after={{
+              content: '""',
+              w: 4,
+              h: 4,
+              border: '2px solid white',
+              pos: 'absolute',
+              bottom: 0,
+              right: 3,
+            }}
+          />
+          <Heading
+            fontSize={'2xl'}
+            fontFamily={'body'}
+          >
+            Natalie Oldroyd
           </Heading>
-        {/* <Text
-            textAlign={'center'}
-            color={useColorModeValue('gray.700', 'gray.400')}
-            px={3}>
-            Actress, musician, songwriter and artist. PM for work inquires or{' '}
-            <Link href={'#'} color={'blue.400'}>
-              #tag
-            </Link>{' '}
-            me in your posts
-          </Text> */}
-
+        </Flex>
         <Stack align={'center'} justify={'center'} direction={'row'} mt={6}>
           <Badge
             px={2}
@@ -74,20 +73,24 @@ export default function SocialProfileSimple() {
             fontSize={'l'}
           >
             Software Developer
-            </Badge>
+          </Badge>
         </Stack>
-
         <Stack mt={8} direction={'row'} spacing={4}>
-          <Button
-            flex={1}
-            fontSize={'2xl'}
-            rounded={'full'}
-            _focus={{
-              bg: 'gray.200',
-            }}
-          >
-            <a href='https://github.com/natoh19'><i className="fab fa-github"></i></a>
-          </Button>
+          <a href='https://github.com/natoh19'>
+            <Button
+              flex={1}
+              fontSize={'2xl'}
+              rounded={'full'}
+              _focus={{
+                bg: 'gray.200',
+              }}
+              w='165.88px'
+            >
+              <i className="fab fa-github">
+              </i>
+            </Button>
+          </a>
+          {/* <a href='https://github.com/natoh19'><i className="fab fa-github"></i></a> */}
           <Button
             flex={1}
             fontSize={'2xl'}
@@ -140,7 +143,7 @@ export default function SocialProfileSimple() {
         />
         <Heading fontSize={'2xl'} fontFamily={'body'}>
           Vishaal Meduri
-          </Heading>
+        </Heading>
         {/* <Text
             textAlign={'center'}
             color={useColorModeValue('gray.700', 'gray.400')}
@@ -161,7 +164,7 @@ export default function SocialProfileSimple() {
             fontSize={'l'}
           >
             Software Developer
-            </Badge>
+          </Badge>
         </Stack>
 
         <Stack mt={8} direction={'row'} spacing={4}>
@@ -225,7 +228,7 @@ export default function SocialProfileSimple() {
         />
         <Heading fontSize={'2xl'} fontFamily={'body'}>
           Jonathan Chan
-          </Heading>
+        </Heading>
         {/* <Text
             textAlign={'center'}
             color={useColorModeValue('gray.700', 'gray.400')}
@@ -246,7 +249,7 @@ export default function SocialProfileSimple() {
             fontSize={'l'}
           >
             Software Developer
-            </Badge>
+          </Badge>
         </Stack>
 
         <Stack mt={8} direction={'row'} spacing={4}>
@@ -310,7 +313,7 @@ export default function SocialProfileSimple() {
         />
         <Heading fontSize={'2xl'} fontFamily={'body'}>
           B Salinas
-          </Heading>
+        </Heading>
         {/* <Text
             textAlign={'center'}
             color={useColorModeValue('gray.700', 'gray.400')}
@@ -331,7 +334,7 @@ export default function SocialProfileSimple() {
             fontSize={'l'}
           >
             Software Developer
-            </Badge>
+          </Badge>
         </Stack>
 
         <Stack mt={8} direction={'row'} spacing={4}>
