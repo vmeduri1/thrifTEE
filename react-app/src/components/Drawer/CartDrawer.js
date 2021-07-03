@@ -37,7 +37,7 @@ export default function CartDrawer(props) {
 
 
   function handleCheckout() {
-    history.push("/thankyou")
+    history.push("/confirm")
   }
 
 

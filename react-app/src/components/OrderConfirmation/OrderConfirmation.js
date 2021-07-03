@@ -13,7 +13,7 @@ import './orderConfirmation.css'
 export default function OrderConfirmation() {
 
     const cart = useSelector((state) => state.cart.products)
-    console.log('+++++++', cart)
+
     const userInSession = useSelector(state => state.session.user)
 
     const handleTotal = (cart) => {
