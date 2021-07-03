@@ -2,14 +2,11 @@ import {
   Heading,
   Avatar,
   Box,
-  Center,
-  Text,
   Stack,
   Button,
   Link,
   Badge,
   Flex,
-  Spacer,
   useColorModeValue,
 } from '@chakra-ui/react';
 import { SiLinkedin, SiMessenger } from 'react-icons/si';
