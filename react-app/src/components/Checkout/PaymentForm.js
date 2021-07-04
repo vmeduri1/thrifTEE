@@ -79,22 +79,23 @@ export default function Paymentform() {
 
 
           <Stack spacing={3}>
+          <p>*Required fields</p>
+              <FormLabel>First Name*</FormLabel>
 
-
-              <FormLabel>First Name</FormLabel>
               <InputGroup>
                 <Input
                   placeholder="First Name"
                   type='text'
                   value={firstName}
+                  required
                   onChange={(e) => setFirstName(e.target.value)}
                 />
               </InputGroup>
 
-              <FormLabel>Last Name</FormLabel>
+              <FormLabel>Last Name*</FormLabel>
               <InputGroup>
                 <Input
-
+                  required
                   placeholder="Last Name"
                   type='text'
                   value={lastName}
@@ -102,9 +103,10 @@ export default function Paymentform() {
                 />
               </InputGroup>
 
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Email*</FormLabel>
               <InputGroup>
                 <Input
+                  required
                   placeholder="email"
                   type="email"
                   value={email}
@@ -112,62 +114,69 @@ export default function Paymentform() {
                 />
               </InputGroup>
 
-              <FormLabel>Street Address</FormLabel>
+              <FormLabel>Street Address*</FormLabel>
               <InputGroup>
                 <Input
+                  required
                   placeholder="Street Address"
                   value={address1}
                   onChange={(e) => setAddress1(e.target.value)}
                 />
               </InputGroup>
 
-              <FormLabel>State</FormLabel>
+              <FormLabel>State*</FormLabel>
               <InputGroup>
                 <Input
+                  required
                   placeholder="State"
                   value={state}
                   onChange={(e) => setState(e.target.value)}
                 />
               </InputGroup>
 
-              <FormLabel>Zip Code</FormLabel>
+              <FormLabel>Zip Code*</FormLabel>
               <InputGroup>
                 <Input
+                  required
                   placeholder="Zip Code"
                   value={zipcode}
                   onChange={(e) => setZipCode(e.target.value)}
                 />
               </InputGroup>
 
-              <FormLabel>City</FormLabel>
+              <FormLabel>City*</FormLabel>
               <InputGroup>
                 <Input
                   placeholder="City"
+                  required
                   value={city}
                   onChange={(e) => setCity(e.target.value)}
                 />
               </InputGroup>
 
-              <FormLabel>Country</FormLabel>
+              <FormLabel>Country*</FormLabel>
               <InputGroup>
                 <Input
                   placeholder="Country"
+                  required
                   value={country}
                   onChange={(e) => setCountry(e.target.value)}
                 />
               </InputGroup>
 
-              <FormLabel>Credit Card Number</FormLabel>
+              <FormLabel>Credit Card Number*</FormLabel>
               <InputGroup>
                 <Input
+                  required
                   placeholder="Credit Card Number"
 
                 />
               </InputGroup>
 
-              <FormLabel>CVV</FormLabel>
+              <FormLabel>CVV*</FormLabel>
               <InputGroup>
                 <Input
+                  required
                   placeholder="CVV"
 
                 />
