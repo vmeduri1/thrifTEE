@@ -8,6 +8,7 @@
     /* gap: 7px 10px; */
     width: 40%;
     margin-top: 22%;
+
     /* margin: 0 auto; */
   }
 
@@ -16,6 +17,8 @@
     margin-bottom: 1em;
     background-color: #f56565;
     font-size: 2em;
+    font-weight: 600;
+    /* font-weight: bold; */
     margin-top: 2em;
   }
 
@@ -53,5 +56,5 @@
     border: 2px solid #f56565;
     padding-bottom: 1.5em;
     padding-top: 1.5em;
-
+    margin-bottom:100px;
   }
