@@ -26,21 +26,21 @@ export default function Checkout({ product }) {
     return (
 
         <div>
-        <div className="header-text">
-            <p>Checkout</p>
+            <div className="header-text">
+                <p>Checkout</p>
             </div>
 
 
             <div className="cart">
                 <div className="cart-wrapper">
-                    <div className="cart-label">
+                    {/* <div className="cart-label">
                         <h2>Items in Your Cart</h2>
-                    </div>
+                    </div> */}
                     <div>
 
                         <div id="form-grid-wrapper">
 
-                        {/* <div className="container-checkout">
+                            {/* <div className="container-checkout">
                             {cart.map(item => (
                                 <>
                                     <div style={{ width: "75px" }}><img src={item.image_url}></img></div>
@@ -52,7 +52,7 @@ export default function Checkout({ product }) {
 
                         </div> */}
 
-                        <div className="form-container">  <PaymentForm /></div>
+                            <div className="form-container">  <PaymentForm /></div>
 
 
                         </div>
