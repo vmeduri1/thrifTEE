@@ -40,13 +40,13 @@ export default function Paymentform() {
 
 
 
-    const handlePay=async (total)=> {
-        total = handleTotal(cart)
-
-        // e.preventDefault()
+    const handlePay=async (e)=> {
 
 
-        await dispatch(orderReducer.createOrder(total))
+
+        e.preventDefault(e)
+
+        await dispatch(orderReducer.createOrder())
         await dispatch(cartReducer.clearProduct())
         history.push('/ThankYou')
 
@@ -60,21 +60,26 @@ export default function Paymentform() {
 
     }
 
+    const handleThankYou=()=> {
+      history.push('/ThankYou')
+    }
+
 
 
 
 
     return (
         <>
-        <form onSubmit = {handlePay(total)}>
+        <form onSubmit = {handlePay}>
           <div>
             <ul style={{marginTop: '.25em', marginBottom: '1.25em'}}>
             {errors && errors.map((error, idx) => <li key={idx}>{error}</li>)}
             </ul>
-          </div>
+            </div>
+
 
           <Stack spacing={3}>
-            <FormControl isRequired>
+
 
               <FormLabel>First Name</FormLabel>
               <InputGroup>
@@ -168,19 +173,19 @@ export default function Paymentform() {
                 />
               </InputGroup>
 
-              <br />
+
               <div className="total-cart">
                    <p>Order Total: {`$${handleTotal(cart)}`}</p>
                    <Center>
-                   <Button type='Submit' onClick={handlePay}>Complete Payment</Button>
+                   <Button type='Submit' cursor="pointer">Complete Payment</Button>
                    </Center>
 
                    </div>
 
 
-            </FormControl>
+
           </Stack>
-        </form>
+      </form>
 
 
         </>

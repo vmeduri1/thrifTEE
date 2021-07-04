@@ -1,4 +1,4 @@
-.container-for-body{
+/* .container-for-body{
     height: 85vh;
 }
 
@@ -16,4 +16,42 @@
 .thank-you-image {
     width: 100%;
     height: auto;
+} */
+
+.thank-you-card {
+    align-items: center;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, .24) 0 3px 8px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    flex: 0 0 150px;
+    flex-direction: column;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    height: auto;
+    justify-content: center;
+    margin: 3.5em;
+    overflow: hidden;
+    padding-top: 2.5em;
+    padding-bottom: 2.5em;
+    text-align: center;
+    transition: all 300ms;
+
+}
+
+
+.order-total {
+    margin-bottom: 1em;
+    /* background-color: black; */
+    /* color: white; */
+    /* padding: 1em; */
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: .5em;
+    padding-right: .5em;
+    border: 1px solid black;
+    border-radius: 30;
+    border-radius: 5%;
+    box-shadow: rgba(0, 0, 0, .24) 0 3px 8px;
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import './orderConfirmation.css'
 // import {
 //     Box,
 //     Grid,
@@ -15,11 +16,15 @@ import { Grid, GridItem } from "@chakra-ui/react"
 import { Heading } from "@chakra-ui/react"
 import { Text } from "@chakra-ui/react"
 import { Box } from "@chakra-ui/react"
+import { useDispatch } from 'react-redux'
 import { DeleteIcon } from '@chakra-ui/icons'
-import './orderConfirmation.css'
+import {removeProduct} from '../../store/cart'
+
 
 
 export default function ItemDetail({ product }) {
+    const dispatch = useDispatch()
+
     return (
         <>
             <Grid
@@ -53,6 +58,7 @@ export default function ItemDetail({ product }) {
                 <GridItem>
                     <DeleteIcon
                         cursor='pointer'
+                        onClick={() => dispatch(removeProduct(product))}
                     >
                         Remove
                     </DeleteIcon>

@@ -19,6 +19,7 @@ import Footer from '../src/components/Footer'
 import { Box } from '@chakra-ui/react'
 import OrderConfirmation from './components/OrderConfirmation/OrderConfirmation'
 import Checkout from '../src/components/Checkout/Checkout'
+import NotFound from '../src/components/NotFound/NotFound'
 
 function App() {
   const user = useSelector(state => state.session.user)
@@ -41,52 +42,35 @@ function App() {
       <NavBar />
       <CatNavBar />
       <Switch>
-        <Route path="/" exact={true} >
+        <Route path="/" exact >
           <HomePage />
         </Route>
 
-        <Route path="/categories/:id" exact={true} >
+        <Route path="/categories/:id" exact >
           <Category />
         </Route>
 
-        <Route path="/products/:id" exact={true} >
+        <Route path="/products/:id" exact>
           <SingleProduct />
         </Route>
 
-        <Route path="/aboutDevs" exact={true} >
+        <Route path="/aboutDevs" exact>
           <AboutPage />
         </Route>
 
-        <Route path="/search/:query" exact={true} >
+        <Route path="/search/:query" exact>
           <SearchResults />
         </Route>
         <Route path="/confirm" exact>
           <OrderConfirmation />
         </Route>
-        <Route path="/checkout" exact>
+        <ProtectedRoute path="/checkout" exact>
           <Checkout />
-        </Route>
-
-        <Route path="/categories/1" exact>
-          Tops
-        </Route>
-
-        {/* <Route path="/login" exact={true}>
-            <LoginForm />
-          </Route>
-          <Route path="/sign-up" exact={true}>
-            <SignUpForm />
-          </Route> */}
-        {/* <Route path="/users" exact={true} >
-            <UsersList />
-          </Route> */}
-        {/* <Route path="/users/:userId" exact={true} >
-            <User />
-          </Route> */}
-        <Route path="/thankyou" exact={true} >
+        </ProtectedRoute>
+        <ProtectedRoute path="/thankyou" exact >
           <ThankYou />
-          {/* <Footer /> */}
-        </Route>
+        </ProtectedRoute>
+        <Route component={NotFound}></Route>
 
       </Switch>
       <Footer />

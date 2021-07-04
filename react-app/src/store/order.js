@@ -18,13 +18,11 @@ const setOrdersActionCreator = (data) => ({
 export const createOrder = (total) => async (dispatch, getState)   => {
 
     const state = getState();
-    const cart = Object.values(state.cart.products)
-    console.log('+++++++cart', cart)
-    // if(!cart.products.length) return;
+
+
+    if(!state.cart.products.length) return;
 
     const products = state.cart.products
-    // let total = 75
-    // total = cart.map(item=> total += item.regular_price)
 
     const user = state.session.user.id;
 
@@ -36,7 +34,7 @@ export const createOrder = (total) => async (dispatch, getState)   => {
       body: JSON.stringify({
         "user_id": user,
 	      "products": products,
-        "total": total
+
       }),
     });
     const data = await response.json();
@@ -46,24 +44,11 @@ export const createOrder = (total) => async (dispatch, getState)   => {
 
 
     dispatch(createOrderAction(data))
+
     return data
   }
 
 
-export const getOrders =() => async(dispatch, getState) => {
-  const state = getState();
-  const user = state.session.user.id;
-
-  const response = await fetch("/api/orders/")
-
-  if (response.ok){
-    const data = await response.json();
-    dispatch(setOrdersActionCreator(data))
-    return data
-  } else {
-    return null
-  }
-}
 
 export default function (state=null, action) {
     switch(action.type) {

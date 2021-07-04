@@ -1,18 +1,22 @@
 import React from 'react';
+import './orderConfirmation.css'
 import { useSelector } from 'react-redux'
 import { Container } from "@chakra-ui/react"
 import { Grid, GridItem } from "@chakra-ui/react"
+import { useHistory } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
 import * as cartReducer from '../../store/cart'
 import { Text } from "@chakra-ui/react"
 import { Box } from "@chakra-ui/react"
 import { Button, ButtonGroup, Typography, Flex } from "@chakra-ui/react"
-import './orderConfirmation.css'
+import {removeProduct} from '../../store/cart'
 
 
 export default function OrderConfirmation() {
 
     const cart = useSelector((state) => state.cart.products)
+    const user = useSelector(state => state.session.user)
+    const history = useHistory();
 
     const userInSession = useSelector(state => state.session.user)
 
@@ -23,7 +27,24 @@ export default function OrderConfirmation() {
 
     }
 
+    const handleCheckout = () => {
+
+        history.push('/checkout')
+    }
+
     return (
+        <>
+        {!user &&
+          <Box>
+              <Text
+               align='center'
+               mt='1em'
+               mb='1em'
+               fontSize="lg"
+               fontWeight="bold"
+              >Please sign up or login to place your order</Text>
+            </Box>}
+
 
         <Container className="container" maxWidth="600px">
             {cart.map(product => (
@@ -61,12 +82,15 @@ export default function OrderConfirmation() {
                     color='white'
                     ml='525px;'
                     mb='25px'
+                    onClick={handleCheckout}
+
                 >
-                    <a href='/checkout'>Checkout</a>
+                Checkout
                 </Button>
             </Box>
 
         </Container>
+        </>
 
 
     )

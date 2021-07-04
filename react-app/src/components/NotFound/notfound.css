@@ -1,0 +1,66 @@
+.notFound-container{
+    align-items: normal;
+    background-color: transparent;
+    border: 0 solid currentcolor;
+    box-sizing: content-box;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    font-family: "helvetica neue",helvetica,arial,sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 1.25;
+    margin: 64px auto 0;
+    min-width: 0;
+    padding: 0 16px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    width: 980px;
+}
+
+
+
+.notFound-headline {
+align-items: normal;
+background-color: transparent;
+border: 0 solid currentcolor;
+box-sizing: border-box;
+color: #000;
+font-family: georgia,times,serif;
+font-size: 32px;
+font-weight: 400;
+letter-spacing: normal;
+line-height: 40px;
+margin: 0;
+min-width: 0;
+overflow-wrap: break-word;
+padding: 0;
+text-align: center;
+text-decoration: none;
+text-transform: none;
+white-space: pre-wrap;
+word-wrap: break-word;
+
+}
+
+.notFound-img {
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 32px;
+    margin-bottom: 32px;
+    width: 226px;
+    /* height: 128px; */
+    max-width: 100%;
+}
+
+.notFound-text {
+    font-size: 1.25em;
+    margin-bottom: 2em;
+}
+
+.btn-notFound{
+    margin-bottom: 5em;
+}
