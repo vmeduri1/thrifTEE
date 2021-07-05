@@ -9,16 +9,14 @@ import {
   Flex,
   useColorModeValue,
 } from '@chakra-ui/react';
-import { SiLinkedin, SiMessenger } from 'react-icons/si';
+import { SiLinkedin} from 'react-icons/si';
 import React from 'react';
-
-
 
 export default function SocialProfileSimple() {
 
 
   return (
-    <Flex h={'85vh'}>
+    <Flex h={'85vh'} style={{marginBottom: '5em'}}>
       <Box
         margin={'40px'}
         mt={'125px'}
@@ -31,17 +29,17 @@ export default function SocialProfileSimple() {
         p={6}
         textAlign={'center'}>
         <Flex
-          // bg='lightblue'
+
           w='347.75px'
           flexDirection='column'
         >
           <Link
             href='https://natoh19.github.io/'
-          // style={{ textDecoration: 'none' }}
-          >
+
+          target='_blank'>
             <Avatar
               size={'3xl'}
-              // size={'3xl'}
+
               src={
                 'https://avatars.githubusercontent.com/u/60409772?v=4'
               }
@@ -78,7 +76,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/natoh19'>
+          <a href='https://github.com/natoh19' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -91,7 +89,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/natalie-oldroyd/'>
+          <a href='https://www.linkedin.com/in/natalie-oldroyd/' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -134,7 +132,7 @@ export default function SocialProfileSimple() {
         >
           <Link
             href='https://vmeduri1.github.io/'
-          // style={{ textDecoration: 'none' }}
+          target='_blank'
           >
             <Avatar
               size={'3xl'}
@@ -174,7 +172,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/vmeduri1'>
+          <a href='https://github.com/vmeduri1' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -187,7 +185,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/vishaalmeduri/'>
+          <a href='https://www.linkedin.com/in/vishaalmeduri/' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -224,14 +222,14 @@ export default function SocialProfileSimple() {
         p={6}
         textAlign={'center'}>
         <Flex
-          // bg='lightblue'
+
           w='347.75px'
           flexDirection='column'
         >
           <Link
             href='https://jc-008.github.io/'
-          // style={{ textDecoration: 'none' }}
-          >
+
+          target='_blank'>
             <Avatar
               size={'3xl'}
               src={
@@ -270,7 +268,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/Jc-008'>
+          <a href='https://github.com/Jc-008' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -283,7 +281,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/jonathan-chan8/'>
+          <a href='https://www.linkedin.com/in/jonathan-chan8/' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -320,14 +318,12 @@ export default function SocialProfileSimple() {
         p={6}
         textAlign={'center'}>
         <Flex
-          // bg='lightblue'
           w='347.75px'
           flexDirection='column'
         >
           <Link
             href='https://b-salinas.github.io/'
-          // style={{ textDecoration: 'none' }}
-          >
+          target='_blank'>
             <Avatar
               size={'3xl'}
               src={
@@ -366,7 +362,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/B-Salinas'>
+          <a href='https://github.com/B-Salinas' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -379,7 +375,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/b-salinas/'>
+          <a href='https://www.linkedin.com/in/b-salinas/' target='_blank'>
             <Button
               flex={1}
               fontSize={'2xl'}

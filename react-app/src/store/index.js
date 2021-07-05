@@ -29,14 +29,7 @@ if (process.env.NODE_ENV === 'production') {
     enhancer = composeEnhancers(applyMiddleware(thunk, logger));
 }
 
-// const configureStore = (preloadedState) => {
-//     return createStore(rootReducer, preloadedState, enhancer);
-// };
 
-
-const persistedState = localStorage.getItem('cart')
-    ? JSON.parse(localStorage.getItem('cart'))
-    : []
 
 const configureStore = (persistedState) => {
     return createStore(rootReducer, persistedState, enhancer)

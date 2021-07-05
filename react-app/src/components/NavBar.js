@@ -1,47 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+
 import LogoutButton from './auth/LogoutButton';
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { VerticallyCenter } from '../modals/Modal'
-import CartDrawer from '../components/Drawer/CartDrawer'
 import SearchLogic from '../components/Search/SearchLogic'
 import { FiShoppingCart } from 'react-icons/fi'
 import {
-  Box,
   Grid,
   Link,
-  Input,
-  Text,
   Flex,
-  Spacer,
-  FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
-  GridItem,
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
-  useDisclosure,
-  isOpen,
-  onOpen,
-  onClose,
-  isClose,
   Icon,
-  chakra,
   Button,
-  Center
+
 } from "@chakra-ui/react"
 
 
 const NavBar = () => {
   const sessionUser = useSelector(state => state.session.user);
-  const dispatch = useDispatch();
-  const events = useSelector(state => state.events);        // pull content out of state
-  const history = useHistory();
-
-  const { isOpen, onOpen, onClose } = useDisclosure()
   const [flag, setFlag] = useState(false)
 
 

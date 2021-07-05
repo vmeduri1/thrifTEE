@@ -1,19 +1,11 @@
-// comment
-import React, { useEffect, useState } from "react";
+
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from 'react-router-dom';
-import * as productActions from '../../store/products';
 import { getSingleProduct } from '../../store/products';
 import { addProduct } from '../../store/cart';
 import CartDrawer from '../Drawer/CartDrawer'
-import Category from '../Category/Category'
-
-
-
-
 import {
-  Flex,
-  Circle,
   Box,
   Image,
   Badge,
@@ -22,10 +14,7 @@ import {
   chakra,
   Tooltip,
   useDisclosure,
-  onOpen,
-  onClose,
   Container,
-  Button,
   Text
 } from '@chakra-ui/react';
 import { FiShoppingCart } from 'react-icons/fi';
@@ -37,14 +26,12 @@ export default function SingleProduct() {
   const product = useSelector(state => state.products?.product)
   const cart = useSelector((state) => state.cart)
   const { id } = useParams()
-  // const [open, setOpen] = useState(false);
-  const [open, setOpen] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure()
 
 
   useEffect(() => {
     dispatch(getSingleProduct(id));
-  }, [dispatch])
+  }, [dispatch, id])
 
 
   const handleAdd = async (product) => {

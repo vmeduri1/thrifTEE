@@ -2,23 +2,15 @@ import React from 'react';
 import {
   Box,
   Flex,
-  chakra,
   Container,
   Stack,
   Text,
   useColorModeValue,
-  VisuallyHidden,
-  children,
-  label,
-  href,
 } from '@chakra-ui/react';
-import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
-import { ReactNode } from 'react';
-
+import { FaGithub } from 'react-icons/fa';
 
 
 export default function FooterDetails() {
-
 
   return (
     <Box
@@ -39,16 +31,14 @@ export default function FooterDetails() {
         <Stack direction={'row'} spacing={6} align={{ base: 'center', md: 'center' }}>
           <Flex
             justify='space-evenly'
-            // bg='lightblue'
             w='750px'
           >
             <Text
-              // fontSize={'l'}
+
               fontWeight='500'
               justify={{ base: 'center', md: 'space-between' }}
               align={{ base: 'center', md: 'center' }}
               ml='-55px'
-            // >CONNECT WITH THE DEVS</Text>
             >CONNECT WITH THE DEVELOPERS</Text>
 
             <Flex
@@ -78,7 +68,7 @@ export default function FooterDetails() {
               borderRadius='5px'
               justifyContent='center'
               w='90px'
-            // w='70px'
+
             >
               <a href='/aboutDevs'>Jonathan</a>
             </Flex>

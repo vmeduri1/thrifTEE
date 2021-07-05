@@ -1,20 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import './ThankYou.css';
-import { Box } from "@chakra-ui/react";
-import {Heading, Container, Button} from "@chakra-ui/react";
-
-import {useSelector, useDispatch} from 'react-redux';
+import {Heading, Button} from "@chakra-ui/react";
+import {useSelector} from 'react-redux';
 import {useHistory} from 'react-router-dom'
-import * as orderReducer from '../store/order';
-// import Footer from '../components/Footer'
+
+
 
 function ThankYouFunc() {
 
   const orders = useSelector(state => state.orders)
   const order = useSelector(state => state.orders.id.products)
   const user = useSelector(state => state.session.user)
-  const cart = Object.values(useSelector(state => state.cart.products))
-  const dispatch = useDispatch()
   const history = useHistory()
 
 

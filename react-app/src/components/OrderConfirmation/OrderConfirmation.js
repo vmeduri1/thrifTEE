@@ -2,14 +2,13 @@ import React from 'react';
 import './orderConfirmation.css'
 import { useSelector } from 'react-redux'
 import { Container } from "@chakra-ui/react"
-import { Grid, GridItem } from "@chakra-ui/react"
+import { Grid} from "@chakra-ui/react"
 import { useHistory } from 'react-router-dom'
 import ItemDetail from './ItemDetail'
-import * as cartReducer from '../../store/cart'
 import { Text } from "@chakra-ui/react"
 import { Box } from "@chakra-ui/react"
-import { Button, ButtonGroup, Typography, Flex } from "@chakra-ui/react"
-import {removeProduct} from '../../store/cart'
+import { Button, Flex } from "@chakra-ui/react"
+
 
 
 export default function OrderConfirmation() {
@@ -18,7 +17,7 @@ export default function OrderConfirmation() {
     const user = useSelector(state => state.session.user)
     const history = useHistory();
 
-    const userInSession = useSelector(state => state.session.user)
+
 
     const handleTotal = (cart) => {
         let total = 0
@@ -46,7 +45,7 @@ export default function OrderConfirmation() {
             </Box>}
 
 
-        <Container className="container" maxWidth="600px">
+        <Container className="container" maxWidth="600px" style={{marginBottom: '6em'}}>
             {cart.map(product => (
                 <Grid
                     key={product.id}
@@ -67,7 +66,6 @@ export default function OrderConfirmation() {
                         mt='15px'
                         mb='15px'
                     >
-                        {/* Order Total: ${handleTotal(cart)} */}
                         Order Total:
                     </Text>
                     <Text
