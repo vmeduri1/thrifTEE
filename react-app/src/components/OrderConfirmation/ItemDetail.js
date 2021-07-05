@@ -1,21 +1,8 @@
 import React from 'react';
 import './orderConfirmation.css'
-// import {
-//     Box,
-//     Grid,
-//     Text,
-//     Link,
-//     Container,
-//     GridItem,
-//     Heading,
-//     DeleteIcon,
-// } from "@chakra-ui/react"
 import { Link } from "@chakra-ui/react"
 import { Image } from "@chakra-ui/react"
 import { Grid, GridItem } from "@chakra-ui/react"
-import { Heading } from "@chakra-ui/react"
-import { Text } from "@chakra-ui/react"
-import { Box } from "@chakra-ui/react"
 import { useDispatch } from 'react-redux'
 import { DeleteIcon } from '@chakra-ui/icons'
 import {removeProduct} from '../../store/cart'

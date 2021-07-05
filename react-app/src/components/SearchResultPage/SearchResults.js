@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux'
 import Item from '../Item'
 
 import {
@@ -10,14 +10,11 @@ import {
 
 const SearchResultsFunc = (search) => {
   const product_Search = useSelector(state => state.search?.searchResults)
-  // console.log(product_Search, 'productSearch details----')
-
   const productResults = Object.values(product_Search).map(product => {
     return <Item price={product.regular_price} name={product.name} image={product.image_url} product={product} key={product.id} />
 
   })
-  // console.log(product_Search, '---------SEARCH')
-  console.log(productResults.length, 'productResults Array---- ')
+
 
   return (
     <>

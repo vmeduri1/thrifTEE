@@ -1,18 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as searchActions from '../../store/search'
 
 import {
   Button,
   FormControl,
-  FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   InputGroup,
-  isRequired,
-  Stack,
 } from "@chakra-ui/react";
 
 

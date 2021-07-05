@@ -17,10 +17,8 @@ def product(id):
     return product.to_dict()
 
 
-# @product_routes.route('/categories/<int:id>')
 @product_routes.route('/categories')
 def categoryProducts():
-    # products = Product.query.join(Category).get(id)
+
     categories = Category.query.all()
-    # return {"products": [product.to_dict() for product in products]}
     return categories.to_dict()

@@ -2,29 +2,21 @@ import {
   Button,
   FormControl,
   FormLabel,
-  FormErrorMessage,
-  FormHelperText,
   Input,
   InputGroup,
-  isRequired,
   Stack,
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import * as sessionActions from "../store/session"
-import { login } from '../store/session'
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from 'react-router'
 
 
-
-// need to work on this functionality
 export function LoginForm() {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
   const [email, setEmail] = useState("");
-  const [credential, setCredential] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
 
 

@@ -1,5 +1,5 @@
-import { StarIcon} from '@chakra-ui/icons'
-import { Box, HStack, Icon, Stack, Text} from '@chakra-ui/react'
+import { StarIcon } from '@chakra-ui/icons'
+import { Box, HStack, Icon, Stack, Text } from '@chakra-ui/react'
 import * as React from 'react'
 import { chakra, HTMLChakraProps } from '@chakra-ui/react'
 
@@ -30,7 +30,7 @@ export const CategoryHero = () => (
       py="3"
       px={{ base: '3', md: '6', lg: '8' }}
       color="white"
-      bg=  '#f56565'
+      bg='#f56565'
     >
       <HStack spacing="3">
         <Icon as={StarIcon} fontSize="2xl" h="10" />
@@ -40,9 +40,7 @@ export const CategoryHero = () => (
         </Text>
         <Icon as={StarIcon} fontSize="2xl" h="10" />
       </HStack>
-      {/* <BannerLink w={{ base: 'full', sm: 'auto' }} flexShrink={0}>
-        Resend email
-      </BannerLink> */}
+
     </Stack>
   </Box>
 )

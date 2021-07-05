@@ -2,36 +2,24 @@ import React from 'react';
 import {
   Drawer,
   DrawerBody,
-  DrawerFooter,
   DrawerHeader,
   DrawerOverlay,
   DrawerContent,
-  DrawerCloseButton,
-  useDisclosure,
-  isOpen,
-  onOpen,
-  onClose,
   Box,
   Image,
-  Center,
   Button,
   Icon,
-
 } from "@chakra-ui/react"
 
-// comment for Heroku
-import { useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
-
-import { clearProduct, removeProduct, addProduct } from '../../store/cart'
+import { clearProduct, removeProduct} from '../../store/cart'
 import { AiFillCloseCircle } from 'react-icons/ai'
 
 
 
 export default function CartDrawer(props) {
-  // const { isOpen, onOpen, onClose } = useDisclosure()
-  const [placement, setPlacement] = React.useState("right")
+
   const dispatch = useDispatch()
   let history = useHistory()
 
@@ -45,18 +33,12 @@ export default function CartDrawer(props) {
     <>
 
       <Drawer
-
       {...props}
        >
         <DrawerOverlay />
         <DrawerContent>
-
-
           <DrawerHeader borderBottomWidth="1px">Your Basket</DrawerHeader>
-
           <DrawerBody>
-
-
 
             <Box mb={20} >
               {props.cart.products.map((product, idx) => (

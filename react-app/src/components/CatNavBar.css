@@ -1,18 +1,13 @@
-/* .master-div {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-} */
+
 
 .nav-links {
     display: grid;
     grid-template-columns: repeat(12,1fr);
-    color: white;
-    /* min-height: 65px; */
     height: 30px;
     width: 100%;
     margin: auto;
     grid-column: 2/3;
-  /* flex-direction: row; */
+
 }
 
 .tops {
