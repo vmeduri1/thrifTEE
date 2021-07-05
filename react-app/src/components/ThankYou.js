@@ -33,7 +33,7 @@ const handleHome=() => {
 
   return (
     <div className="thank-you-card">
-      <Heading as ="h2" size="lg" style={{marginBottom: '1.25em'}}>Thanks for your order {user.fname}</Heading>
+      <Heading as ="h2" size="lg" style={{marginBottom: '1.25em'}}>Thanks for your order, {user.fname}</Heading>
       <div className="order-total">
        <Heading size="md">Order Total: {`$${handleTotal(order)}`}</Heading>
 
