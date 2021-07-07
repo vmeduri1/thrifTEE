@@ -102,7 +102,12 @@ export function SignUpForm() {
             />
           </InputGroup>
           <br />
-          <Button type='Submit'>Sign Up</Button>
+          <Button
+            type='Submit'
+            border='1px solid rgb(211, 211, 211)'
+          >
+            Sign Up
+          </Button>
         </FormControl>
       </Stack>
     </form>
