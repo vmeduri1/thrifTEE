@@ -76,7 +76,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/natoh19' target='_blank'>
+          <a href='https://github.com/natoh19' target='_blank' rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -89,7 +89,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/natalie-oldroyd/' target='_blank'>
+          <a href='https://www.linkedin.com/in/natalie-oldroyd/' target='_blank' rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -172,7 +172,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/vmeduri1' target='_blank'>
+          <a href='https://github.com/vmeduri1' target='_blank' rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -185,7 +185,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/vishaalmeduri/' target='_blank'>
+          <a href='https://www.linkedin.com/in/vishaalmeduri/' target='_blank'  rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -268,7 +268,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/Jc-008' target='_blank'>
+          <a href='https://github.com/Jc-008' target='_blank' rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -281,7 +281,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/jonathan-chan8/' target='_blank'>
+          <a href='https://www.linkedin.com/in/jonathan-chan8/' target='_blank'  rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -362,7 +362,7 @@ export default function SocialProfileSimple() {
           </Badge>
         </Stack>
         <Stack mt={8} direction={'row'} spacing={4}>
-          <a href='https://github.com/B-Salinas' target='_blank'>
+          <a href='https://github.com/B-Salinas' target='_blank'  rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
@@ -375,7 +375,7 @@ export default function SocialProfileSimple() {
               <i className="fab fa-github"></i>
             </Button>
           </a>
-          <a href='https://www.linkedin.com/in/b-salinas/' target='_blank'>
+          <a href='https://www.linkedin.com/in/b-salinas/' target='_blank'  rel="noopener noreferrer">
             <Button
               flex={1}
               fontSize={'2xl'}
