@@ -40,7 +40,7 @@ const NavBar = () => {
 
   return (
     <>
-      {/* {flag ? <CartDrawer /> : null} */}
+
 
       <Grid templateColumns="repeat(15, 1fr)" gap={.7} bg="#FFFFF">
         <Flex w="100%" h="20" />
@@ -51,11 +51,7 @@ const NavBar = () => {
 
         <Link href='/' textAlign="center" paddingTop={8} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }} >Shop</Link>
         <Link href='/aboutDevs' textAlign="center" paddingTop={8} fontWeight="bold" w="100%" h="20" _hover={{ color: "white", fontWeight: "bold", bg: "gray.400" }}>About</Link>
-        {/* <form>
-          <FormControl id='searchbar' w="475%" h="20" bg="FFFFFF" color='#000000' textAlign="center" paddingTop={5}>
-            <Input placeholder="I'm looking for..." bg="white" />
-          </FormControl>
-        </form> */}
+
         <SearchLogic />
         <Flex w="100%" h="20" bg="FFFFFF" />
         <Flex w="100%" h="20" bg="FFFFFF" />
@@ -74,6 +70,7 @@ const NavBar = () => {
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginLeft={3}>
           {/* {logoutBtnVisibility} */}
           {/* <LogoutButton /> */}
+          {/* {BtnVisibility} */}
         </Flex>
 
         <Flex w="100%" h="20" />
