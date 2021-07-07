@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import LogoutButton from './auth/LogoutButton';
 import { useSelector } from 'react-redux'
-import { VerticallyCenter } from '../modals/Modal'
+import { VerticallyCenter } from '../modals/SignUpModal'
+import { VerticallyCenter2 } from '../modals/LogInModal'
 import SearchLogic from '../components/Search/SearchLogic'
 import { FiShoppingCart } from 'react-icons/fi'
 import {
@@ -25,23 +26,25 @@ const NavBar = () => {
   }, [flag])
 
 
-  let BtnVisibility;
+  let BtnVisibility1;
+  let BtnVisibility2;
 
   if (sessionUser) {          // if user is logged in
-    BtnVisibility = (
+    BtnVisibility1 = (
       <LogoutButton user={sessionUser} />
     )
   } else {                      // if user is NOT LOGGED in
-    BtnVisibility = (
-      <VerticallyCenter />
+    BtnVisibility1 = (
+      <VerticallyCenter />                  // SignUpModal
+    )
+    BtnVisibility2 = (
+      <VerticallyCenter2 />                 // LogInModal
     )
   }
 
 
   return (
     <>
-
-
       <Grid templateColumns="repeat(15, 1fr)" gap={.7} bg="#FFFFF">
         <Flex w="100%" h="20" />
         <Flex w="100%" h="20" />
@@ -65,12 +68,13 @@ const NavBar = () => {
         </Flex>
 
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginRight={3} >
-          {BtnVisibility}
+          {/* {BtnVisibility} */}
+          {BtnVisibility1}
         </Flex>
         <Flex textAlign="center" w="100%" h="20" paddingTop={5} fontWeight="bold" marginLeft={3}>
           {/* {logoutBtnVisibility} */}
           {/* <LogoutButton /> */}
-          {/* {BtnVisibility} */}
+          {BtnVisibility2}
         </Flex>
 
         <Flex w="100%" h="20" />

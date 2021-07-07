@@ -76,14 +76,25 @@ export function LoginForm() {
             </InputGroup>
 
             <br />
-            <Button type='Submit'>Log in</Button>
+            <Button
+              type='Submit'
+              mb='15px'
+              border='1px solid rgb(211, 211, 211)'
+            >
+              Log in
+            </Button>
 
           </FormControl>
         </Stack>
       </form>
 
       <form onSubmit={handleDemo}>
-        <Button type="Submit">Demo User</Button>
+        <Button
+          type="Submit"
+          border='1px solid rgb(211, 211, 211)'
+        >
+          Demo User
+        </Button>
       </form>
     </>
   )
