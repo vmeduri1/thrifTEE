@@ -25,8 +25,11 @@ export default function Category() {
     return (
         <>
             <CategoryHero />
+            <div style={{marginBottom: '4em'}}>
 
             <Wrap spacing="20px">
+
+
 
 
                 {allCatProducts.map((product, idx) => (
@@ -39,7 +42,9 @@ export default function Category() {
 
 
                 ))}
+
             </Wrap>
+            </div>
 
         </>
     )
