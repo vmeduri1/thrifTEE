@@ -84,7 +84,7 @@ export default function HomePage() {
 
             </Flex>
 
-            <Center className="wasteless-container" mb="50px" >
+            <Center className="wasteless-container" mb="8em" >
 
                 <Image
                     alt={'ThrifTEE Logo'}
